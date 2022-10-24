@@ -1,32 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import axios from "axios";
+import {HashRouter, Route, Routes} from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
 
-    const [helloMessage, setHelloMessage] = useState("");
-
-    useEffect(() => {
-        fetchHelloMessage()
-    }, [])
-
-    function fetchHelloMessage() {
-        axios.get("/api/hello")
-            .then(response => response.data)
-            .then(data => setHelloMessage(data))
-            .catch((error) => console.log(error))
-    }
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-            {helloMessage}
-        </p>
-      </header>
-    </div>
+      <HashRouter>
+          <Routes>
+              <Route path="/" element={<LandingPage />}/>
+              <Route path="/homepage" element={<HomePage />}/>
+          </Routes>
+
+      </HashRouter>
   );
 }
 

@@ -1,38 +1,336 @@
-.App {
-  text-align: center;
+:root {
+    --bg-color: #fff;
+    --headings-color: #000000;
+    --desc-color: #000000;
+    --border-bottom: 5px solid #008C45;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body[data-theme="ducati-theme"] {
+    --bg-color: #282c34;
+    --headings-color: #fff;
+    --desc-color: red;
+    --border-bottom: 5px solid red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body[data-theme="gresini-theme"] {
+    --bg-color: #8facd8;
+    --headings-color: #000000;
+    --desc-color: #ffffff;
+    --border-bottom: #000000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body[data-theme="lcr-theme"] {
+    --bg-color: #ffffff;
+    --headings-color: #BF9D3E;
+    --desc-color: #000000;
+    --border-bottom: #BF9D3E;
 }
 
-.App-link {
-  color: #61dafb;
+body[data-theme="yamaha-theme"] {
+    --bg-color: #000000;
+    --headings-color: #0A2D82;
+    --desc-color: #ffffff;
+    --border-bottom: #95D600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body[data-theme="vr46-theme"] {
+    --bg-color: #000000;
+    --headings-color: #FFBF00;
+    --desc-color: #ffffff;
+    --border-bottom: #95D600;
+}
+
+body[data-theme="ktm-theme"] {
+    --bg-color: #001a72;
+    --headings-color: #ffffff;
+    --desc-color: #F2771A;
+    --border-bottom: #F2771A;
+}
+
+body[data-theme="pramac-theme"] {
+    --bg-color: #ffffff;
+    --headings-color: red;
+    --desc-color: rebeccapurple;
+    --border-bottom: rebeccapurple;
+}
+
+body[data-theme="repsol-theme"] {
+    --bg-color: #ffffff;
+    --headings-color: #e3192f;
+    --desc-color: #f6a60e;
+    --border-bottom: #e3192f;
+}
+
+body[data-theme="tech3-theme"] {
+    --bg-color: #000000;
+    --headings-color: #ffffff;
+    --desc-color: #F2771A;
+    --border-bottom: #F2771A;
+}
+
+body[data-theme="suzuki-theme"] {
+    --bg-color: silver;
+    --headings-color: #2A52BE;
+    --desc-color: #ffffff;
+    --border-bottom: #2A52BE;
+}
+
+body[data-theme="withu-theme"] {
+    --bg-color: #0F4C81;
+    --headings-color: #ffffff;
+    --desc-color: #ffffff;
+    --border-bottom: #2A52BE;
+}
+
+body {
+    background: var(--bg-color) !important;
+}
+
+.content-container {
+    margin-top: 5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.theme-section-headings {
+    padding-top: 3rem;
+}
+
+.theme-section-title {
+    color: var(--headings-color);
+    font-size: 7rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.c-section-title {
+    margin-bottom: 16px;
+    color: var(--headings-color);
+}
+
+.select-theme-heading {
+    color: var(--headings-color);
+}
+
+.theme-section-desc {
+    margin-right: 5rem;
+    color: var(--desc-color);
+    text-align: center;
+    font-size: 2rem;
+}
+
+#Aprilia {
+    background-color: black;
+    border: 2px solid #cc2229;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Aprilia:hover {
+    background-color: white;
+    border: 2px solid #cc2229;
+    color: #cc2229;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Ducati-Lenovo {
+    background-color: red;
+    border: 2px solid black;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Ducati-Lenovo:hover {
+    background-color: white;
+    border: 2px solid red;
+    color: #000000;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Gresini {
+    background-color: #8facd8;
+    border: 2px solid #000000;
+    color: #000000;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Gresini:hover {
+    background-color: white;
+    border: 2px solid #000000;
+    color: #000000;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+
+}
+
+#LCR {
+    background-color: #000000;
+    border: 2px solid #BF9D3E;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#LCR:hover {
+    background-color: #BF9D3E;
+    border: 2px solid #000000;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Monster-Yamaha {
+    background-color: #000000;
+    border: 2px solid #0A2D82;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Monster-Yamaha:hover {
+    background-color: #0A2D82;
+    border: 2px solid #ffffff;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#VR46 {
+    background-color: #000000;
+    border: 2px solid #FFBF00;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#VR46:hover {
+    background-color: #FFBF00;
+    border: 2px solid #000000;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#KTM {
+    background-color: #001a72;
+    border: 2px solid #F2771A;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#KTM:hover {
+    background-color: #F2771A;
+    border: 2px solid #001a72;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Pramac {
+    background-color: #ffffff;
+    border: 2px solid red;
+    color: rebeccapurple;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Pramac:hover {
+    background-color: rebeccapurple;
+    border: 2px solid red;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Repsol {
+    background-color: #ffffff;
+    border: 2px solid #f6a60e;
+    color: #e3192f;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Repsol:hover {
+    background-color: #f6a60e;
+    border: 2px solid #e3192f;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Tech3 {
+    background-color: #000000;
+    border: 2px solid #F2771A;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Tech3:hover {
+    background-color: #F2771A;
+    border: 2px solid #000000;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Suzuki {
+    background-color: silver;
+    border: 2px solid #2A52BE;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#Suzuki:hover {
+    background-color: #2A52BE;
+    border: 2px solid silver;
+    color: white;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#WithU {
+    background-color: #000000;
+    border: 2px solid #0F4C81;
+    color: #ffffff;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
+}
+
+#WithU:hover {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    color: #0F4C81;
+    box-shadow: 5px 5px 5px #00000052;
+    border-radius: 5px;
+    margin-right: 0px;
 }

@@ -1,0 +1,8 @@
+.fields {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.h2 {
+    margin: auto;
+}
