@@ -2,6 +2,12 @@ import React from 'react';
 import "./LandingPage.css";
 import {Button, Card} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import "swiper/css/effect-coverflow";
+import {EffectCoverflow, Pagination, Navigation} from "swiper";
 
 type LandingPageProps = {
 
@@ -134,6 +140,25 @@ function LandingPage(props: LandingPageProps) {
                             <p className="select-theme-heading">Click on demo to see a theme you like</p>
                             <p className="select-theme-heading">Click on Confirm to choose this theme and continue</p>
                             <div className="select-theme-div">
+                                <Swiper
+                                    navigation
+                                    effect={"coverflow"}
+                                    grabCursor={true}
+                                    centeredSlides={true}
+                                    slidesPerView={4}
+                                    coverflowEffect={{
+                                        rotate: 50,
+                                        stretch: 0,
+                                        depth: 100,
+                                        modifier: 1,
+                                        slideShadows: true,
+                                    }}
+                                    pagination={{ clickable: true }}
+                                    modules={[EffectCoverflow, Pagination, Navigation]}
+                                    onSlideChange={() => console.log('slide change')}
+                                    onSwiper={(swiper) => console.log(swiper)}
+                                >
+                                    <SwiperSlide>
                                 <Card className="aprilia-card-container">
                                     <Card.Img variant="top" className="card-logo" src={process.env.PUBLIC_URL + "/images/aprilia-logo-removebg.png"} />
                                     <Card.Body className="card-body">
@@ -155,6 +180,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="ducati-card-container">
                                     <Card.Img variant="top" className="card-logo-ducati" src={process.env.PUBLIC_URL + "/images/ducati_motogp.png"} />
                                     <Card.Body className="card-body">
@@ -176,6 +203,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="gresini-card-container">
                                     <Card.Img variant="top" className="card-logo-gresini" src={process.env.PUBLIC_URL + "/images/logo_gresini.png"} />
                                     <Card.Body className="card-body">
@@ -197,6 +226,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="lcr-card-container">
                                     <Card.Img variant="top" className="card-logo-aprilia" src={process.env.PUBLIC_URL + "/images/lcr_honda.png"} />
                                     <Card.Body className="card-body">
@@ -218,6 +249,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="monster-yamaha-card-container">
                                     <Card.Img variant="top" className="card-logo-monster-yamaha" src={process.env.PUBLIC_URL + "/images/monster-yamaha-logo.png"} />
                                     <Card.Body className="card-body">
@@ -239,6 +272,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="vr46-card-container">
                                     <Card.Img variant="top" className="card-logo-vr46" src={process.env.PUBLIC_URL + "/images/Mooney-VR46-2022-Logo.jpg"} />
                                     <Card.Body className="card-body">
@@ -260,6 +295,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="ktm-card-container">
                                     <Card.Img variant="top" className="card-logo-ktm" src={process.env.PUBLIC_URL + "/images/red_bull_ktm-logo.png"} />
                                     <Card.Body className="card-body">
@@ -281,6 +318,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="pramac-card-container">
                                     <Card.Img variant="top" className="card-logo-pramac" src={process.env.PUBLIC_URL + "/images/pramac_racing_logo.png"} />
                                     <Card.Body className="card-body">
@@ -302,6 +341,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="repsol-card-container">
                                     <Card.Img variant="top" className="card-logo-repsol" src={process.env.PUBLIC_URL + "/images/Repsol-Honda-Team-logo.png"} />
                                     <Card.Body className="card-body">
@@ -323,6 +364,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="tech3-card-container">
                                     <Card.Img variant="top" className="card-logo-ktm" src={process.env.PUBLIC_URL + "/images/tech3-logo.png"} />
                                     <Card.Body className="card-body">
@@ -344,6 +387,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="suzuki-card-container">
                                     <Card.Img variant="top" className="card-logo-suzuki" src={process.env.PUBLIC_URL + "/images/team_suzuki_ecstar_logo.png"} />
                                     <Card.Body className="card-body">
@@ -365,6 +410,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
                                 <Card className="withu-card-container">
                                     <Card.Img variant="top" className="card-logo-withu" src={process.env.PUBLIC_URL + "/images/logo_withu.png"} />
                                     <Card.Body className="card-body">
@@ -386,6 +433,8 @@ function LandingPage(props: LandingPageProps) {
                                         </div>
                                     </Card.Body>
                                 </Card>
+                                    </SwiperSlide>
+                                    </Swiper>
                             </div>
                         </div>
                     </div>
