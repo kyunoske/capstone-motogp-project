@@ -1,0 +1,229 @@
+.theme-buttons {
+    margin-bottom: 20px;
+}
+
+.select-theme-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.select-theme-div .btn {
+    margin-right: 1rem;
+    width: 100px;
+    margin-top: 5px;
+}
+
+.aprilia-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #008C45;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.ducati-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid red;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.gresini-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #000000;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.lcr-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #BF9D3E;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.monster-yamaha-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #95D600;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.vr46-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #ccff00;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.ktm-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #F2771A;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.pramac-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid rebeccapurple;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.repsol-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #e3192f;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.tech3-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #F2771A;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.suzuki-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #2A52BE;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.withu-card-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    border-radius: 5px;
+    border-bottom: 5px solid #0F4C81;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.card-body {
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.card-logo {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card-logo-ducati {
+    margin-top: 9px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 97%;
+}
+
+.card-logo-gresini {
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card-logo-vr46 {
+    margin-top: 10px;
+}
+
+.card-logo-monster-yamaha {
+    margin-top: 5px;
+}
+
+.card-logo-pramac {
+    margin-top: 5px;
+    height: 70%;
+}
+
+.card-logo-ktm {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    height: 71%;
+    width: 49%;
+    align-self: center;
+}
+
+.card-button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+.card-logo-repsol {
+    margin-top: 23px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card-logo-suzuki {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.card-logo-withu {
+    margin-top: 5px;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 200px;
+    height: 400px;
+}
+
+.swiper-pagination {
+    position: absolute;
+    display: block;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 2;
+    top:90%;
+}
