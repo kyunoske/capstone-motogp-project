@@ -1,6 +1,5 @@
 import React, {FormEvent, useState} from 'react';
 import {Team} from "../models/Team";
-import {Team} from "../models/Team";
 
 type AddTeamModalProps = {
     addTeam: (team: Team) => void;
