@@ -1,0 +1,21 @@
+.team-card-container {
+    border-bottom: var(--border-bottom);
+    margin: 15px;
+    box-shadow: 5px 5px 5px 5px #00000052;
+}
+
+.team-card-logo-image {
+    max-height: 140px;
+}
+
+.team-card-body {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.team-card-button {
+    width: 100%;
+    max-height: 38px;
+}
