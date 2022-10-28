@@ -3,11 +3,17 @@ import "./HomePage.css";
 import {Team} from "../models/Team";
 import TeamGallery from "./TeamGallery";
 import AddTeamModal from "../components/AddTeamModal";
+import RiderGallery from "./RiderGallery";
+import {Rider} from "../models/Rider";
+import AddRiderModal from "../components/AddRiderModal";
 
 type HomePageProps = {
     team: Team;
     teams: Team[];
     addTeam: (team: Team) => void;
+    rider: Rider;
+    riders: Rider[];
+    addRider: (rider: Rider) => void;
 }
 
 function HomePage(props: HomePageProps) {
@@ -32,7 +38,23 @@ function HomePage(props: HomePageProps) {
 
             <div className="tab-content">
                 <div className="tab-pane container active" id="riders">
-                    Some Text
+                    <RiderGallery riders={props.riders} team={props.team}/>
+                    <AddRiderModal rider={props.rider} addRider={props.addRider}/>
+                    <button type="button"
+                            className="btn btn-secondary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2"
+                            style={{
+                                width: "30%",
+                                display: "flex",
+                                justifyContent: "center",
+                                margin: "auto",
+                                marginBottom: "55px",
+                                marginTop: "55px"
+                            }}
+                    >
+                        Add Rider
+                    </button>
                 </div>
                 <div className="tab-pane container fade" id="teams">
                     <TeamGallery teams={props.teams}/>

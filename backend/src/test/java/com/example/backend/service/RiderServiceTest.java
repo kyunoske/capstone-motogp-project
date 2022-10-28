@@ -21,7 +21,7 @@ class RiderServiceTest {
     @Test
     void getAllRiders() {
         // GIVEN
-        Rider rider1 = new Rider("1", "name", "last", "nationality", "bike", "dateOfBirth", "height", "weight", "motoGPDebut", "description", "podiums", "wins", "championships", "numOfRacesMotoGP", "riderImage", "image1", "image2", "image3");
+        Rider rider1 = new Rider("1", "name", "last", "nameInitials", "nationality", "bike", "1", "dateOfBirth", "height", "weight", "motoGPDebut", "description", "podiums", "wins", "championships", "numOfRacesMotoGP", "riderImage", "image1", "image2", "image3");
 
         when(repo.findAll())
                 .thenReturn(List.of(rider1));
@@ -37,7 +37,7 @@ class RiderServiceTest {
 
     @Test
     void getRiderById() {
-        Rider rider1 = new Rider("1", "name", "last", "nationality", "bike", "dateOfBirth", "height", "weight", "motoGPDebut", "description", "podiums", "wins", "championships", "numOfRacesMotoGP", "riderImage", "image1", "image2", "image3");
+        Rider rider1 = new Rider("1", "name", "last", "nameInitials", "nationality", "bike", "1", "dateOfBirth", "height", "weight", "motoGPDebut", "description", "podiums", "wins", "championships", "numOfRacesMotoGP", "riderImage", "image1", "image2", "image3");
 
         // GIVEN
         when(repo.findById("1"))
@@ -55,7 +55,7 @@ class RiderServiceTest {
     @Test
     void addRider() {
         //GIVEN
-        Rider rider1 = new Rider("1", "name", "last", "nationality", "bike", "dateOfBirth", "height", "weight", "motoGPDebut", "description", "podiums", "wins", "championships", "numOfRacesMotoGP", "riderImage", "image1", "image2", "image3");
+        Rider rider1 = new Rider("1", "name", "last", "nameInitials", "nationality", "bike", "1", "dateOfBirth", "height", "weight", "motoGPDebut", "description", "podiums", "wins", "championships", "numOfRacesMotoGP", "riderImage", "image1", "image2", "image3");
         when(repo.save(rider1)).thenReturn(rider1);
 
         //WHEN

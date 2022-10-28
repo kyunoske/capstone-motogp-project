@@ -18,15 +18,16 @@ function UseTeams() {
             .catch((error) => console.log(error));
     }
 
+    const getTeamById = (id: string) => {
+        axios.get(`/api/teams/${id}`)
+            .then(response => response.data);
+    }
+
     const addTeam = (team: Team) => {
         axios.post("/api/teams", team)
             .then(getAllTeams)
     }
 
-    const getTeamById = (id: string) => {
-        axios.get(`/api/teams/${id}`)
-            .then(response => response.data);
-    }
     return {getAllTeams, addTeam, getTeamById, teams, team};
 }
 

@@ -36,8 +36,8 @@ class RiderControllerTest {
     @Test
     void getAllRiders() throws Exception {
         // GIVEN
-        riderRepo.save(new Rider("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
-        riderRepo.save(new Rider("2", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
+        riderRepo.save(new Rider("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
+        riderRepo.save(new Rider("2", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
 
         // WHEN & THEN
         String expectedJSON = """
@@ -46,8 +46,10 @@ class RiderControllerTest {
                         "id":"1",
                         "firstName":"1",
                         "lastName": "1",
+                        "nameInitials": "1",
                         "nationality": "1",
                         "bike": "1",
+                        "bikeNumber": "1",
                         "dateOfBirth": "1",
                         "height": "1",
                         "weight":  "1",
@@ -66,8 +68,10 @@ class RiderControllerTest {
                         "id":"2",
                         "firstName":"1",
                         "lastName": "1",
+                        "nameInitials": "1",
                         "nationality": "1",
                         "bike": "1",
+                        "bikeNumber": "1",
                         "dateOfBirth": "1",
                         "height": "1",
                         "weight":  "1",
@@ -102,8 +106,10 @@ class RiderControllerTest {
                 {
                     "firstName":"1",
                     "lastName": "1",
+                    "nameInitials": "1",
                     "nationality": "1",
                     "bike": "1",
+                    "bikeNumber": "1",
                     "dateOfBirth": "1",
                     "height": "1",
                     "weight":  "1",
@@ -125,8 +131,10 @@ class RiderControllerTest {
                    "id":"1",
                    "firstName":"1",
                    "lastName": "1",
+                   "nameInitials": "1",
                    "nationality": "1",
                    "bike": "1",
+                   "bikeNumber": "1",
                    "dateOfBirth": "1",
                    "height": "1",
                    "weight":  "1",
