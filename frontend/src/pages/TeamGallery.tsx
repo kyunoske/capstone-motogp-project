@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import "./TeamGallery.css";
 import {Team} from "../models/Team";
 import TeamCard from "../components/TeamCard";
 
@@ -14,7 +15,7 @@ function TeamGallery(props: TeamGalleryProps) {
     return (
 
         <div>
-            <div className="track-input-container">
+            <div className="team-input-container">
                 <div className="input-group input-group-sm mb-3">
                     <input style={{width: "80%", borderRadius: "5px"}} type="text" placeholder="Find a team..."
                            onChange={(event) => setData(event.target.value)}/>
