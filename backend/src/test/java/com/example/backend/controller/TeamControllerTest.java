@@ -71,7 +71,7 @@ class TeamControllerTest {
                 ]
                 """;
 
-        //WHEN+THEN
+        // WHEN & THEN
         mockMvc.perform(get("/api/teams"))
                 .andExpect(status().isOk())
                 .andExpect(content().json(expectedJSON));
@@ -86,7 +86,7 @@ class TeamControllerTest {
                 {
                             "name": "Ducati",
                             "description": "yup",
-                            "logo": "logo", 
+                            "logo": "logo",
                             "image1":"1",
                             "image2":"2",
                             "image3":"3",
@@ -103,7 +103,7 @@ class TeamControllerTest {
                             "id": "1",
                             "name": "Ducati",
                             "description": "yup",
-                            "logo": "logo", 
+                            "logo": "logo",
                             "image1":"1",
                             "image2":"2",
                             "image3":"3",
