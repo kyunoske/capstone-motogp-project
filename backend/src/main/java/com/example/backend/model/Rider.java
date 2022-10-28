@@ -17,8 +17,10 @@ public class Rider {
 
     private String firstName;
     private String lastName;
+    private String nameInitials;
     private String nationality;
     private String bike;
+    private String bikeNumber;
     private String dateOfBirth;
     private String height;
     private String weight;
