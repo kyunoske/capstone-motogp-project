@@ -6,6 +6,8 @@ import AddTeamModal from "../components/AddTeamModal";
 import RiderGallery from "./RiderGallery";
 import {Rider} from "../models/Rider";
 import AddRiderModal from "../components/AddRiderModal";
+import TrackGallery from "./TrackGallery";
+import {Track} from "../models/Track";
 
 type HomePageProps = {
     team: Team;
@@ -14,6 +16,9 @@ type HomePageProps = {
     rider: Rider;
     riders: Rider[];
     addRider: (rider: Rider) => void;
+    track: Track;
+    tracks: Track[];
+    addTrack: (track: Track) => void;
 }
 
 function HomePage(props: HomePageProps) {
@@ -75,8 +80,8 @@ function HomePage(props: HomePageProps) {
                         Add Team
                     </button>
                 </div>
-                <div className="tab-pane container fade" id="tracks">This is a setting tab using pill data-toggle
-                    attribute.
+                <div className="tab-pane container fade" id="tracks">
+                    <TrackGallery tracks={props.tracks}/>
                 </div>
                 <div className="tab-pane container fade" id="forum">This is a setting tab using pill data-toggle
                     attribute.
