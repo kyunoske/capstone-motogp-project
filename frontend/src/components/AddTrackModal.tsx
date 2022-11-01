@@ -1,64 +1,63 @@
 import React, {FormEvent, useState} from 'react';
-import {Team} from "../models/Team";
+import {Track} from "../models/Track";
 
-type AddTeamModalProps = {
-    team: Team;
-    addTeam: (team: Team) => void;
+type AddTrackModalProps = {
+    track: Track;
+    addTrack: (track: Track) => void;
 }
 
-function AddTeamModal(props: AddTeamModalProps) {
+function AddTrackModal(props: AddTrackModalProps) {
 
-    const [team, setTeam] = useState(props.team)
+    const [track, setTrack] = useState(props.track)
     const [name, setName] = useState("")
+    const [grandPrixName, setGrandPrixName] = useState("")
+    const [round, setRound] = useState("")
     const [description, setDescription] = useState("")
-    const [logo, setLogo] = useState("")
-    const [image1, setImage1] = useState("")
-    const [image2, setImage2] = useState("")
-    const [image3, setImage3] = useState("")
-    const [image4, setImage4] = useState("")
-    const [image5, setImage5] = useState("")
-    const [wins, setWins] = useState("")
-    const [championships, setChampionships] = useState("")
+    const [country, setCountry] = useState("")
+    const [countryFlag, setCountryFlag] = useState("")
+    const [date, setDate] = useState("")
+    const [lapRecord, setLapRecord] = useState("")
+    const [lapRecordHolder, setLapRecordHolder] = useState("")
+    const [lap, setLap] = useState("")
+    const [image, setImage] = useState("")
 
     const handleSubmit = (event: FormEvent) => {
-        event.preventDefault();
+        event.preventDefault()
+        console.log(handleSubmit)
 
-        let team = {
+        let track = {
             name,
             description,
-            logo,
-            image1,
-            image2,
-            image3,
-            image4,
-            image5,
-            wins,
-            championships
+            grandPrixName,
+            image,
+            round,
+            country,
+            countryFlag,
+            date,
+            lapRecord,
+            lapRecordHolder,
+            lap,
+        }
+        console.table(track);
+
+        setTrack(track);
+        if (track) {
+            props.addTrack(track);
+            console.table(track)
         }
 
-        setTeam(team);
-        if (team) {
-            props.addTeam(team);
-        }
-        setName("")
-        setDescription("")
-        setLogo("")
-        setImage1("")
-        setImage2("")
-        setImage3("")
-        setImage4("")
-        setImage5("")
-        setWins("")
-        setChampionships("")
+        setTimeout(() => {
+            console.log('Hello, World!')
+        }, 3000);
     }
 
     return (
-        <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel"
+        <div className="modal fade" id="exampleModal3" tabIndex={-1} aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">Add Team</h5>
+                        <h5 className="modal-title" id="exampleModalLabel">Add Track</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
@@ -72,7 +71,7 @@ function AddTeamModal(props: AddTeamModalProps) {
                                 name="name"
                                 required={true}
                                 type="text"
-                                placeholder="Team Name"
+                                placeholder="Track Name"
                                 onChange={(e) => setName(e.target.value)}
                             />
                             <textarea
@@ -81,78 +80,86 @@ function AddTeamModal(props: AddTeamModalProps) {
                                 name="description"
                                 required={true}
                                 rows={3}
-                                placeholder="Team Description"
+                                placeholder="Track Description"
                                 onChange={(e) => setDescription(e.target.value)}
                             />
 
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="logo"
+                                name="grandPrixName"
                                 type="text"
-                                placeholder="Team Logo"
-                                onChange={(e) => setLogo(e.target.value)}
+                                placeholder="Grand Prix Name"
+                                onChange={(e) => setGrandPrixName(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="image1"
+                                name="image"
                                 type="text"
                                 placeholder="image1"
-                                onChange={(e) => setImage1(e.target.value)}
+                                onChange={(e) => setImage(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="image2"
+                                name="round"
                                 type="text"
-                                placeholder="image2"
-                                onChange={(e) => setImage2(e.target.value)}
+                                placeholder="Round Number"
+                                onChange={(e) => setRound(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="image3"
+                                name="country"
                                 type="text"
-                                placeholder="image3"
-                                onChange={(e) => setImage3(e.target.value)}
+                                placeholder="Country Name"
+                                onChange={(e) => setCountry(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="image4"
+                                name="countryFlag"
                                 type="text"
-                                placeholder="image4"
-                                onChange={(e) => setImage4(e.target.value)}
+                                placeholder="Country Flag"
+                                onChange={(e) => setCountryFlag(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="image5"
+                                name="date"
                                 type="text"
-                                placeholder="image5"
-                                onChange={(e) => setImage5(e.target.value)}
+                                placeholder="date"
+                                onChange={(e) => setDate(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="wins"
+                                name="lapRecord"
                                 type="text"
-                                placeholder="Wins"
-                                onChange={(e) => setWins(e.target.value)}
+                                placeholder="Lap Record Time"
+                                onChange={(e) => setLapRecord(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="championships"
+                                name="lapRecordHolder"
                                 required={true}
                                 type="text"
-                                placeholder="Championships"
-                                onChange={(e) => setChampionships(e.target.value)}
+                                placeholder="Lap Record Holder Name"
+                                onChange={(e) => setLapRecordHolder(e.target.value)}
+                            />
+                            <input
+                                style={{marginBottom: "10px"}}
+                                className="form-control"
+                                name="lap"
+                                type="text"
+                                placeholder="Lap Video"
+                                onChange={(e) => setLap(e.target.value)}
                             />
                             <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
-                                <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
-                                        style={{width: "200px"}}>Add Team
+                                <button type="submit" className="btn btn-success"
+                                        style={{width: "200px"}}>Add Track
                                 </button>
                                 <button type="button" className="btn btn-secondary" style={{width: "200px"}}
                                         data-bs-dismiss="modal">Close
@@ -166,5 +173,4 @@ function AddTeamModal(props: AddTeamModalProps) {
     );
 }
 
-export default AddTeamModal;
-
+export default AddTrackModal;

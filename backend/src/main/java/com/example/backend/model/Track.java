@@ -16,6 +16,8 @@ public class Track {
     private String id;
 
     private String name;
+    private String grandPrixName;
+    private String round;
     private String description;
     private String country;
     private String countryFlag;

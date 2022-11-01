@@ -36,8 +36,8 @@ class TrackControllerTest {
     @Test
     void getAllTracks() throws Exception {
         // GIVEN
-        trackRepo.save(new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
-        trackRepo.save(new Track("2", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
+        trackRepo.save(new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
+        trackRepo.save(new Track("2", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
 
         // WHEN & THEN
         String expectedJSON = """
@@ -45,6 +45,8 @@ class TrackControllerTest {
                     {
                         "id": "1",
                         "name": "1",
+                        "grandPrixName": "1",
+                        "round": "1",
                         "description": "1",
                         "country": "1",
                         "countryFlag": "1",
@@ -57,6 +59,8 @@ class TrackControllerTest {
                     {
                         "id": "2",
                         "name": "1",
+                        "grandPrixName": "1",
+                        "round": "1",
                         "description": "1",
                         "country": "1",
                         "countryFlag": "1",
@@ -84,6 +88,8 @@ class TrackControllerTest {
         String requestBody = """
                     {
                         "name": "1",
+                        "grandPrixName": "1",
+                        "round": "1",
                         "description": "1",
                         "country": "1",
                         "countryFlag": "1",
@@ -99,6 +105,8 @@ class TrackControllerTest {
                     {
                         "id": "1",
                         "name": "1",
+                        "grandPrixName": "1",
+                        "round": "1",
                         "description": "1",
                         "country": "1",
                         "countryFlag": "1",
