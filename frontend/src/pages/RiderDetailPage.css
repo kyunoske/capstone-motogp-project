@@ -1,0 +1,86 @@
+.rider-info-container {
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.rider-info-left-right-container {
+    display: flex;
+    color: var(--headings-color)
+}
+
+.rider-image-container-left {
+    display: flex;
+    width: 50%;
+    background-image: linear-gradient(to right, var(--team-highlight-color), transparent);
+}
+
+.rider-info-rider-image {
+    max-width: 310px;
+    max-height: 530px;
+}
+
+.rider-info {
+    margin-top: 80px;
+}
+
+.rider-info-flag {
+    width: 30px;
+}
+
+.rider-info-first-name {
+    font-size: larger;
+}
+
+.rider-info-last-name {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.rider-championships-wins-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    align-items: center;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.rider-championship-container {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to left, var(--alt-headings-color), transparent);
+}
+
+.rider-championship-number {
+}
+
+.rider-wins-container {
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to left, var(--alt-headings-color), transparent);
+}
+
+.rider-wins-number {
+}
+
+.rider-info-description-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    background: #8C92AC;
+    color: #ffffff;
+}
+
+.about-rider {
+    text-align: center;
+    font-size: large;
+    padding-top: 20px;
+}
+
+.rider-info-description {
+    padding: 20px;
+}

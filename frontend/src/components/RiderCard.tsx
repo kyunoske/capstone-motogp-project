@@ -2,14 +2,14 @@ import React from 'react';
 import "./RiderCard.css";
 import {Rider} from "../models/Rider";
 import {Button, Card} from "react-bootstrap";
-import {Team} from "../models/Team";
+import {Link} from "react-router-dom";
 
 type RiderCardProps = {
     rider: Rider;
-    team: Team;
 }
 
 function RiderCard(props: RiderCardProps) {
+
     return (
         <Card style={{width: '13rem'}} className="rider-card-container">
             <Card.Img variant="top" className="rider-card-logo-image" src={props.rider.riderImage}/>
@@ -22,9 +22,14 @@ function RiderCard(props: RiderCardProps) {
                     <span>{props.rider.firstName}</span>
                     <span><strong>{props.rider.lastName}</strong></span>
                 </Card.Text>
-                <Button variant="primary" className="rider-card-button">
-                    More {props.rider.firstName}
-                </Button>
+                <Link to={"/riders/" + props.rider.id}>
+                    <Button
+                        variant="primary"
+                        className="rider-card-button"
+                    >
+                        More {props.rider.firstName}
+                    </Button>
+                </Link>
             </Card.Body>
         </Card>
     );

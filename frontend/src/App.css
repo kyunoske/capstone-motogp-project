@@ -1,85 +1,109 @@
 :root {
     --bg-color: #fff;
     --headings-color: #000000;
+    --alt-headings-color: #000000;
     --desc-color: #000000;
-    --border-bottom: 5px solid #008C45;
+    --border-bottom: 5px solid #52cc00;
+    --team-highlight-color: #52cc00
 }
 
 body[data-theme="ducati-theme"] {
     --bg-color: #282c34;
-    --headings-color: #fff;
+    --headings-color: #ffffff;
+    --alt-headings-color: #ffffff;
     --desc-color: red;
     --border-bottom: 5px solid red;
+    --team-highlight-color: red;
 }
 
 body[data-theme="gresini-theme"] {
     --bg-color: #8facd8;
     --headings-color: #000000;
+    --alt-headings-color: #ffffff;
     --desc-color: #ffffff;
     --border-bottom: #000000;
+    --team-highlight-color: red;
 }
 
 body[data-theme="lcr-theme"] {
     --bg-color: #ffffff;
     --headings-color: #BF9D3E;
+    --alt-headings-color: #000000;
     --desc-color: #000000;
     --border-bottom: #BF9D3E;
+    --team-highlight-color: #BF9D3E;
 }
 
 body[data-theme="yamaha-theme"] {
     --bg-color: #000000;
-    --headings-color: #0A2D82;
+    --headings-color: #ffffff;
+    --alt-headings-color: #0A2D82;
     --desc-color: #ffffff;
     --border-bottom: #95D600;
+    --team-highlight-color: #95D600;
 }
 
 body[data-theme="vr46-theme"] {
     --bg-color: #000000;
     --headings-color: #FFBF00;
+    --alt-headings-color: #ffffff;
     --desc-color: #ffffff;
-    --border-bottom: #95D600;
+    --border-bottom: #ffff00;
+    --team-highlight-color: #ffff00;
 }
 
 body[data-theme="ktm-theme"] {
     --bg-color: #001a72;
     --headings-color: #ffffff;
+    --alt-headings-color: #ffffff;
     --desc-color: #F2771A;
     --border-bottom: #F2771A;
+    --team-highlight-color: #F2771A;
 }
 
 body[data-theme="pramac-theme"] {
     --bg-color: #ffffff;
     --headings-color: red;
+    --alt-headings-color: #000000;
     --desc-color: rebeccapurple;
     --border-bottom: rebeccapurple;
+    --team-highlight-color: rebeccapurple;
 }
 
 body[data-theme="repsol-theme"] {
     --bg-color: #ffffff;
     --headings-color: #e3192f;
+    --alt-headings-color: #000000;
     --desc-color: #f6a60e;
     --border-bottom: #e3192f;
+    --team-highlight-color: #e3192f;
 }
 
 body[data-theme="tech3-theme"] {
     --bg-color: #000000;
     --headings-color: #ffffff;
+    --alt-headings-color: #000000;
     --desc-color: #F2771A;
     --border-bottom: #F2771A;
+    --team-highlight-color: #F2771A;
 }
 
 body[data-theme="suzuki-theme"] {
     --bg-color: silver;
     --headings-color: #2A52BE;
+    --alt-headings-color: #000000;
     --desc-color: #ffffff;
     --border-bottom: #2A52BE;
+    --team-highlight-color: #2A52BE;
 }
 
 body[data-theme="withu-theme"] {
     --bg-color: #0F4C81;
     --headings-color: #ffffff;
+    --alt-headings-color: #000000;
     --desc-color: #ffffff;
     --border-bottom: #2A52BE;
+    --team-highlight-color: #2A52BE;
 }
 
 body {
