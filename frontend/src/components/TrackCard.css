@@ -9,13 +9,29 @@
     max-height: 140px;
 }
 
+.track-round {
+    width: 30px;
+    position: absolute;
+    text-align: center;
+    font-weight: bolder;
+    background-color: #0A2D82;
+    color: #ffffff;
+}
+
 .track-card-body {
     display: flex;
     flex-direction: column;
     color: #ffffff;
 }
 
+.track-flag {
+    width: 30px;
+}
+
 .track-card-button {
     width: 100%;
     max-height: 38px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

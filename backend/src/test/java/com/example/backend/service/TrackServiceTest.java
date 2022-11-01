@@ -21,7 +21,7 @@ class TrackServiceTest {
     @Test
     void getAllTracks() {
         // GIVEN
-        Track track1 = new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
+        Track track1 = new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
 
         when(repo.findAll())
                 .thenReturn(List.of(track1));
@@ -37,7 +37,7 @@ class TrackServiceTest {
 
     @Test
     void getTrackById() {
-        Track track1 = new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
+        Track track1 = new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
 
         // GIVEN
         when(repo.findById("1"))
@@ -55,7 +55,7 @@ class TrackServiceTest {
     @Test
     void addTrack() {
         // GIVEN
-        Track track1 = new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
+        Track track1 = new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
         when(repo.save(track1)).thenReturn(track1);
 
         // WHEN

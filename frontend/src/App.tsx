@@ -42,6 +42,7 @@ function App() {
                     tracks={tracks}
                     track={track}
                     addTrack={addTrack}
+
                 />}/>
                 <Route path="/teams" element={<TeamGallery teams={teams}/>}/>
             </Routes>

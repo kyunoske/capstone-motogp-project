@@ -15,7 +15,9 @@ function RiderCard(props: RiderCardProps) {
             <Card.Img variant="top" className="rider-card-logo-image" src={props.rider.riderImage}/>
             <Card.Body className="rider-card-body">
                 <Card.Title
-                    style={{color: "#AEAEAE"}}>{props.rider.nameInitials}{props.rider.bikeNumber}</Card.Title>
+                    style={{color: "#AEAEAE"}}>{props.rider.nameInitials}{props.rider.bikeNumber}&nbsp;
+                    <img src={props.rider.nationality} alt={props.rider.nationality} className="rider-flag"/>
+                </Card.Title>
                 <Card.Text className="rider-card-text">
                     <span>{props.rider.firstName}</span>
                     <span><strong>{props.rider.lastName}</strong></span>

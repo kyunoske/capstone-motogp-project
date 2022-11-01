@@ -8,6 +8,7 @@ import {Rider} from "../models/Rider";
 import AddRiderModal from "../components/AddRiderModal";
 import TrackGallery from "./TrackGallery";
 import {Track} from "../models/Track";
+import AddTrackModal from "../components/AddTrackModal";
 
 type HomePageProps = {
     team: Team;
@@ -82,6 +83,22 @@ function HomePage(props: HomePageProps) {
                 </div>
                 <div className="tab-pane container fade" id="tracks">
                     <TrackGallery tracks={props.tracks}/>
+                    <AddTrackModal track={props.track} addTrack={props.addTrack}/>
+                    <button type="button"
+                            className="btn btn-secondary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal3"
+                            style={{
+                                width: "30%",
+                                display: "flex",
+                                justifyContent: "center",
+                                margin: "auto",
+                                marginBottom: "55px",
+                                marginTop: "55px"
+                            }}
+                    >
+                        Add Track
+                    </button>
                 </div>
                 <div className="tab-pane container fade" id="forum">This is a setting tab using pill data-toggle
                     attribute.

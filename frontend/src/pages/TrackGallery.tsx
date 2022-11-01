@@ -10,7 +10,8 @@ type TrackGalleryProps = {
 function TrackGallery(props: TrackGalleryProps) {
 
     const [data, setData] = useState("");
-    const filteredTracks = props.tracks.filter((track) => track.name.toLowerCase().includes(data));
+    const sorting = [...props.tracks].sort((a, b) => +a.round > +b.round ? 1 : -1)
+    const filteredTracks = sorting.filter((track) => track.name.toLowerCase().includes(data));
 
     return (
         <div>
