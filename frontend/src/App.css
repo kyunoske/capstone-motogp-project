@@ -1,85 +1,181 @@
 :root {
     --bg-color: #fff;
     --headings-color: #000000;
+    --alt-headings-color: #000000;
     --desc-color: #000000;
-    --border-bottom: 5px solid #008C45;
+    --border-bottom: 5px solid #52cc00;
+    --team-highlight-color: #52cc00;
+    --team-button-border: 2px solid #cc2229;
+    --team-button-background: #000000;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid #cc2229;
+    --team-button-alt-background: #ffffff;
+    --team-alt-button-color: #cc2229;
 }
 
 body[data-theme="ducati-theme"] {
     --bg-color: #282c34;
-    --headings-color: #fff;
+    --headings-color: #ffffff;
+    --alt-headings-color: #ffffff;
     --desc-color: red;
     --border-bottom: 5px solid red;
+    --team-highlight-color: red;
+    --team-button-border: 2px solid black;
+    --team-button-background: red;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid red;
+    --team-button-alt-background: #ffffff;
+    --team-alt-button-color: #000000;
 }
 
 body[data-theme="gresini-theme"] {
     --bg-color: #8facd8;
     --headings-color: #000000;
+    --alt-headings-color: #ffffff;
     --desc-color: #ffffff;
     --border-bottom: #000000;
+    --team-highlight-color: red;
+    --team-button-border: 2px solid #000000;
+    --team-button-background: #8facd8;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid #000000;
+    --team-button-alt-background: #ffffff;
+    --team-alt-button-color: #000000;
 }
 
 body[data-theme="lcr-theme"] {
     --bg-color: #ffffff;
     --headings-color: #BF9D3E;
+    --alt-headings-color: #000000;
     --desc-color: #000000;
     --border-bottom: #BF9D3E;
+    --team-highlight-color: #BF9D3E;
+    --team-button-border: 2px solid #BF9D3E;
+    --team-button-background: #000000;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid #000000;
+    --team-button-alt-background: #BF9D3E;
+    --team-alt-button-color: #ffffff;
 }
 
 body[data-theme="yamaha-theme"] {
     --bg-color: #000000;
-    --headings-color: #0A2D82;
+    --headings-color: #ffffff;
+    --alt-headings-color: #0A2D82;
     --desc-color: #ffffff;
     --border-bottom: #95D600;
+    --team-highlight-color: #95D600;
+    --team-button-border: 2px solid #0A2D82;
+    --team-button-background: #000000;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid #ffffff;
+    --team-button-alt-background: #0A2D82;
+    --team-alt-button-color: #ffffff;
 }
 
 body[data-theme="vr46-theme"] {
     --bg-color: #000000;
     --headings-color: #FFBF00;
+    --alt-headings-color: #ffffff;
     --desc-color: #ffffff;
-    --border-bottom: #95D600;
+    --border-bottom: #ffff00;
+    --team-highlight-color: #ffff00;
+    --team-button-border: 2px solid #FFBF00;
+    --team-button-background: #000000;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid #000000;
+    --team-button-alt-background: #FFBF00;
+    --team-alt-button-color: #ffffff;
 }
 
 body[data-theme="ktm-theme"] {
     --bg-color: #001a72;
     --headings-color: #ffffff;
+    --alt-headings-color: #ffffff;
     --desc-color: #F2771A;
     --border-bottom: #F2771A;
+    --team-highlight-color: #F2771A;
+    --team-button-border: 2px solid #F2771A;
+    --team-button-background: #001a72;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid #001a72;
+    --team-button-alt-background: #F2771A;
+    --team-alt-button-color: #ffffff;
 }
 
 body[data-theme="pramac-theme"] {
     --bg-color: #ffffff;
     --headings-color: red;
+    --alt-headings-color: #000000;
     --desc-color: rebeccapurple;
     --border-bottom: rebeccapurple;
+    --team-highlight-color: rebeccapurple;
+    --team-button-border: 2px solid red;
+    --team-button-background: #ffffff;
+    --team-button-color: rebeccapurple;
+    --team-button-alt-border: 2px solid red;
+    --team-button-alt-background: rebeccapurple;
+    --team-alt-button-color: #ffffff;
 }
 
 body[data-theme="repsol-theme"] {
     --bg-color: #ffffff;
     --headings-color: #e3192f;
+    --alt-headings-color: #000000;
     --desc-color: #f6a60e;
     --border-bottom: #e3192f;
+    --team-highlight-color: #e3192f;
+    --team-button-border: 2px solid #f6a60e;
+    --team-button-background: #ffffff;
+    --team-button-color: #e3192f;
+    --team-button-alt-border: 2px solid #e3192f;
+    --team-button-alt-background: #f6a60e;
+    --team-alt-button-color: #ffffff;
 }
 
 body[data-theme="tech3-theme"] {
     --bg-color: #000000;
     --headings-color: #ffffff;
+    --alt-headings-color: #000000;
     --desc-color: #F2771A;
     --border-bottom: #F2771A;
+    --team-highlight-color: #F2771A;
+    --team-button-border: 2px solid #F2771A;
+    --team-button-background: #000000;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid #000000;
+    --team-button-alt-background: #F2771A;
+    --team-alt-button-color: #ffffff;
 }
 
 body[data-theme="suzuki-theme"] {
     --bg-color: silver;
     --headings-color: #2A52BE;
+    --alt-headings-color: #000000;
     --desc-color: #ffffff;
     --border-bottom: #2A52BE;
+    --team-highlight-color: #2A52BE;
+    --team-button-border: 2px solid #2A52BE;
+    --team-button-background: silver;
+    --team-button-color: #ffffff;
+    --team-button-alt-border: 2px solid silver;
+    --team-button-alt-background: #2A52BE;
+    --team-alt-button-color: #ffffff;
 }
 
 body[data-theme="withu-theme"] {
     --bg-color: #0F4C81;
     --headings-color: #ffffff;
+    --alt-headings-color: #000000;
     --desc-color: #ffffff;
     --border-bottom: #2A52BE;
+    --team-highlight-color: #2A52BE;
+    --team-button-border: 2px solid #0F4C81;
+    --team-button-background: #000000;
+    --team-button-color: #0F4C81;
+    --team-button-alt-border: 2px solid #000000;
+    --team-button-alt-background: #ffffff;
+    --team-alt-button-color: #0F4C81;
 }
 
 body {

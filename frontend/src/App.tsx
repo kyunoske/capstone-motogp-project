@@ -7,6 +7,8 @@ import useTeams from "./hooks/useTeams";
 import TeamGallery from "./pages/TeamGallery";
 import useRiders from "./hooks/useRiders";
 import useTracks from "./hooks/useTracks";
+import RiderDetailPage from "./pages/RiderDetailPage";
+import TeamDetailPage from "./pages/TeamDetailPage";
 
 function App() {
 
@@ -31,8 +33,8 @@ function App() {
     return (
         <HashRouter>
             <Routes>
-                <Route path="/" element={<LandingPage/>}/>
-                <Route path="/homepage" element={<HomePage
+                <Route path={"/"} element={<LandingPage/>}/>
+                <Route path={"/homepage"} element={<HomePage
                     teams={teams}
                     team={team}
                     addTeam={addTeam}
@@ -44,7 +46,12 @@ function App() {
                     addTrack={addTrack}
 
                 />}/>
-                <Route path="/teams" element={<TeamGallery teams={teams}/>}/>
+                <Route path={"/riders/:id"} element={<RiderDetailPage
+                    riders={riders}
+                />}/>
+                <Route path={"/teams/:id"} element={<TeamDetailPage
+                    teams={teams}/>}/>
+                <Route path={"/teams"} element={<TeamGallery teams={teams}/>}/>
             </Routes>
 
         </HashRouter>

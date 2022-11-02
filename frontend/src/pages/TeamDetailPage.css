@@ -1,0 +1,83 @@
+.team-detail-info-container {
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.team-detail-info-logo-bike {
+    display: flex;
+    background-image: linear-gradient(to left, var(--team-highlight-color), transparent);
+}
+
+.team-detail-logo-left {
+    width: 50%;
+    align-self: center;
+}
+
+.team-detail-logo {
+    width: 100%;
+    height: auto;
+}
+
+.team-detail-bike-right {
+    width: 50%;
+    align-self: center;
+}
+
+.team-detail-bike {
+    width: 100%;
+    height: auto;
+}
+
+.team-team-name {
+    font-size: xxx-large;
+}
+
+.team-championships-wins-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.team-championship-container {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to left, var(--alt-headings-color), transparent);
+}
+
+.team-championship-number {
+}
+
+.team-wins-container {
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to left, var(--alt-headings-color), transparent);
+}
+
+.team-wins-number {
+}
+
+.team-info-description-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100%;
+    background: #8C92AC;
+    color: #ffffff;
+}
+
+.about-team {
+    text-align: center;
+    font-size: larger;
+    padding-top: 20px;
+}
+
+.team-info-description {
+    padding: 20px;
+    font-size: large;
+}
