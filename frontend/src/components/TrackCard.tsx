@@ -18,7 +18,7 @@ function TrackCard(props: TrackCardProps) {
                     {props.track.country}&nbsp;
                     <img src={props.track.countryFlag} alt={props.track.countryFlag} className="track-flag"/>
                 </Card.Text>
-                <Button variant="primary" className="track-card-button">More {props.track.name}</Button>
+                <Button className="track-card-button">More {props.track.name}</Button>
             </Card.Body>
         </Card>
     );

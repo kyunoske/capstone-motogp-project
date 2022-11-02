@@ -8,6 +8,7 @@ import TeamGallery from "./pages/TeamGallery";
 import useRiders from "./hooks/useRiders";
 import useTracks from "./hooks/useTracks";
 import RiderDetailPage from "./pages/RiderDetailPage";
+import TeamDetailPage from "./pages/TeamDetailPage";
 
 function App() {
 
@@ -48,6 +49,8 @@ function App() {
                 <Route path={"/riders/:id"} element={<RiderDetailPage
                     riders={riders}
                 />}/>
+                <Route path={"/teams/:id"} element={<TeamDetailPage
+                    teams={teams}/>}/>
                 <Route path={"/teams"} element={<TeamGallery teams={teams}/>}/>
             </Routes>
 

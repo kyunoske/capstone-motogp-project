@@ -2,6 +2,7 @@ import React from 'react';
 import "./TeamCard.css";
 import {Team} from "../models/Team";
 import {Button, Card} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 type TeamCardProps = {
     team: Team;
@@ -16,7 +17,9 @@ function TeamCard(props: TeamCardProps) {
                 <Card.Title></Card.Title>
                 <Card.Text>
                 </Card.Text>
-                <Button variant="primary" className="team-card-button">More {props.team.name}</Button>
+                <Link to={"/teams/" + props.team.id}>
+                    <Button className="team-card-button">More {props.team.name}</Button>
+                </Link>
             </Card.Body>
         </Card>
     );
