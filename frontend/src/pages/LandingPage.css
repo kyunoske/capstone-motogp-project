@@ -2,6 +2,17 @@
     margin-bottom: 20px;
 }
 
+.upside-down::after {
+    content: "MotoGP World";
+    display: flex;
+    transform: rotateX(180deg);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 24%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 1) 100%);
+    -webkit-background-clip: text;
+    justify-content: center;
+    color: transparent;
+    margin-top: -81px;
+}
+
 .select-theme-div {
     display: flex;
     flex-wrap: wrap;

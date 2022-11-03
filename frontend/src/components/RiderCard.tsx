@@ -22,7 +22,7 @@ function RiderCard(props: RiderCardProps) {
                     <span>{props.rider.firstName}</span>
                     <span><strong>{props.rider.lastName}</strong></span>
                 </Card.Text>
-                <Link to={"/riders/" + props.rider.id}>
+                <Link style={{width: "100%", marginTop: "auto"}} to={"/riders/" + props.rider.id}>
                     <Button
                         variant="primary"
                         className="rider-card-button"

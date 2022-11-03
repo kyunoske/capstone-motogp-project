@@ -17,7 +17,7 @@ function TeamCard(props: TeamCardProps) {
                 <Card.Title></Card.Title>
                 <Card.Text>
                 </Card.Text>
-                <Link to={"/teams/" + props.team.id}>
+                <Link style={{width: "100%", marginTop: "auto"}} to={"/teams/" + props.team.id}>
                     <Button className="team-card-button">More {props.team.name}</Button>
                 </Link>
             </Card.Body>

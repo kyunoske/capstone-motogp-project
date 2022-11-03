@@ -2,6 +2,7 @@ import React from 'react';
 import "./TrackCard.css";
 import {Track} from "../models/Track";
 import {Button, Card} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 type TrackCardProps = {
     track: Track;
@@ -18,7 +19,9 @@ function TrackCard(props: TrackCardProps) {
                     {props.track.country}&nbsp;
                     <img src={props.track.countryFlag} alt={props.track.countryFlag} className="track-flag"/>
                 </Card.Text>
-                <Button className="track-card-button">More {props.track.name}</Button>
+                <Link style={{width: "100%", marginTop: "auto"}} to={"/tracks/" + props.track.id}>
+                    <Button className="track-card-button">More {props.track.name}</Button>
+                </Link>
             </Card.Body>
         </Card>
     );

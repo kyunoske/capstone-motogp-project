@@ -4,6 +4,10 @@
     margin-right: 60px;
 }
 
+.track-detail-image-container {
+    display: flex;
+}
+
 .team-detail-info-logo-bike {
     display: flex;
     background-image: linear-gradient(to left, var(--team-highlight-color), transparent);
