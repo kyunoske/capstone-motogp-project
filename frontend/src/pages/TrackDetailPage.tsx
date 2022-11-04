@@ -1,5 +1,6 @@
 import React from 'react';
 import "./TrackDetailPage.css";
+import ReactPlayer from "react-player/youtube";
 import {Track} from "../models/Track";
 import {useParams} from "react-router-dom";
 
@@ -30,15 +31,19 @@ function TrackDetailPage(props: TrackDetailPageProps) {
             <div className="track-detail-grand-prix-name">
                 {track.grandPrixName}
             </div>
-            <div className="track-detail-image-container">
-                <img src={track.image} alt={track.image}/>
-                <iframe width="951" height="535" src="https://www.youtube.com/embed/Pqg30hGwGXw"
-                        title="Lorenzo's 9 year lap record broken 💥 | Tissot Pole Lap 2022 #AustralianGP"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen>
-
-                </iframe>
+            <div className="track-detail-image-video-container">
+                <div className="track-detail-image-container">
+                    <img src={track.image} alt={track.image} className="track-detail-image"/>
+                </div>
+                <div className="track-detai-video">
+                    <ReactPlayer url={track.lap}
+                                 width="100%"
+                                 height="100%"
+                                 playing={true}
+                                 controls={true}
+                                 muted={true}
+                    />
+                </div>
             </div>
             <div className="track-detail-info-container">
                 <div className="track-detail-info-left">

@@ -28,16 +28,17 @@ function HomePage(props: HomePageProps) {
         <div className="container" style={{marginTop: "10px"}}>
             <ul className="nav nav-pills nav-justified">
                 <li className="nav-item">
-                    <a className="nav-link active" data-bs-toggle="pill" href={"#riders"}>Riders</a>
+                    <a className="nav-link active theme-tabs-text-color" data-bs-toggle="pill"
+                       href={"#riders"}>Riders</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="pill" href={"#teams"}>Teams</a>
+                    <a className="nav-link theme-tabs-text-color" data-bs-toggle="pill" href={"#teams"}>Teams</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="pill" href={"#tracks"}>Tracks</a>
+                    <a className="nav-link theme-tabs-text-color" data-bs-toggle="pill" href={"#tracks"}>Tracks</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" data-bs-toggle="pill" href={"#forum"}>Forum</a>
+                    <a className="nav-link theme-tabs-text-color" data-bs-toggle="pill" href={"#forum"}>Forum</a>
                 </li>
             </ul>
 
@@ -100,7 +101,8 @@ function HomePage(props: HomePageProps) {
                         Add Track
                     </button>
                 </div>
-                <div className="tab-pane container fade" id="forum">This is a setting tab using pill data-toggle
+                <div className="tab-pane container fade" id="forum">This is a setting tab using
+                    pill data-toggle
                     attribute.
                 </div>
             </div>
