@@ -7,3 +7,28 @@
     margin: auto;
 }
 
+.nav-pills .nav-item .nav-link {
+    background: transparent;
+    border-radius: 0;
+}
+
+.nav-pills .nav-item .nav-link.active {
+    font-weight: bolder;
+    color: var(--desc-color);
+    border-bottom: var(--border-bottom);
+}
+
+/*.nav-tabs .nav-link.active,*/
+/*.nav-tabs .nav-item.show .nav-link {*/
+
+/*    color: #FFFFFF;*/
+
+/*    background-color: #2399FB;*/
+
+/*    border-color: #dee2e6 #dee2e6 #fff;*/
+
+/*}*/
+
+.theme-tabs-text-color {
+    color: var(--desc-color);
+}

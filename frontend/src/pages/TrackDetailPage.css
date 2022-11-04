@@ -9,9 +9,22 @@
     text-align: center;
 }
 
-.track-detail-image-container {
+.track-detail-image-video-container {
+    display: flex;
     margin-top: 20px;
-    text-align: center;
+}
+
+.track-detail-image-container {
+    width: 50%;
+}
+
+.track-detail-image {
+    width: 100%;
+}
+
+.track-detai-video {
+    width: 50%;
+    height: auto;
 }
 
 .track-detail-info-container {
