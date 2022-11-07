@@ -21,6 +21,7 @@ public class Rider {
     private String nationality;
     private String bike;
     private String bikeNumber;
+    private String teamName;
     private String dateOfBirth;
     private String height;
     private String weight;
@@ -34,4 +35,5 @@ public class Rider {
     private String image1;
     private String image2;
     private String image3;
+    private String image4;
 }

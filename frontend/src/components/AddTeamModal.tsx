@@ -12,6 +12,9 @@ function AddTeamModal(props: AddTeamModalProps) {
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [logo, setLogo] = useState("")
+    const [rider1, setRider1] = useState("")
+    const [rider2, setRider2] = useState("")
+    const [rider3, setRider3] = useState("")
     const [image1, setImage1] = useState("")
     const [image2, setImage2] = useState("")
     const [image3, setImage3] = useState("")
@@ -27,6 +30,9 @@ function AddTeamModal(props: AddTeamModalProps) {
             name,
             description,
             logo,
+            rider1,
+            rider2,
+            rider3,
             image1,
             image2,
             image3,
@@ -40,16 +46,7 @@ function AddTeamModal(props: AddTeamModalProps) {
         if (team) {
             props.addTeam(team);
         }
-        setName("")
-        setDescription("")
-        setLogo("")
-        setImage1("")
-        setImage2("")
-        setImage3("")
-        setImage4("")
-        setImage5("")
-        setWins("")
-        setChampionships("")
+
     }
 
     return (
@@ -92,6 +89,30 @@ function AddTeamModal(props: AddTeamModalProps) {
                                 type="text"
                                 placeholder="Team Logo"
                                 onChange={(e) => setLogo(e.target.value)}
+                            />
+                            <input
+                                style={{marginBottom: "10px"}}
+                                className="form-control"
+                                name="rider1"
+                                type="text"
+                                placeholder="rider1"
+                                onChange={(e) => setRider1(e.target.value)}
+                            />
+                            <input
+                                style={{marginBottom: "10px"}}
+                                className="form-control"
+                                name="rider2"
+                                type="text"
+                                placeholder="rider2"
+                                onChange={(e) => setRider2(e.target.value)}
+                            />
+                            <input
+                                style={{marginBottom: "10px"}}
+                                className="form-control"
+                                name="rider3"
+                                type="text"
+                                placeholder="rider3"
+                                onChange={(e) => setRider3(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}

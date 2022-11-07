@@ -1,0 +1,16 @@
+.article-container {
+    color: #000000;
+}
+
+.card-article-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

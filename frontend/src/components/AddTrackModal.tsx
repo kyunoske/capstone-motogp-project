@@ -45,10 +45,6 @@ function AddTrackModal(props: AddTrackModalProps) {
             props.addTrack(track);
             console.table(track)
         }
-
-        setTimeout(() => {
-            console.log('Hello, World!')
-        }, 3000);
     }
 
     return (

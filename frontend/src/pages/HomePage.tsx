@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./HomePage.css";
 import {Team} from "../models/Team";
 import TeamGallery from "./TeamGallery";
@@ -9,6 +9,9 @@ import AddRiderModal from "../components/AddRiderModal";
 import TrackGallery from "./TrackGallery";
 import {Track} from "../models/Track";
 import AddTrackModal from "../components/AddTrackModal";
+import ArticleGallery from "./ArticleGallery";
+import {Article} from "../models/Article";
+import AddArticle from "../components/AddArticle";
 
 type HomePageProps = {
     team: Team;
@@ -20,15 +23,22 @@ type HomePageProps = {
     track: Track;
     tracks: Track[];
     addTrack: (track: Track) => void;
+    article: Article;
+    articles: Article[];
+    addArticle: (article: Article) => void;
 }
 
 function HomePage(props: HomePageProps) {
+
     return (
 
         <div className="container" style={{marginTop: "10px"}}>
             <ul className="nav nav-pills nav-justified">
                 <li className="nav-item">
-                    <a className="nav-link active theme-tabs-text-color" data-bs-toggle="pill"
+                    <a className="nav-link active theme-tabs-text-color" data-bs-toggle="pill" href={"#news"}>News</a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link theme-tabs-text-color" data-bs-toggle="pill"
                        href={"#riders"}>Riders</a>
                 </li>
                 <li className="nav-item">
@@ -37,15 +47,31 @@ function HomePage(props: HomePageProps) {
                 <li className="nav-item">
                     <a className="nav-link theme-tabs-text-color" data-bs-toggle="pill" href={"#tracks"}>Tracks</a>
                 </li>
-                <li className="nav-item">
-                    <a className="nav-link theme-tabs-text-color" data-bs-toggle="pill" href={"#forum"}>Forum</a>
-                </li>
             </ul>
 
 
             <div className="tab-content">
-                <div className="tab-pane container active" id="riders">
-                    <RiderGallery riders={props.riders} team={props.team}/>
+                <div className="tab-pane container active" id="news">
+                    <ArticleGallery articles={props.articles}/>
+                    <AddArticle article={props.article} addArticle={props.addArticle}/>
+                    <button type="button"
+                            className="btn btn-secondary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal4"
+                            style={{
+                                width: "30%",
+                                display: "flex",
+                                justifyContent: "center",
+                                margin: "auto",
+                                marginBottom: "55px",
+                                marginTop: "55px"
+                            }}
+                    >
+                        Add Article
+                    </button>
+                </div>
+                <div className="tab-pane fade container" id="riders">
+                    <RiderGallery riders={props.riders}/>
                     <AddRiderModal rider={props.rider} addRider={props.addRider}/>
                     <button type="button"
                             className="btn btn-secondary"
@@ -101,10 +127,7 @@ function HomePage(props: HomePageProps) {
                         Add Track
                     </button>
                 </div>
-                <div className="tab-pane container fade" id="forum">This is a setting tab using
-                    pill data-toggle
-                    attribute.
-                </div>
+
             </div>
         </div>
     );

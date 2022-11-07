@@ -36,8 +36,8 @@ class RiderControllerTest {
     @Test
     void getAllRiders() throws Exception {
         // GIVEN
-        riderRepo.save(new Rider("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
-        riderRepo.save(new Rider("2", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
+        riderRepo.save(new Rider("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
+        riderRepo.save(new Rider("2", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
 
         // WHEN & THEN
         String expectedJSON = """
@@ -50,6 +50,7 @@ class RiderControllerTest {
                         "nationality": "1",
                         "bike": "1",
                         "bikeNumber": "1",
+                        "teamName": "1",
                         "dateOfBirth": "1",
                         "height": "1",
                         "weight":  "1",
@@ -62,7 +63,8 @@ class RiderControllerTest {
                         "riderImage": "1",
                         "image1": "1",
                         "image2": "1",
-                        "image3": "1"
+                        "image3": "1",
+                        "image4": "1"
                     },
                     {
                         "id":"2",
@@ -72,6 +74,7 @@ class RiderControllerTest {
                         "nationality": "1",
                         "bike": "1",
                         "bikeNumber": "1",
+                        "teamName": "1",
                         "dateOfBirth": "1",
                         "height": "1",
                         "weight":  "1",
@@ -84,7 +87,8 @@ class RiderControllerTest {
                         "riderImage": "1",
                         "image1": "1",
                         "image2": "1",
-                        "image3": "1"
+                        "image3": "1",
+                        "image4": "1"
                     }
                 ]
                 """;
@@ -110,6 +114,7 @@ class RiderControllerTest {
                     "nationality": "1",
                     "bike": "1",
                     "bikeNumber": "1",
+                    "teamName": "1",
                     "dateOfBirth": "1",
                     "height": "1",
                     "weight":  "1",
@@ -122,7 +127,8 @@ class RiderControllerTest {
                     "riderImage": "1",
                     "image1": "1",
                     "image2": "1",
-                    "image3": "1"
+                    "image3": "1",
+                    "image4": "1"
                 }
                 """;
 
@@ -135,6 +141,7 @@ class RiderControllerTest {
                    "nationality": "1",
                    "bike": "1",
                    "bikeNumber": "1",
+                   "teamName": "1",
                    "dateOfBirth": "1",
                    "height": "1",
                    "weight":  "1",
@@ -147,7 +154,8 @@ class RiderControllerTest {
                    "riderImage": "1",
                    "image1": "1",
                    "image2": "1",
-                   "image3": "1" 
+                   "image3": "1",
+                   "image4": "1"
                 }
                 """;
 

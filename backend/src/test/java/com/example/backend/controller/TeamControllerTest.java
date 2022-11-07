@@ -36,8 +36,8 @@ class TeamControllerTest {
     @Test
     void getAllTeams() throws Exception {
         // GIVEN
-        motoRepo.save(new Team("1", "Ducati", "yup", "logo", "1", "2", "3", "4", "5", "10", "1"));
-        motoRepo.save(new Team("2", "Ducati", "yup", "logo", "1", "2", "3", "4", "5", "10", "1"));
+        motoRepo.save(new Team("1", "Ducati", "yup", "1", "1", "1", "logo", "1", "2", "3", "4", "5", "10", "1"));
+        motoRepo.save(new Team("2", "Ducati", "yup", "1", "1", "1", "logo", "1", "2", "3", "4", "5", "10", "1"));
 
         // WHEN & THEN
         String expectedJSON = """
@@ -47,6 +47,9 @@ class TeamControllerTest {
                         "name": "Ducati",
                         "description": "yup",
                         "logo": "logo",
+                        "rider1": "1",
+                        "rider2": "1",
+                        "rider3": "1",
                         "image1":"1",
                         "image2":"2",
                         "image3":"3",
@@ -60,6 +63,9 @@ class TeamControllerTest {
                         "name": "Ducati",
                         "description": "yup",
                         "logo": "logo",
+                        "rider1": "1",
+                        "rider2": "1",
+                        "rider3": "1",
                         "image1":"1",
                         "image2":"2",
                         "image3":"3",
@@ -87,6 +93,9 @@ class TeamControllerTest {
                             "name": "Ducati",
                             "description": "yup",
                             "logo": "logo",
+                            "rider1": "1",
+                            "rider2": "1",
+                            "rider3": "1",
                             "image1":"1",
                             "image2":"2",
                             "image3":"3",
@@ -104,6 +113,9 @@ class TeamControllerTest {
                             "name": "Ducati",
                             "description": "yup",
                             "logo": "logo",
+                            "rider1": "1",
+                            "rider2": "1",
+                            "rider3": "1",
                             "image1":"1",
                             "image2":"2",
                             "image3":"3",

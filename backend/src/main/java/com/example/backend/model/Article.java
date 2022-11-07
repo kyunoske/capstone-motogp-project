@@ -6,18 +6,19 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("topics")
-public class Topic {
+@Document("articles")
+public class Article {
 
     @Id
     private String id;
 
+    private String image;
+    private String image2;
+    private String image3;
     private String title;
-    private Date createTime;
-    private int postCount;
+    private String text;
+    private String articleNumber;
 }
