@@ -11,6 +11,11 @@
     --team-button-alt-border: 2px solid #cc2229;
     --team-button-alt-background: #ffffff;
     --team-alt-button-color: #cc2229;
+    --alt-color-article-detail-title: #000000;
+    --alt-side-color-article-detail: #000000;
+    --article-title-gallery-color: #000000;
+    --bottom-border-tabs: 5px solid #52cc00;
+
 }
 
 body[data-theme="ducati-theme"] {
@@ -26,6 +31,10 @@ body[data-theme="ducati-theme"] {
     --team-button-alt-border: 2px solid red;
     --team-button-alt-background: #ffffff;
     --team-alt-button-color: #000000;
+    --alt-color-article-detail-title: #ffffff;
+    --alt-side-color-article-detail: red;
+    --article-title-gallery-color: red;
+    --bottom-border-tabs: 5px solid red;
 }
 
 body[data-theme="gresini-theme"] {
@@ -33,7 +42,7 @@ body[data-theme="gresini-theme"] {
     --headings-color: #000000;
     --alt-headings-color: #ffffff;
     --desc-color: #ffffff;
-    --border-bottom: #000000;
+    --border-bottom: 5px solid #000000;
     --team-highlight-color: red;
     --team-button-border: 2px solid #000000;
     --team-button-background: #8facd8;
@@ -41,6 +50,10 @@ body[data-theme="gresini-theme"] {
     --team-button-alt-border: 2px solid #000000;
     --team-button-alt-background: #ffffff;
     --team-alt-button-color: #000000;
+    --alt-color-article-detail-title: #ffffff;
+    --alt-side-color-article-detail: #ffffff;;
+    --article-title-gallery-color: #000000;
+    --bottom-border-tabs: #000000;
 }
 
 body[data-theme="lcr-theme"] {
@@ -48,7 +61,7 @@ body[data-theme="lcr-theme"] {
     --headings-color: #BF9D3E;
     --alt-headings-color: #000000;
     --desc-color: #000000;
-    --border-bottom: #BF9D3E;
+    --border-bottom: 5px solid #BF9D3E;
     --team-highlight-color: #BF9D3E;
     --team-button-border: 2px solid #BF9D3E;
     --team-button-background: #000000;
@@ -56,6 +69,10 @@ body[data-theme="lcr-theme"] {
     --team-button-alt-border: 2px solid #000000;
     --team-button-alt-background: #BF9D3E;
     --team-alt-button-color: #ffffff;
+    --alt-color-article-detail-title: #BF9D3E;
+    --alt-side-color-article-detail: #BF9D3E;
+    --article-title-gallery-color: #BF9D3E;
+    --bottom-border-tabs: #BF9D3E;
 }
 
 body[data-theme="yamaha-theme"] {
@@ -63,7 +80,7 @@ body[data-theme="yamaha-theme"] {
     --headings-color: #ffffff;
     --alt-headings-color: #0A2D82;
     --desc-color: #ffffff;
-    --border-bottom: #95D600;
+    --border-bottom: 5px solid #95D600;
     --team-highlight-color: #95D600;
     --team-button-border: 2px solid #0A2D82;
     --team-button-background: #000000;
@@ -71,6 +88,10 @@ body[data-theme="yamaha-theme"] {
     --team-button-alt-border: 2px solid #ffffff;
     --team-button-alt-background: #0A2D82;
     --team-alt-button-color: #ffffff;
+    --alt-color-article-detail-title: #ffffff;
+    --alt-side-color-article-detail: #0A2D82;
+    --article-title-gallery-color: #95D600;
+    --bottom-border-tabs: 5px solid #95D600;
 }
 
 body[data-theme="vr46-theme"] {
@@ -78,7 +99,7 @@ body[data-theme="vr46-theme"] {
     --headings-color: #FFBF00;
     --alt-headings-color: #ffffff;
     --desc-color: #ffffff;
-    --border-bottom: #ffff00;
+    --border-bottom: 5px solid #ffff00;
     --team-highlight-color: #ffff00;
     --team-button-border: 2px solid #FFBF00;
     --team-button-background: #000000;
@@ -86,6 +107,10 @@ body[data-theme="vr46-theme"] {
     --team-button-alt-border: 2px solid #000000;
     --team-button-alt-background: #FFBF00;
     --team-alt-button-color: #ffffff;
+    --alt-color-article-detail-title: #ffffff;
+    --alt-side-color-article-detail: #FFBF00;
+    --article-title-gallery-color: #FFBF00;
+    --bottom-border-tabs: 5px solid #ffff00;
 }
 
 body[data-theme="ktm-theme"] {
@@ -93,7 +118,7 @@ body[data-theme="ktm-theme"] {
     --headings-color: #ffffff;
     --alt-headings-color: #ffffff;
     --desc-color: #F2771A;
-    --border-bottom: #F2771A;
+    --border-bottom: 5px solid #F2771A;
     --team-highlight-color: #F2771A;
     --team-button-border: 2px solid #F2771A;
     --team-button-background: #001a72;
@@ -101,6 +126,10 @@ body[data-theme="ktm-theme"] {
     --team-button-alt-border: 2px solid #001a72;
     --team-button-alt-background: #F2771A;
     --team-alt-button-color: #ffffff;
+    --alt-color-article-detail-title: #ffffff;
+    --alt-side-color-article-detail: #F2771A;
+    --article-title-gallery-color: #F2771A;
+    --bottom-border-tabs: 5px solid #F2771A;
 }
 
 body[data-theme="pramac-theme"] {
@@ -108,7 +137,7 @@ body[data-theme="pramac-theme"] {
     --headings-color: red;
     --alt-headings-color: #000000;
     --desc-color: rebeccapurple;
-    --border-bottom: rebeccapurple;
+    --border-bottom: 5px solid rebeccapurple;
     --team-highlight-color: rebeccapurple;
     --team-button-border: 2px solid red;
     --team-button-background: #ffffff;
@@ -116,6 +145,10 @@ body[data-theme="pramac-theme"] {
     --team-button-alt-border: 2px solid red;
     --team-button-alt-background: rebeccapurple;
     --team-alt-button-color: #ffffff;
+    --alt-color-article-detail-title: rebeccapurple;
+    --alt-side-color-article-detail: rebeccapurple;
+    --article-title-gallery-color: rebeccapurple;
+    --bottom-border-tabs: 5px solid red;
 }
 
 body[data-theme="repsol-theme"] {
@@ -123,7 +156,7 @@ body[data-theme="repsol-theme"] {
     --headings-color: #e3192f;
     --alt-headings-color: #000000;
     --desc-color: #f6a60e;
-    --border-bottom: #e3192f;
+    --border-bottom: 5px solid #e3192f;
     --team-highlight-color: #e3192f;
     --team-button-border: 2px solid #f6a60e;
     --team-button-background: #ffffff;
@@ -131,6 +164,10 @@ body[data-theme="repsol-theme"] {
     --team-button-alt-border: 2px solid #e3192f;
     --team-button-alt-background: #f6a60e;
     --team-alt-button-color: #ffffff;
+    --alt-color-article-detail-title: #e3192f;
+    --alt-side-color-article-detail: #f6a60e;
+    --article-title-gallery-color: #f6a60e;
+    --bottom-border-tabs: 5px solid #e3192f;
 }
 
 body[data-theme="tech3-theme"] {
@@ -138,7 +175,7 @@ body[data-theme="tech3-theme"] {
     --headings-color: #ffffff;
     --alt-headings-color: #000000;
     --desc-color: #F2771A;
-    --border-bottom: #F2771A;
+    --border-bottom: 5px solid #F2771A;
     --team-highlight-color: #F2771A;
     --team-button-border: 2px solid #F2771A;
     --team-button-background: #000000;
@@ -146,6 +183,10 @@ body[data-theme="tech3-theme"] {
     --team-button-alt-border: 2px solid #000000;
     --team-button-alt-background: #F2771A;
     --team-alt-button-color: #ffffff;
+    --alt-color-article-detail-title: #ffffff;
+    --alt-side-color-article-detail: #F2771A;
+    --article-title-gallery-color: #F2771A;
+    --bottom-border-tabs: 5px solid #F2771A;
 }
 
 body[data-theme="suzuki-theme"] {
@@ -153,7 +194,7 @@ body[data-theme="suzuki-theme"] {
     --headings-color: #2A52BE;
     --alt-headings-color: #000000;
     --desc-color: #ffffff;
-    --border-bottom: #2A52BE;
+    --border-bottom: 5px solid #2A52BE;
     --team-highlight-color: #2A52BE;
     --team-button-border: 2px solid #2A52BE;
     --team-button-background: silver;
@@ -161,6 +202,10 @@ body[data-theme="suzuki-theme"] {
     --team-button-alt-border: 2px solid silver;
     --team-button-alt-background: #2A52BE;
     --team-alt-button-color: #ffffff;
+    --alt-color-article-detail-title: #ffffff;
+    --alt-side-color-article-detail: #2A52BE;
+    --article-title-gallery-color: #2A52BE;
+    --bottom-border-tabs: 5px solid #2A52BE;
 }
 
 body[data-theme="withu-theme"] {
@@ -168,7 +213,7 @@ body[data-theme="withu-theme"] {
     --headings-color: #ffffff;
     --alt-headings-color: #000000;
     --desc-color: #ffffff;
-    --border-bottom: #2A52BE;
+    --border-bottom: 5px solid #2A52BE;
     --team-highlight-color: #2A52BE;
     --team-button-border: 2px solid #0F4C81;
     --team-button-background: #000000;
@@ -176,6 +221,10 @@ body[data-theme="withu-theme"] {
     --team-button-alt-border: 2px solid #000000;
     --team-button-alt-background: #ffffff;
     --team-alt-button-color: #0F4C81;
+    --alt-color-article-detail-title: #ffffff;
+    --alt-side-color-article-detail: #000000;
+    --article-title-gallery-color: #000000;
+    --bottom-border-tabs: 5px solid #000000;
 }
 
 body {
