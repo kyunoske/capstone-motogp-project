@@ -134,9 +134,11 @@ function LandingPage(props: LandingPageProps) {
                         The place for MotoGP enthusiasts
                     </p>
                     <div className="justify-content-center theme-buttons">
-                        <h4 className="select-theme-heading">Select a Theme from below</h4>
-                        <p className="select-theme-heading">Click on demo to see a theme you like</p>
-                        <p className="select-theme-heading">Click on Confirm to choose this theme and continue</p>
+                        <div className="landing-page-select-theme-text">
+                            <h4 className="select-theme-heading">Select a Theme from below</h4>
+                            <p className="select-theme-heading">Click on demo to see a theme you like</p>
+                            <p className="select-theme-heading">Click on Confirm to choose this theme and continue</p>
+                        </div>
                         <div className="select-theme-div">
                             <Swiper
                                 navigation

@@ -10,26 +10,14 @@ import useTracks from "./hooks/useTracks";
 import RiderDetailPage from "./pages/RiderDetailPage";
 import TeamDetailPage from "./pages/TeamDetailPage";
 import TrackDetailPage from "./pages/TrackDetailPage";
+import useArticles from "./hooks/useArticles";
 
 function App() {
 
-    const {
-        addTeam,
-        teams,
-        team
-    } = useTeams();
-
-    const {
-        addRider,
-        riders,
-        rider
-    } = useRiders();
-
-    const {
-        addTrack,
-        tracks,
-        track
-    } = useTracks();
+    const {addTeam, teams, team} = useTeams();
+    const {addRider, riders, rider} = useRiders();
+    const {addTrack, tracks, track} = useTracks();
+    const {article, articles, addArticle} = useArticles();
 
     return (
         <HashRouter>
@@ -45,6 +33,9 @@ function App() {
                     tracks={tracks}
                     track={track}
                     addTrack={addTrack}
+                    articles={articles}
+                    article={article}
+                    addArticle={addArticle}
                 />}/>
 
                 <Route path={"/riders/:id"} element={<RiderDetailPage

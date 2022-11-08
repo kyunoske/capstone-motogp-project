@@ -15,6 +15,7 @@ function AddRiderModal(props: AddRiderModalProps) {
     const [nationality, setNationality] = useState("")
     const [bike, setBike] = useState("")
     const [bikeNumber, setBikeNumber] = useState("")
+    const [teamName, setTeamName] = useState("")
     const [dateOfBirth, setDateOfBirth] = useState("")
     const [height, setHeight] = useState("")
     const [weight, setWeight] = useState("")
@@ -28,6 +29,7 @@ function AddRiderModal(props: AddRiderModalProps) {
     const [image1, setImage1] = useState("")
     const [image2, setImage2] = useState("")
     const [image3, setImage3] = useState("")
+    const [image4, setImage4] = useState("")
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault()
@@ -39,6 +41,7 @@ function AddRiderModal(props: AddRiderModalProps) {
             nationality,
             bike,
             bikeNumber,
+            teamName,
             dateOfBirth,
             height,
             weight,
@@ -52,6 +55,7 @@ function AddRiderModal(props: AddRiderModalProps) {
             image1,
             image2,
             image3,
+            image4
         }
 
         setRider(rider);
@@ -123,6 +127,14 @@ function AddRiderModal(props: AddRiderModalProps) {
                                 type="text"
                                 placeholder="Bike Number"
                                 onChange={(e) => setBikeNumber(e.target.value)}
+                            />
+                            <input
+                                style={{marginBottom: "10px"}}
+                                className="form-control"
+                                name="teamName"
+                                type="text"
+                                placeholder="Team Name"
+                                onChange={(e) => setTeamName(e.target.value)}
                             />
                             <input
                                 style={{marginBottom: "10px"}}
@@ -217,7 +229,7 @@ function AddRiderModal(props: AddRiderModalProps) {
                             <input
                                 style={{marginBottom: "10px"}}
                                 className="form-control"
-                                name="image12"
+                                name="image2"
                                 type="text"
                                 placeholder="image2"
                                 onChange={(e) => setImage2(e.target.value)}
@@ -229,6 +241,14 @@ function AddRiderModal(props: AddRiderModalProps) {
                                 type="text"
                                 placeholder="image3"
                                 onChange={(e) => setImage3(e.target.value)}
+                            />
+                            <input
+                                style={{marginBottom: "10px"}}
+                                className="form-control"
+                                name="image4"
+                                type="text"
+                                placeholder="image4"
+                                onChange={(e) => setImage4(e.target.value)}
                             />
                             <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"

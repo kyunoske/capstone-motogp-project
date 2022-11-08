@@ -19,7 +19,7 @@ class TeamServiceTest {
     @Test
     void getAllTeams() {
         // GIVEN
-        Team team1 = new Team("1", "name", "description", "logo", "1", "2", "3", "4", "5", "10", "1");
+        Team team1 = new Team("1", "name", "description", "logo", "1", "1", "1", "1", "2", "3", "4", "5", "10", "1");
 
         when(repo.findAll())
                 .thenReturn(List.of(team1));
@@ -36,7 +36,7 @@ class TeamServiceTest {
     @Test
     void addTeam() {
         // GIVEN
-        Team team = new Team("1", "name", "description", "logo", "1", "2", "3", "4", "5", "10", "1");
+        Team team = new Team("1", "name", "description", "logo", "1", "1", "1", "1", "2", "3", "4", "5", "10", "1");
         when(repo.save(team)).thenReturn(team);
 
         // WHEN
@@ -50,7 +50,7 @@ class TeamServiceTest {
     @Test
     void getTeamById() {
 
-        Team team1 = new Team("1", "name", "description", "logo", "1", "2", "3", "4", "5", "10", "1");
+        Team team1 = new Team("1", "name", "description", "logo", "1", "1", "1", "1", "2", "3", "4", "5", "10", "1");
 
         // GIVEN
         when(repo.findById("1"))

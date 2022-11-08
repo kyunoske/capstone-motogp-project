@@ -6,7 +6,6 @@ import {Team} from "../models/Team";
 
 type RiderGalleryProps = {
     riders: Rider[];
-    team: Team;
 }
 
 function RiderGallery(props: RiderGalleryProps) {

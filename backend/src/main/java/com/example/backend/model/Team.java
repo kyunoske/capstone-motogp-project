@@ -17,6 +17,9 @@ public class Team {
 
     private String name;
     private String description;
+    private String rider1;
+    private String rider2;
+    private String rider3;
     private String logo;
     private String image1;
     private String image2;
