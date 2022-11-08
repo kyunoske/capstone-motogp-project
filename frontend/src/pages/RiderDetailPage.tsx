@@ -17,7 +17,6 @@ function RiderDetailPage(props: RiderDetailPageProps) {
     }
 
     const rider = props.riders.find((rider) => rider.id === id)
-    console.log(rider)
 
     if (rider === undefined) {
         return (<>Sorry no rider found!</>)
@@ -34,7 +33,7 @@ function RiderDetailPage(props: RiderDetailPageProps) {
                         </div>
                         <div className="rider-info-first-name">{rider.firstName}</div>
                         <div className="rider-info-last-name">{rider.lastName}</div>
-                        <div className="rider-info-team-name">Team teamName here TODO</div>
+                        <div className="rider-info-team-name">Team: {rider.teamName}</div>
                         <br/>
                         <div className="rider-info-bike">Bike:{rider.bike}</div>
                         <div className="rider-info-dob">Place of Birth: {rider.dateOfBirth}</div>

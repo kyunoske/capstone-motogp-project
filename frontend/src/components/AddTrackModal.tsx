@@ -23,7 +23,6 @@ function AddTrackModal(props: AddTrackModalProps) {
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault()
-        console.log(handleSubmit)
 
         let track = {
             name,
@@ -38,12 +37,10 @@ function AddTrackModal(props: AddTrackModalProps) {
             lapRecordHolder,
             lap,
         }
-        console.table(track);
 
         setTrack(track);
         if (track) {
             props.addTrack(track);
-            console.table(track)
         }
     }
 

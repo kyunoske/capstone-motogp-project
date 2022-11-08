@@ -6,6 +6,7 @@ export type Rider = {
     nationality: string;
     bike: string;
     bikeNumber: string;
+    teamName: string;
     dateOfBirth: string;
     height: string;
     weight: string;
@@ -19,4 +20,5 @@ export type Rider = {
     image1: string;
     image2: string;
     image3: string;
+    image4: string;
 }
