@@ -37,4 +37,13 @@ public class RiderService {
         rider.setId(idService.generateId());
         return repo.save(rider);
     }
+
+    public void deleteRider(String id) {
+        repo.deleteById(id);
+    }
+
+    public Rider editRider(String id, Rider rider) {
+        repo.save(rider);
+        return rider;
+    }
 }

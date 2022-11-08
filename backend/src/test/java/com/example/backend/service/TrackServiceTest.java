@@ -65,4 +65,33 @@ class TrackServiceTest {
         verify(repo).save(track1);
         assertEquals(track1, actual);
     }
+
+    @Test
+    void trackIsDeleted_WhenDeleted() {
+        Track track1 = new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
+
+        // GIVEN
+        when(repo.findById("1")).thenReturn(Optional.ofNullable(track1));
+
+        // WHEN
+        service.deleteTrack("1");
+
+        // THEN
+        verify(repo).deleteById("1");
+    }
+
+    @Test
+    void trackIsEdited_WhenEdited() {
+        Track track1 = new Track("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1");
+
+        // GIVEN
+        when(service.editTrack("1", track1)).thenReturn(track1);
+        when(repo.existsById("1")).thenReturn(true);
+
+        // WHEN
+        Track actual = service.editTrack("1", track1);
+
+        // THEN
+        assertEquals(track1, actual);
+    }
 }

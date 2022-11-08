@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 class TeamServiceTest {
@@ -63,5 +63,34 @@ class TeamServiceTest {
         Optional<Team> expected = Optional.of(team1);
         verify(repo).findById("1");
         assertEquals(expected, actual);
+    }
+
+    @Test
+    void teamIsDeleted_WhenDeleted() {
+        Team team1 = new Team("1", "name", "description", "logo", "1", "1", "1", "1", "2", "3", "4", "5", "10", "1");
+
+        // GIVEN
+        when(repo.findById("1")).thenReturn(Optional.ofNullable(team1));
+
+        // WHEN
+        service.deleteTeam("1");
+
+        // THEN
+        verify(repo).deleteById("1");
+    }
+
+    @Test
+    void teamIsEdited_WhenEdited() {
+        Team team1 = new Team("1", "name", "description", "logo", "1", "1", "1", "1", "2", "3", "4", "5", "10", "1");
+
+        // GIVEN
+        when(service.editTeam("1", team1)).thenReturn(team1);
+        when(repo.existsById("1")).thenReturn(true);
+
+        // WHEN
+        Team actual = service.editTeam("1", team1);
+
+        // THEN
+        assertEquals(team1, actual);
     }
 }

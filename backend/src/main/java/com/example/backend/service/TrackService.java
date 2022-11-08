@@ -37,4 +37,13 @@ public class TrackService {
         track.setId(idService.generateId());
         return repo.save(track);
     }
+
+    public void deleteTrack(String id) {
+        repo.deleteById(id);
+    }
+
+    public Track editTrack(String id, Track track) {
+        repo.save(track);
+        return track;
+    }
 }

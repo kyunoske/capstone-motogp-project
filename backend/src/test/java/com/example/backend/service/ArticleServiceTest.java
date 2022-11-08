@@ -64,4 +64,33 @@ class ArticleServiceTest {
         verify(repo).findById("1");
         assertEquals(expected, actual);
     }
+
+    @Test
+    void articleIsDeleted_WhenDeleted() {
+        Article article1 = new Article("1", "1", "1", "1,", "1", "1", "1");
+
+        // GIVEN
+        when(repo.findById("1")).thenReturn(Optional.ofNullable(article1));
+
+        // WHEN
+        service.deleteArticle("1");
+
+        // THEN
+        verify(repo).deleteById("1");
+    }
+
+    @Test
+    void articleIsEdited_WhenEdited() {
+        Article article1 = new Article("1", "1", "1", "1,", "1", "1", "1");
+
+        // GIVEN
+        when(service.editArticle("1", article1)).thenReturn(article1);
+        when(repo.existsById("1")).thenReturn(true);
+
+        // WHEN
+        Article actual = service.editArticle("1", article1);
+
+        // THEN
+        assertEquals(article1, actual);
+    }
 }

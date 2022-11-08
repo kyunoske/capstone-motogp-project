@@ -33,4 +33,14 @@ public class TrackController {
     public Track addTrack(@RequestBody Track track) {
         return trackService.addTrack(track);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteTrack(@PathVariable String id) {
+        trackService.deleteTrack(id);
+    }
+
+    @PutMapping("/{id}")
+    public Track editTrack(@PathVariable String id, @RequestBody Track track) {
+        return trackService.editTrack(id, track);
+    }
 }
