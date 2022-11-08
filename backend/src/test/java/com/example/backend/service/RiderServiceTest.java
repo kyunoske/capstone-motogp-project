@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 class RiderServiceTest {
@@ -63,6 +63,35 @@ class RiderServiceTest {
 
         //THEN
         verify(repo).save(rider1);
+        assertEquals(rider1, actual);
+    }
+
+    @Test
+    void riderIsDeleted_WhenDeleted() {
+        Rider rider1 = new Rider("1", "name", "last", "nameInitials", "nationality", "bike", "1", "1", "1", "dateOfBirth", "height", "weight", "motoGPDebut", "description", "podiums", "wins", "championships", "numOfRacesMotoGP", "riderImage", "image1", "image2", "image3");
+
+        // GIVEN
+        when(repo.findById("1")).thenReturn(Optional.ofNullable(rider1));
+
+        // WHEN
+        service.deleteRider("1");
+
+        // THEN
+        verify(repo).deleteById("1");
+    }
+
+    @Test
+    void riderIsEdited_WhenEdited() {
+        Rider rider1 = new Rider("1", "name", "last", "nameInitials", "nationality", "bike", "1", "1", "1", "dateOfBirth", "height", "weight", "motoGPDebut", "description", "podiums", "wins", "championships", "numOfRacesMotoGP", "riderImage", "image1", "image2", "image3");
+
+        // GIVEN
+        when(service.editRider("1", rider1)).thenReturn(rider1);
+        when(repo.existsById("1")).thenReturn(true);
+
+        // WHEN
+        Rider actual = service.editRider("1", rider1);
+
+        // THEN
         assertEquals(rider1, actual);
     }
 }

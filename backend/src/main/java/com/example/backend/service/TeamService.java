@@ -37,4 +37,13 @@ public class TeamService {
         }
         return repo.findById(id);
     }
+
+    public void deleteTeam(String id) {
+        repo.deleteById(id);
+    }
+
+    public Team editTeam(String id, Team team) {
+        repo.save(team);
+        return team;
+    }
 }

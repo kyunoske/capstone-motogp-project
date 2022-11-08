@@ -37,4 +37,13 @@ public class ArticleService {
         }
         return repo.findById(id);
     }
+
+    public void deleteArticle(String id) {
+        repo.deleteById(id);
+    }
+
+    public Article editArticle(String id, Article article) {
+        repo.save(article);
+        return article;
+    }
 }

@@ -33,4 +33,14 @@ public class RiderController {
     public Rider addRider(@RequestBody Rider rider) {
         return riderService.addRider(rider);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteRider(@PathVariable String id) {
+        riderService.deleteRider(id);
+    }
+
+    @PutMapping("/{id}")
+    public Rider editRider(@PathVariable String id, @RequestBody Rider rider) {
+        return riderService.editRider(id, rider);
+    }
 }

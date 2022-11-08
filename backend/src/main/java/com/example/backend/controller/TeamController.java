@@ -34,4 +34,13 @@ public class TeamController {
         return teamService.addTeam(team);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteTeam(@PathVariable String id) {
+        teamService.deleteTeam(id);
+    }
+
+    @PutMapping("/{id}")
+    public Team editTeam(@PathVariable String id, @RequestBody Team team) {
+        return teamService.editTeam(id, team);
+    }
 }
