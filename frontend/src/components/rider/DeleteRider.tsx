@@ -1,14 +1,14 @@
 import React from 'react';
-import {Article} from "../../models/Article";
+import {Rider} from "../../models/Rider";
 import {useNavigate, useParams} from "react-router-dom";
 
-type DeleteArticleProps = {
-    article: Article;
-    articles: Article[];
-    deleteArticle: (id: string) => void;
+type DeleteRiderProps = {
+    rider: Rider;
+    riders: Rider[];
+    deleteRider: (id: string) => void;
 }
 
-function DeleteArticle(props: DeleteArticleProps) {
+function DeleteRider(props: DeleteRiderProps) {
 
     const params = useParams();
     const id = params.id;
@@ -19,9 +19,9 @@ function DeleteArticle(props: DeleteArticleProps) {
         navigate(path);
     }
 
-    const findArticle = props.articles.find((article) => article.id === id);
+    const findRider = props.riders.find((rider) => rider.id === id);
 
-    if (findArticle === undefined) {
+    if (findRider === undefined) {
         return (<>Sorry no article found!</>)
     }
     if (id === undefined) {
@@ -31,7 +31,7 @@ function DeleteArticle(props: DeleteArticleProps) {
     const handleRoute = () => {
 
         // @ts-ignore
-        props.deleteArticle(findArticle.id)
+        props.deleteRider(findRider.id)
 
         setTimeout(() => {
             routeChange()
@@ -39,7 +39,7 @@ function DeleteArticle(props: DeleteArticleProps) {
     }
 
     return (
-        <div className="modal fade" id="exampleModal6" tabIndex={-1} aria-labelledby="exampleModalLabel"
+        <div className="modal fade" id="exampleModal8" tabIndex={-1} aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
@@ -48,7 +48,7 @@ function DeleteArticle(props: DeleteArticleProps) {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        Are you sure you want to delete {findArticle.text}?
+                        Are you sure you want to delete {findRider.firstName}&nbsp;{findRider.lastName}?
                     </div>
                     <div className="modal-footer">
                         <button
@@ -66,4 +66,4 @@ function DeleteArticle(props: DeleteArticleProps) {
     );
 }
 
-export default DeleteArticle;
+export default DeleteRider;
