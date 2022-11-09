@@ -1,6 +1,6 @@
 import React from 'react';
 import "./TeamCard.css";
-import {Team} from "../models/Team";
+import {Team} from "../../models/Team";
 import {Button, Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 

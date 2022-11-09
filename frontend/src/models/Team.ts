@@ -3,6 +3,9 @@ export type Team = {
     name: string;
     description: string;
     logo: string;
+    rider1: string;
+    rider2: string;
+    rider3: string;
     image1: string;
     image2: string;
     image3: string;

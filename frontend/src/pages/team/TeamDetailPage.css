@@ -85,3 +85,10 @@
     padding: 20px;
     font-size: large;
 }
+
+.team-modal-button-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}

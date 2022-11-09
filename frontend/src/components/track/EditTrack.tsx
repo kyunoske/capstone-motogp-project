@@ -1,30 +1,46 @@
 import React, {FormEvent, useState} from 'react';
-import {Track} from "../models/Track";
+import {Track} from "../../models/Track";
+import {useParams} from "react-router-dom";
 
-type AddTrackModalProps = {
+type EditTrackProps = {
     track: Track;
-    addTrack: (track: Track) => void;
+    tracks: Track[];
+    editTrack: (id: string, track: Track) => void;
 }
 
-function AddTrackModal(props: AddTrackModalProps) {
+function EditTrack(props: EditTrackProps) {
 
-    const [track, setTrack] = useState(props.track)
-    const [name, setName] = useState("")
-    const [grandPrixName, setGrandPrixName] = useState("")
-    const [round, setRound] = useState("")
-    const [description, setDescription] = useState("")
-    const [country, setCountry] = useState("")
-    const [countryFlag, setCountryFlag] = useState("")
-    const [date, setDate] = useState("")
-    const [lapRecord, setLapRecord] = useState("")
-    const [lapRecordHolder, setLapRecordHolder] = useState("")
-    const [lap, setLap] = useState("")
-    const [image, setImage] = useState("")
+    const params = useParams();
+    const id = params.id;
+
+    const findTrack = props.tracks.find((track) => track.id === id);
+
+    const [track, setTrack] = useState(findTrack)
+    const [name, setName] = useState(findTrack ? findTrack.name : "")
+    const [grandPrixName, setGrandPrixName] = useState(findTrack ? findTrack.grandPrixName : "")
+    const [round, setRound] = useState(findTrack ? findTrack.round : "")
+    const [description, setDescription] = useState(findTrack ? findTrack.description : "")
+    const [country, setCountry] = useState(findTrack ? findTrack.country : "")
+    const [countryFlag, setCountryFlag] = useState(findTrack ? findTrack.countryFlag : "")
+    const [date, setDate] = useState(findTrack ? findTrack.date : "")
+    const [lapRecord, setLapRecord] = useState(findTrack ? findTrack.lapRecord : "")
+    const [lapRecordHolder, setLapRecordHolder] = useState(findTrack ? findTrack.lapRecordHolder : "")
+    const [lap, setLap] = useState(findTrack ? findTrack.lap : "")
+    const [image, setImage] = useState(findTrack ? findTrack.image : "")
+
+    if (id === undefined) {
+        return (<>Track not found with this id!</>)
+    }
+
+    if (findTrack === undefined) {
+        return (<>Sorry no track found!</>)
+    }
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault()
 
-        let track = {
+        let updatedTrack = {
+            id,
             name,
             description,
             grandPrixName,
@@ -38,19 +54,18 @@ function AddTrackModal(props: AddTrackModalProps) {
             lap,
         }
 
-        setTrack(track);
-        if (track) {
-            props.addTrack(track);
-        }
+        setTrack(updatedTrack);
+
+        props.editTrack(id, updatedTrack);
     }
 
     return (
-        <div className="modal fade" id="exampleModal3" tabIndex={-1} aria-labelledby="exampleModalLabel"
+        <div className="modal fade" id="exampleModal11" tabIndex={-1} aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">Add Track</h5>
+                        <h5 className="modal-title" id="exampleModalLabel">Edit Track</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
@@ -64,6 +79,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 name="name"
                                 required={true}
                                 type="text"
+                                value={name}
                                 placeholder="Track Name"
                                 onChange={(e) => setName(e.target.value)}
                             />
@@ -73,6 +89,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 name="description"
                                 required={true}
                                 rows={3}
+                                value={description}
                                 placeholder="Track Description"
                                 onChange={(e) => setDescription(e.target.value)}
                             />
@@ -82,6 +99,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 className="form-control"
                                 name="grandPrixName"
                                 type="text"
+                                value={grandPrixName}
                                 placeholder="Grand Prix Name"
                                 onChange={(e) => setGrandPrixName(e.target.value)}
                             />
@@ -90,6 +108,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 className="form-control"
                                 name="image"
                                 type="text"
+                                value={image}
                                 placeholder="image1"
                                 onChange={(e) => setImage(e.target.value)}
                             />
@@ -98,6 +117,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 className="form-control"
                                 name="round"
                                 type="text"
+                                value={round}
                                 placeholder="Round Number"
                                 onChange={(e) => setRound(e.target.value)}
                             />
@@ -106,6 +126,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 className="form-control"
                                 name="country"
                                 type="text"
+                                value={country}
                                 placeholder="Country Name"
                                 onChange={(e) => setCountry(e.target.value)}
                             />
@@ -114,6 +135,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 className="form-control"
                                 name="countryFlag"
                                 type="text"
+                                value={countryFlag}
                                 placeholder="Country Flag"
                                 onChange={(e) => setCountryFlag(e.target.value)}
                             />
@@ -122,6 +144,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 className="form-control"
                                 name="date"
                                 type="text"
+                                value={date}
                                 placeholder="date"
                                 onChange={(e) => setDate(e.target.value)}
                             />
@@ -130,6 +153,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 className="form-control"
                                 name="lapRecord"
                                 type="text"
+                                value={lapRecord}
                                 placeholder="Lap Record Time"
                                 onChange={(e) => setLapRecord(e.target.value)}
                             />
@@ -139,6 +163,7 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 name="lapRecordHolder"
                                 required={true}
                                 type="text"
+                                value={lapRecord}
                                 placeholder="Lap Record Holder Name"
                                 onChange={(e) => setLapRecordHolder(e.target.value)}
                             />
@@ -147,12 +172,13 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 className="form-control"
                                 name="lap"
                                 type="text"
+                                value={lap}
                                 placeholder="Lap Video"
                                 onChange={(e) => setLap(e.target.value)}
                             />
                             <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
-                                <button type="submit" className="btn btn-success"
-                                        style={{width: "200px"}}>Add Track
+                                <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
+                                        style={{width: "200px"}}>Save Edit
                                 </button>
                                 <button type="button" className="btn btn-secondary" style={{width: "200px"}}
                                         data-bs-dismiss="modal">Close
@@ -166,4 +192,4 @@ function AddTrackModal(props: AddTrackModalProps) {
     );
 }
 
-export default AddTrackModal;
+export default EditTrack;

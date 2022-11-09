@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import "./HomePage.css";
 import {Team} from "../models/Team";
-import TeamGallery from "./TeamGallery";
-import AddTeamModal from "../components/AddTeamModal";
+import TeamGallery from "./team/TeamGallery";
+import AddTeamModal from "../components/team/AddTeamModal";
 import RiderGallery from "./rider/RiderGallery";
 import {Rider} from "../models/Rider";
 import AddRiderModal from "../components/rider/AddRiderModal";
-import TrackGallery from "./TrackGallery";
+import TrackGallery from "./track/TrackGallery";
 import {Track} from "../models/Track";
-import AddTrackModal from "../components/AddTrackModal";
+import AddTrackModal from "../components/track/AddTrackModal";
 import ArticleGallery from "./article/ArticleGallery";
 import {Article} from "../models/Article";
 import AddArticle from "../components/article/AddArticle";

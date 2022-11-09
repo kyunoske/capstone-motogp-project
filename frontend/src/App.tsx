@@ -4,21 +4,21 @@ import {HashRouter, Route, Routes} from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import HomePage from "./pages/HomePage";
 import useTeams from "./hooks/useTeams";
-import TeamGallery from "./pages/TeamGallery";
+import TeamGallery from "./pages/team/TeamGallery";
 import useRiders from "./hooks/useRiders";
 import useTracks from "./hooks/useTracks";
 import RiderDetailPage from "./pages/rider/RiderDetailPage";
-import TeamDetailPage from "./pages/TeamDetailPage";
-import TrackDetailPage from "./pages/TrackDetailPage";
+import TeamDetailPage from "./pages/team/TeamDetailPage";
+import TrackDetailPage from "./pages/track/TrackDetailPage";
 import useArticles from "./hooks/useArticles";
 import ArticleDetailPage from "./pages/article/ArticleDetailPage";
 import Footer from "./components/Footer";
 
 function App() {
 
-    const {addTeam, teams, team} = useTeams();
+    const {addTeam, teams, team, deleteTeam, editTeam} = useTeams();
     const {addRider, riders, rider, deleteRider, editRider} = useRiders();
-    const {addTrack, tracks, track} = useTracks();
+    const {addTrack, tracks, track, deleteTrack, editTrack} = useTracks();
     const {article, articles, addArticle, deleteArticle, editArticle} = useArticles();
 
     return (
@@ -50,10 +50,16 @@ function App() {
 
                     <Route path={"/teams/:id"} element={<TeamDetailPage
                         teams={teams}
+                        team={team}
+                        editTeam={editTeam}
+                        deleteTeam={deleteTeam}
                     />}/>
 
                     <Route path={"/tracks/:id"} element={<TrackDetailPage
                         tracks={tracks}
+                        track={track}
+                        editTrack={editTrack}
+                        deleteTrack={deleteTrack}
                     />}/>
 
                     <Route path={"/articles/:id"} element={<ArticleDetailPage

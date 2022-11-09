@@ -123,7 +123,7 @@ function EditArticle(props: EditArticleProps) {
                             />
                             <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
-                                        style={{width: "200px"}}>Edit Article
+                                        style={{width: "200px"}}>Save Edit
                                 </button>
                                 <button type="button" className="btn btn-secondary" style={{width: "200px"}}
                                         data-bs-dismiss="modal">Close
