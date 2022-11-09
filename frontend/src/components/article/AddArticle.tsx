@@ -1,5 +1,5 @@
 import React, {FormEvent, useState} from 'react';
-import {Article} from "../models/Article";
+import {Article} from "../../models/Article";
 
 type AddArticleProps = {
     article: Article;

@@ -9,9 +9,9 @@ import AddRiderModal from "../components/AddRiderModal";
 import TrackGallery from "./TrackGallery";
 import {Track} from "../models/Track";
 import AddTrackModal from "../components/AddTrackModal";
-import ArticleGallery from "./ArticleGallery";
+import ArticleGallery from "./article/ArticleGallery";
 import {Article} from "../models/Article";
-import AddArticle from "../components/AddArticle";
+import AddArticle from "../components/article/AddArticle";
 
 type HomePageProps = {
     team: Team;

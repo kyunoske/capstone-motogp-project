@@ -1,6 +1,6 @@
 import React from 'react';
 import "./ArticleCard.css";
-import {Article} from "../models/Article";
+import {Article} from "../../models/Article";
 import {Link} from "react-router-dom";
 
 type ArticleCardProps = {

@@ -11,7 +11,7 @@ import RiderDetailPage from "./pages/RiderDetailPage";
 import TeamDetailPage from "./pages/TeamDetailPage";
 import TrackDetailPage from "./pages/TrackDetailPage";
 import useArticles from "./hooks/useArticles";
-import ArticleDetailPage from "./pages/ArticleDetailPage";
+import ArticleDetailPage from "./pages/article/ArticleDetailPage";
 import Footer from "./components/Footer";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
     const {addTeam, teams, team} = useTeams();
     const {addRider, riders, rider} = useRiders();
     const {addTrack, tracks, track} = useTracks();
-    const {article, articles, addArticle} = useArticles();
+    const {article, articles, addArticle, deleteArticle, editArticle} = useArticles();
 
     return (
         <div>
@@ -55,6 +55,9 @@ function App() {
 
                     <Route path={"/articles/:id"} element={<ArticleDetailPage
                         articles={articles}
+                        article={article}
+                        editArticle={editArticle}
+                        deleteArticle={deleteArticle}
                     />}/>
 
                     <Route path={"/teams"} element={<TeamGallery teams={teams}/>}/>

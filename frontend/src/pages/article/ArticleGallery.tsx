@@ -1,6 +1,6 @@
 import React from 'react';
-import {Article} from "../models/Article";
-import ArticleCard from "../components/ArticleCard";
+import {Article} from "../../models/Article";
+import ArticleCard from "../../components/article/ArticleCard";
 
 type ArticleGalleryProps = {
     articles: Article[];

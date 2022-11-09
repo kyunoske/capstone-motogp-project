@@ -49,5 +49,11 @@
 .article-detail-text {
     padding: 20px 40px;
     font-size: large;
+}
 
+.article-modal-button-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
 }
