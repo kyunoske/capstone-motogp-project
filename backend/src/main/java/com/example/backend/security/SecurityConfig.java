@@ -21,14 +21,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(); //Alternativ Argon2, aber Bcrypt ist auch absolut fein!
+        return new BCryptPasswordEncoder();
     }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/api/user/login").permitAll() //allow all
-                .antMatchers("/admin/*").hasRole("ADMIN")
+                .antMatchers("/api/user/register").authenticated()
+                .antMatchers("/api/user/").permitAll()
+                .antMatchers("/admin/*").authenticated()
                 .and().httpBasic().and().csrf().disable();
     }
 

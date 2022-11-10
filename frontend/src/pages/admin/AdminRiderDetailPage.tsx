@@ -1,17 +1,18 @@
 import React from 'react';
-import "./RiderDetailPage.css";
+import "../rider/RiderDetailPage.css";
 import {Rider} from "../../models/Rider";
 import {useParams} from "react-router-dom";
 import EditRider from "../../components/rider/EditRider";
 import DeleteRider from "../../components/rider/DeleteRider";
 
-
-type RiderDetailPageProps = {
+type AdminRiderDetailPageProps = {
     rider: Rider;
     riders: Rider[];
+    editRider: (id: string, rider: Rider) => void;
+    deleteRider: (id: string) => void;
 }
 
-function RiderDetailPage(props: RiderDetailPageProps) {
+function AdminRiderDetailPage(props: AdminRiderDetailPageProps) {
 
     const params = useParams();
     const id = params.id;
@@ -61,8 +62,36 @@ function RiderDetailPage(props: RiderDetailPageProps) {
                 <div className="about-rider">About {rider.firstName}&nbsp;{rider.lastName}</div>
                 <div className="rider-info-description">{rider.description}</div>
             </div>
+            <div className="riders-modal-button-group">
+                <EditRider rider={props.rider} riders={props.riders} editRider={props.editRider}/>
+                <button type="button"
+                        className="btn btn-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal7"
+                        style={{
+                            width: "30%",
+                            justifyContent: "center",
+                        }}
+                >
+                    Edit Rider
+                </button>
+                <DeleteRider rider={props.rider} deleteRider={props.deleteRider}
+                             riders={props.riders}/>
+                <button
+                    className="btn me-md-2 btn-outline-danger"
+                    style={{
+                        width: "30%",
+                        justifyContent: "center",
+                    }}
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal8"
+                >Delete
+                </button>
+
+            </div>
         </div>
     );
 }
 
-export default RiderDetailPage;
+export default AdminRiderDetailPage;

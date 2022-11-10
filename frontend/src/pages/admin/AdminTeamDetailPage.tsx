@@ -1,16 +1,18 @@
 import React from 'react';
-import "./TeamDetailPage.css";
+import "../team/TeamDetailPage.css";
 import {Team} from "../../models/Team";
 import {useParams} from "react-router-dom";
 import EditTeam from "../../components/team/EditTeam";
 import DeleteTeam from "../../components/team/DeleteTeam";
 
-type TeamDetailPageProps = {
+type AdminTeamDetailPageProps = {
     teams: Team[];
     team: Team;
+    editTeam: (id: string, team: Team) => void;
+    deleteTeam: (id: string) => void;
 }
 
-function TeamDetailPage(props: TeamDetailPageProps) {
+function AdminTeamDetailPage(props: AdminTeamDetailPageProps) {
 
     const params = useParams();
     const id = params.id;
@@ -50,8 +52,35 @@ function TeamDetailPage(props: TeamDetailPageProps) {
                 <div className="about-team">About {team.name}</div>
                 <div className="team-info-description">{team.description}</div>
             </div>
+            <div className="team-modal-button-group">
+                <EditTeam team={props.team} teams={props.teams} editTeam={props.editTeam}/>
+                <button type="button"
+                        className="btn btn-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal9"
+                        style={{
+                            width: "30%",
+                            justifyContent: "center",
+                        }}
+                >
+                    Edit Team
+                </button>
+                <DeleteTeam team={props.team} deleteTeam={props.deleteTeam}
+                            teams={props.teams}/>
+                <button
+                    className="btn me-md-2 btn-outline-danger"
+                    style={{
+                        width: "30%",
+                        justifyContent: "center",
+                    }}
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal10"
+                >Delete
+                </button>
+            </div>
         </div>
     );
 }
 
-export default TeamDetailPage;
+export default AdminTeamDetailPage;

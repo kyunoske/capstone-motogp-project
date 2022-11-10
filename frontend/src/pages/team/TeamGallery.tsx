@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import "./TeamGallery.css";
 import {Team} from "../../models/Team";
 import TeamCard from "../../components/team/TeamCard";
+import {Link} from "react-router-dom";
 
 type TeamGalleryProps = {
     teams: Team[];
@@ -16,7 +17,11 @@ function TeamGallery(props: TeamGalleryProps) {
 
         <div>
             <div className="team-input-container">
-                <div className="input-group input-group-sm mb-3">
+                <Link to={"/"} className="link-to-themes">
+                    <button className="btn button-add back-to-themes">Back to Themes
+                    </button>
+                </Link>
+                <div className="input-group input-group-sm mb-3" style={{width: "50%"}}>
                     <input style={{width: "80%", borderRadius: "5px"}} type="text" placeholder="Find a team..."
                            onChange={(event) => setData(event.target.value)}/>
                 </div>

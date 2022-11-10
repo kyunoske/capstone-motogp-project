@@ -1,6 +1,6 @@
 export type User = {
 
     username: string;
-    passwordHash?: string;
+    password: string;
     roles: string[];
 }
