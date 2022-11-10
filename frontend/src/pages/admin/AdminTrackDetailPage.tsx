@@ -1,17 +1,19 @@
 import React from 'react';
-import "./TrackDetailPage.css";
+import "../track/TrackDetailPage.css";
 import ReactPlayer from "react-player/youtube";
 import {Track} from "../../models/Track";
 import {useParams} from "react-router-dom";
 import EditTrack from "../../components/track/EditTrack";
 import DeleteTrack from "../../components/track/DeleteTrack";
 
-type TrackDetailPageProps = {
+type AdminTrackDetailPageProps = {
     track: Track;
     tracks: Track[];
+    editTrack: (id: string, track: Track) => void;
+    deleteTrack: (id: string) => void;
 }
 
-function TrackDetailPage(props: TrackDetailPageProps) {
+function AdminTrackDetailPage(props: AdminTrackDetailPageProps) {
 
     const params = useParams();
     const id = params.id;
@@ -66,8 +68,34 @@ function TrackDetailPage(props: TrackDetailPageProps) {
                 <div className="about-track">About {track.name}</div>
                 <div className="track-info-description">{track.description}</div>
             </div>
+            <div className="track-modal-button-group">
+                <EditTrack track={props.track} tracks={props.tracks} editTrack={props.editTrack}/>
+                <button type="button"
+                        className="btn btn-secondary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal11"
+                        style={{
+                            width: "30%",
+                            justifyContent: "center",
+                        }}
+                >
+                    Edit Track
+                </button>
+                <DeleteTrack track={props.track} tracks={props.tracks} deleteTrack={props.deleteTrack}/>
+                <button
+                    className="btn me-md-2 btn-outline-danger"
+                    style={{
+                        width: "30%",
+                        justifyContent: "center",
+                    }}
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal12"
+                >Delete
+                </button>
+            </div>
         </div>
     );
 }
 
-export default TrackDetailPage;
+export default AdminTrackDetailPage;

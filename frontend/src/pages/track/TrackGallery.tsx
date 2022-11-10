@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import "./TrackGallery.css";
 import {Track} from "../../models/Track";
 import TrackCard from "../../components/track/TrackCard";
+import {Link} from "react-router-dom";
 
 type TrackGalleryProps = {
     tracks: Track[];
@@ -16,7 +17,11 @@ function TrackGallery(props: TrackGalleryProps) {
     return (
         <div>
             <div className="track-input-container">
-                <div className="input-group input-group-sm mb-3">
+                <Link to={"/"} className="link-to-themes">
+                    <button className="btn button-add back-to-themes">Back to Themes
+                    </button>
+                </Link>
+                <div className="input-group input-group-sm mb-3" style={{width: "50%"}}>
                     <input style={{width: "80%", borderRadius: "5px"}} type="text" placeholder="Find a track..."
                            onChange={(event) => setData(event.target.value)}/>
                 </div>

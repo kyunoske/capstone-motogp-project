@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react';
 import {Rider} from "../models/Rider";
 import axios from "axios";
-import {Article} from "../models/Article";
 
 function UseRiders() {
 
@@ -21,12 +20,14 @@ function UseRiders() {
 
     const getRiderById = (id: string) => {
         axios.get(`/api/riders/${id}`)
-            .then(response => response.data);
+            .then(response => response.data)
+            .catch((error) => console.log(error))
     }
 
     const addRider = (rider: Rider) => {
         axios.post("/api/riders", rider)
             .then(getAllRiders)
+            .catch((error) => console.log(error))
     }
 
     const deleteRider = (id: string) => {

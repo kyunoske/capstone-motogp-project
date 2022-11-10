@@ -15,7 +15,7 @@ function ArticleGallery(props: ArticleGalleryProps) {
 
     return (
         <div>
-            <div className="rider-input-container">
+            <div className="article-input-container">
                 <Link to={"/"} className="link-to-themes">
                     <button className="btn button-add back-to-themes">Back to Themes
                     </button>

@@ -1,7 +1,8 @@
-.rider-input-container {
+.article-input-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .link-to-themes {
@@ -10,6 +11,5 @@
 
 .back-to-themes {
     background: aliceblue;
-    margin-left: 20px;
     margin-bottom: 1rem !important;
 }
