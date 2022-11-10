@@ -1,5 +1,5 @@
 import React, {FormEvent, useState} from 'react';
-import {Rider} from "../models/Rider";
+import {Rider} from "../../models/Rider";
 
 type AddRiderModalProps = {
     rider: Rider;

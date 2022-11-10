@@ -1,6 +1,6 @@
 import React from 'react';
 import "./TrackCard.css";
-import {Track} from "../models/Track";
+import {Track} from "../../models/Track";
 import {Button, Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 

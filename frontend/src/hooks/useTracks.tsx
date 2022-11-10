@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Track} from "../models/Track";
 import axios from "axios";
+import {Article} from "../models/Article";
 
 function UseTracks() {
 
@@ -28,7 +29,20 @@ function UseTracks() {
             .then(getAllTracks);
     }
 
-    return {getAllTracks, getTrackById, addTrack, tracks, track};
+    const deleteTrack = (id: string) => {
+        axios.delete("/api/tracks/" + id)
+            .then(() => getAllTracks())
+            .catch((error) => console.log(error))
+    }
+
+    const editTrack = (id: string, track: Track) => {
+        axios.put(`/api/tracks/${id}`, track)
+            .then(getAllTracks)
+            .catch((error) => console.log(error))
+    }
+
+
+    return {getAllTracks, getTrackById, addTrack, tracks, track, deleteTrack, editTrack};
 }
 
 export default UseTracks;

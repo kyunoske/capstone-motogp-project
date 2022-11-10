@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "./TeamGallery.css";
-import {Team} from "../models/Team";
-import TeamCard from "../components/TeamCard";
+import {Team} from "../../models/Team";
+import TeamCard from "../../components/team/TeamCard";
 
 type TeamGalleryProps = {
     teams: Team[];

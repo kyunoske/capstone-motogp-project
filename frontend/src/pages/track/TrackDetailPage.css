@@ -51,7 +51,6 @@
     margin-top: 30px;
     margin-bottom: 20px;
     width: 100%;
-    height: 100%;
     background: #8C92AC;
     color: #ffffff;
 }
@@ -65,4 +64,11 @@
 .track-info-description {
     padding: 20px;
     font-size: large;
+}
+
+.track-modal-button-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
 }

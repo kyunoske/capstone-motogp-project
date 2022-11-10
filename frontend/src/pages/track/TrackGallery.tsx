@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import "./TrackGallery.css";
-import {Track} from "../models/Track";
-import TrackCard from "../components/TrackCard";
+import {Track} from "../../models/Track";
+import TrackCard from "../../components/track/TrackCard";
 
 type TrackGalleryProps = {
     tracks: Track[];

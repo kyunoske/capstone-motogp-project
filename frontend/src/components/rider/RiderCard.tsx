@@ -1,6 +1,6 @@
 import React from 'react';
 import "./RiderCard.css";
-import {Rider} from "../models/Rider";
+import {Rider} from "../../models/Rider";
 import {Button, Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 

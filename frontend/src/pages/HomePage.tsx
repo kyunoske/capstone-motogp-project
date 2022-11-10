@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 import "./HomePage.css";
 import {Team} from "../models/Team";
-import TeamGallery from "./TeamGallery";
-import AddTeamModal from "../components/AddTeamModal";
-import RiderGallery from "./RiderGallery";
+import TeamGallery from "./team/TeamGallery";
+import AddTeamModal from "../components/team/AddTeamModal";
+import RiderGallery from "./rider/RiderGallery";
 import {Rider} from "../models/Rider";
-import AddRiderModal from "../components/AddRiderModal";
-import TrackGallery from "./TrackGallery";
+import AddRiderModal from "../components/rider/AddRiderModal";
+import TrackGallery from "./track/TrackGallery";
 import {Track} from "../models/Track";
-import AddTrackModal from "../components/AddTrackModal";
-import ArticleGallery from "./ArticleGallery";
+import AddTrackModal from "../components/track/AddTrackModal";
+import ArticleGallery from "./article/ArticleGallery";
 import {Article} from "../models/Article";
-import AddArticle from "../components/AddArticle";
+import AddArticle from "../components/article/AddArticle";
 
 type HomePageProps = {
     team: Team;

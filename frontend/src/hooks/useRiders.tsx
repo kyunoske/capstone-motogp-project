@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Rider} from "../models/Rider";
 import axios from "axios";
+import {Article} from "../models/Article";
 
 function UseRiders() {
 
@@ -28,7 +29,19 @@ function UseRiders() {
             .then(getAllRiders)
     }
 
-    return {getAllRiders, getRiderById, addRider, riders, rider};
+    const deleteRider = (id: string) => {
+        axios.delete("/api/riders/" + id)
+            .then(() => getAllRiders())
+            .catch((error) => console.log(error))
+    }
+
+    const editRider = (id: string, rider: Rider) => {
+        axios.put(`/api/riders/${id}`, rider)
+            .then(getAllRiders)
+            .catch((error) => console.log(error))
+    }
+
+    return {getAllRiders, getRiderById, addRider, riders, rider, deleteRider, editRider};
 }
 
 export default UseRiders;
