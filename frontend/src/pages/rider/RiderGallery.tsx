@@ -18,7 +18,7 @@ function RiderGallery(props: RiderGalleryProps) {
         <div>
             <div className="rider-input-container">
                 <Link to={"/"} className="link-to-themes">
-                    <button className="btn button-add back-to-themes">Back to Themes
+                    <button className="btn button-add back-to-themes-rider">Back to Themes
                     </button>
                 </Link>
                 <div className="input-group input-group-sm mb-3" style={{width: "50%"}}>

@@ -31,8 +31,9 @@ function DeleteTrack(props: DeleteTrackProps) {
 
     const handleRoute = () => {
 
-        // @ts-ignore
-        props.deleteTrack(findTrack.id)
+        if (findTrack && findTrack.id) {
+            props.deleteTrack(findTrack.id)
+        }
 
         setTimeout(() => {
             routeChange()

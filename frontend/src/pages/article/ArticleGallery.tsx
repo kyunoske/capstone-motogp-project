@@ -16,8 +16,8 @@ function ArticleGallery(props: ArticleGalleryProps) {
     return (
         <div>
             <div className="article-input-container">
-                <Link to={"/"} className="link-to-themes">
-                    <button className="btn button-add back-to-themes">Back to Themes
+                <Link to={"/"} className="link-to-themes-article">
+                    <button className="btn button-add back-to-themes-article">Back to Themes
                     </button>
                 </Link>
                 <div className="input-group input-group-sm mb-3" style={{width: "50%"}}>
@@ -26,7 +26,7 @@ function ArticleGallery(props: ArticleGalleryProps) {
                 </div>
             </div>
 
-            <div>
+            <div className="article-gallery-container">
                 {filteredArticles.map((article, index) =>
                     <ArticleCard article={article} key={index}/>
                 )}

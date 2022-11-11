@@ -30,8 +30,9 @@ function DeleteArticle(props: DeleteArticleProps) {
 
     const handleRoute = () => {
 
-        // @ts-ignore
-        props.deleteArticle(findArticle.id)
+        if (findArticle && findArticle.id) {
+            props.deleteArticle(findArticle.id)
+        }
 
         setTimeout(() => {
             routeChange()

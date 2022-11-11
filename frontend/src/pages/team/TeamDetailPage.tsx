@@ -1,7 +1,7 @@
 import React from 'react';
 import "./TeamDetailPage.css";
 import {Team} from "../../models/Team";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import EditTeam from "../../components/team/EditTeam";
 import DeleteTeam from "../../components/team/DeleteTeam";
 
@@ -28,6 +28,10 @@ function TeamDetailPage(props: TeamDetailPageProps) {
 
     return (
         <div className="team-detail-info-container">
+            <Link to={"/homepage"} className="link-to-themes">
+                <button className="btn button-add back-to-homepage-team">Back to Teams
+                </button>
+            </Link>
             <div className="team-detail-info-logo-bike">
                 <div className="team-detail-logo-left">
                     <img src={team.logo} alt={team.logo} className="team-detail-logo"/>

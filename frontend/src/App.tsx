@@ -19,6 +19,7 @@ import AdminArticleDetailPage from "./pages/admin/AdminArticleDetailPage";
 import AdminRiderDetailPage from "./pages/admin/AdminRiderDetailPage";
 import AdminTeamDetailPage from "./pages/admin/AdminTeamDetailPage";
 import AdminTrackDetailPage from "./pages/admin/AdminTrackDetailPage";
+import Protected from "./components/Protected";
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
     const {addRider, riders, rider, deleteRider, editRider} = useRiders();
     const {addTrack, tracks, track, deleteTrack, editTrack} = useTracks();
     const {addArticle, articles, article, deleteArticle, editArticle} = useArticles();
-    const {user, users, handleLogin, handleLogout, handleRegister} = useUser();
+    const {me, isLoggedIn, handleLogin, handleLogout, handleRegister} = useUser();
 
     return (
         <div>
@@ -64,50 +65,68 @@ function App() {
                         article={article}
                     />}/>
 
-                    <Route path={"/users"} element={<LoginPage/>}/>
-
-                    <Route path={"/admin/homepage"} element={<AdminHomePage
-                        teams={teams}
-                        team={team}
-                        addTeam={addTeam}
-                        riders={riders}
-                        rider={rider}
-                        addRider={addRider}
-                        tracks={tracks}
-                        track={track}
-                        addTrack={addTrack}
-                        articles={articles}
-                        article={article}
-                        addArticle={addArticle}
+                    <Route path={"/users"} element={<LoginPage
+                        handleLogin={handleLogin}
+                        handleRegister={handleRegister}
+                        handleLogout={handleLogout}
                     />}/>
 
-                    <Route path={"/admin/articles/:id"} element={<AdminArticleDetailPage
-                        articles={articles}
-                        article={article}
-                        editArticle={editArticle}
-                        deleteArticle={deleteArticle}
-                    />}/>
+                    <Route element={<Protected isLoggedIn={isLoggedIn}/>}>
+                        <Route path={"/admin/homepage"} element={
+                            <AdminHomePage
+                                teams={teams}
+                                team={team}
+                                addTeam={addTeam}
+                                riders={riders}
+                                rider={rider}
+                                addRider={addRider}
+                                tracks={tracks}
+                                track={track}
+                                addTrack={addTrack}
+                                articles={articles}
+                                article={article}
+                                addArticle={addArticle}
+                                handleLogout={handleLogout}
+                            />
+                        }/>
 
-                    <Route path={"/admin/riders/:id"} element={<AdminRiderDetailPage
-                        riders={riders}
-                        rider={rider}
-                        editRider={editRider}
-                        deleteRider={deleteRider}
-                    />}/>
 
-                    <Route path={"/admin/teams/:id"} element={<AdminTeamDetailPage
-                        teams={teams}
-                        team={team}
-                        editTeam={editTeam}
-                        deleteTeam={deleteTeam}
-                    />}/>
+                        <Route path={"/admin/articles/:id"} element={
+                            <AdminArticleDetailPage
+                                articles={articles}
+                                article={article}
+                                editArticle={editArticle}
+                                deleteArticle={deleteArticle}
+                            />
+                        }/>
 
-                    <Route path={"/admin/tracks/:id"} element={<AdminTrackDetailPage
-                        tracks={tracks}
-                        track={track}
-                        editTrack={editTrack}
-                        deleteTrack={deleteTrack}
-                    />}/>
+                        <Route path={"/admin/riders/:id"} element={
+                            <AdminRiderDetailPage
+                                riders={riders}
+                                rider={rider}
+                                editRider={editRider}
+                                deleteRider={deleteRider}
+                            />
+                        }/>
+
+                        <Route path={"/admin/teams/:id"} element={
+                            <AdminTeamDetailPage
+                                teams={teams}
+                                team={team}
+                                editTeam={editTeam}
+                                deleteTeam={deleteTeam}
+                            />
+                        }/>
+
+                        <Route path={"/admin/tracks/:id"} element={
+                            <AdminTrackDetailPage
+                                tracks={tracks}
+                                track={track}
+                                editTrack={editTrack}
+                                deleteTrack={deleteTrack}
+                            />
+                        }/>
+                    </Route>
                 </Routes>
 
             </HashRouter>
