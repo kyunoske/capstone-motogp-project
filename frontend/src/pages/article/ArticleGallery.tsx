@@ -26,7 +26,7 @@ function ArticleGallery(props: ArticleGalleryProps) {
                 </div>
             </div>
 
-            <div>
+            <div className="article-gallery-container">
                 {filteredArticles.map((article, index) =>
                     <ArticleCard article={article} key={index}/>
                 )}

@@ -13,7 +13,7 @@ import ArticleGallery from "../article/ArticleGallery";
 import {Article} from "../../models/Article";
 import AddArticle from "../../components/article/AddArticle";
 import {User} from "../../models/User";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 type AdminHomePageProps = {
     team: Team;
@@ -28,6 +28,7 @@ type AdminHomePageProps = {
     article: Article;
     articles: Article[];
     addArticle: (article: Article) => void;
+    handleLogout: () => void;
 }
 
 function AdminHomePage(props: AdminHomePageProps) {
@@ -53,6 +54,16 @@ function AdminHomePage(props: AdminHomePageProps) {
 
             <div className="tab-content">
                 <div className="tab-pane container active" id="news">
+
+                    <Link to={"/homepage"}>
+                        <button type="button"
+                                className="btn btn-outline-danger"
+                                style={{marginTop: "20px"}}
+                                onClick={props.handleLogout}
+                        >Logout Admin
+                            Mode
+                        </button>
+                    </Link>
                     <ArticleGallery articles={props.articles}/>
                     <AddArticle article={props.article} addArticle={props.addArticle}/>
                     <button type="button"

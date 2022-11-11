@@ -86,6 +86,7 @@ function App() {
                                 articles={articles}
                                 article={article}
                                 addArticle={addArticle}
+                                handleLogout={handleLogout}
                             />
                         }/>
 

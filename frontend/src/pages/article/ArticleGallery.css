@@ -22,7 +22,7 @@
     margin-bottom: 1rem !important;
 }
 
-:hover.back-to-themes-team {
+:hover.back-to-themes-article {
     border: var(--team-button-alt-border);
     background-color: var(--team-button-alt-background);
     color: var(--team-alt-button-color);
