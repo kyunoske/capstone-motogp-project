@@ -49,7 +49,7 @@ function DeleteArticle(props: DeleteArticleProps) {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        Are you sure you want to delete {findArticle.text}?
+                        Are you sure you want to delete <span style={{color: "red"}}> {findArticle.title}</span>?
                     </div>
                     <div className="modal-footer">
                         <button

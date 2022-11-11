@@ -1,4 +1,5 @@
 import React, {FormEvent, useState} from 'react';
+import "./EditArticle.css";
 import {Article} from "../../models/Article";
 import {useParams} from "react-router-dom";
 
@@ -121,7 +122,8 @@ function EditArticle(props: EditArticleProps) {
                                 placeholder="Article Number"
                                 onChange={(e) => setArticleNumber(e.target.value)}
                             />
-                            <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
+                            <div className="edit-article-button-group"
+                                 style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
                                         style={{width: "200px"}}>Save Edit
                                 </button>

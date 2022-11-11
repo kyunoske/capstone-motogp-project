@@ -48,7 +48,8 @@ function DeleteRider(props: DeleteRiderProps) {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        Are you sure you want to delete {findRider.firstName}&nbsp;{findRider.lastName}?
+                        Are you sure you want to delete <span
+                        style={{color: "red"}}> {findRider.firstName}&nbsp;{findRider.lastName}</span>?
                     </div>
                     <div className="modal-footer">
                         <button

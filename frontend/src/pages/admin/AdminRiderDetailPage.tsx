@@ -1,7 +1,7 @@
 import React from 'react';
 import "../rider/RiderDetailPage.css";
 import {Rider} from "../../models/Rider";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import EditRider from "../../components/rider/EditRider";
 import DeleteRider from "../../components/rider/DeleteRider";
 
@@ -29,6 +29,10 @@ function AdminRiderDetailPage(props: AdminRiderDetailPageProps) {
 
     return (
         <div className="rider-info-container">
+            <Link to={"/admin/homepage"} className="link-to-homepage">
+                <button className="btn button-add back-to-homepage-rider">Back to Admin Riders
+                </button>
+            </Link>
             <div className="rider-info-left-right-container">
                 <div className="rider-image-container-left">
                     <img src={rider.riderImage} alt={rider.firstName} className="rider-info-rider-image"/>

@@ -1,4 +1,5 @@
 import React, {FormEvent, useState} from 'react';
+import "./EditRider.css";
 import {Rider} from "../../models/Rider";
 import {useParams} from "react-router-dom";
 
@@ -287,7 +288,8 @@ function EditRider(props: EditRiderProps) {
                                 placeholder="image4"
                                 onChange={(e) => setImage4(e.target.value)}
                             />
-                            <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
+                            <div className="edit-rider-button-group"
+                                 style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
                                         style={{width: "200px"}}>Save Edit
                                 </button>

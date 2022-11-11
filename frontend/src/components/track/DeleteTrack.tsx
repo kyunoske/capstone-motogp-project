@@ -50,7 +50,7 @@ function DeleteTrack(props: DeleteTrackProps) {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        Are you sure you want to delete {findTrack.name}?
+                        Are you sure you want to delete <span style={{color: "red"}}> {findTrack.name}</span>?
                     </div>
                     <div className="modal-footer">
                         <button

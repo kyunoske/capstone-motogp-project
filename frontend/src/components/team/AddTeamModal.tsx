@@ -1,4 +1,5 @@
 import React, {FormEvent, useState} from 'react';
+import "./AddTeamModal.css";
 import {Team} from "../../models/Team";
 
 type AddTeamModalProps = {
@@ -171,7 +172,8 @@ function AddTeamModal(props: AddTeamModalProps) {
                                 placeholder="Championships"
                                 onChange={(e) => setChampionships(e.target.value)}
                             />
-                            <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
+                            <div className="button-group-add-team"
+                                 style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
                                         style={{width: "200px"}}>Add Team
                                 </button>

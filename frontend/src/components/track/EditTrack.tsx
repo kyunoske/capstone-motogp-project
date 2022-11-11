@@ -176,7 +176,8 @@ function EditTrack(props: EditTrackProps) {
                                 placeholder="Lap Video"
                                 onChange={(e) => setLap(e.target.value)}
                             />
-                            <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
+                            <div className="button-group-edit-track"
+                                 style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
                                         style={{width: "200px"}}>Save Edit
                                 </button>

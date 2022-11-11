@@ -1,4 +1,5 @@
 import React, {FormEvent, useState} from 'react';
+import "./AddArticle.css";
 import {Article} from "../../models/Article";
 
 type AddArticleProps = {
@@ -99,7 +100,8 @@ function AddArticle(props: AddArticleProps) {
                                 placeholder="Article Number"
                                 onChange={(e) => setArticleNumber(e.target.value)}
                             />
-                            <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
+                            <div className="button-group-add-article"
+                                 style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
                                         style={{width: "200px"}}>Add Article
                                 </button>

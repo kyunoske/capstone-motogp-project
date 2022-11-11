@@ -89,7 +89,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    margin: auto;
+    margin: 30px;
 }
 
 .link-to-homepage {

@@ -1,4 +1,5 @@
 import React, {FormEvent, useState} from 'react';
+import "./AddTrackModal.css";
 import {Track} from "../../models/Track";
 
 type AddTrackModalProps = {
@@ -150,7 +151,8 @@ function AddTrackModal(props: AddTrackModalProps) {
                                 placeholder="Lap Video"
                                 onChange={(e) => setLap(e.target.value)}
                             />
-                            <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
+                            <div className="button-group-add-track"
+                                 style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
                                         style={{width: "200px"}}>Add Track
                                 </button>

@@ -1,7 +1,7 @@
 import React from 'react';
 import "../article/ArticleDetailPage.css";
 import {Article} from "../../models/Article";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import EditArticle from "../../components/article/EditArticle";
 import DeleteArticle from "../../components/article/DeleteArticle";
 
@@ -31,6 +31,10 @@ function AdminArticleDetailPage(props: AdminArticleDetailPageProps) {
         <div className="article-detail-container">
             <span className="span-filler-left-side"></span>
             <div className="article-detail-container-image-text">
+                <Link to={"/admin/homepage"} className="link-to-themes">
+                    <button className="btn button-add back-to-themes-track">Back to Admin Articles
+                    </button>
+                </Link>
                 <div>
                     <div className="article-detail-title">{article.title}</div>
                     <div className="article-detail-image-container">

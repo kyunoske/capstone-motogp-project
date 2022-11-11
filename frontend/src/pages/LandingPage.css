@@ -11,6 +11,7 @@
     justify-content: center;
     color: transparent;
     margin-top: -81px;
+    filter: drop-shadow(0 -6mm 4mm rgb(169, 169, 169));
 }
 
 .select-theme-div {
