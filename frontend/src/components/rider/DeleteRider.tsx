@@ -22,16 +22,16 @@ function DeleteRider(props: DeleteRiderProps) {
     const findRider = props.riders.find((rider) => rider.id === id);
 
     if (findRider === undefined) {
-        return (<>Sorry no article found!</>)
+        return (<>Sorry no rider found!</>)
     }
     if (id === undefined) {
-        return (<>Article not found with this id!</>)
+        return (<>Rider not found with this id!</>)
     }
 
     const handleRoute = () => {
-
-        // @ts-ignore
-        props.deleteRider(findRider.id)
+        if (findRider && findRider.id) {
+            props.deleteRider(findRider.id)
+        }
 
         setTimeout(() => {
             routeChange()

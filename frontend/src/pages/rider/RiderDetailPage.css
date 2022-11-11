@@ -91,3 +91,26 @@
     justify-content: space-around;
     margin: auto;
 }
+
+.link-to-homepage {
+    display: flex;
+    text-decoration: none;
+}
+
+.back-to-homepage-rider {
+    width: 30%;
+    max-height: 38px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: var(--team-button-border);
+    background-color: var(--team-button-background);
+    color: var(--team-button-color);
+    margin-bottom: 1rem !important;
+}
+
+:hover.back-to-homepage-rider {
+    border: var(--team-button-alt-border);
+    background-color: var(--team-button-alt-background);
+    color: var(--team-alt-button-color);
+}

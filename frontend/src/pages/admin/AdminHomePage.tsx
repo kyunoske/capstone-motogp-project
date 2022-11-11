@@ -12,6 +12,8 @@ import AddTrackModal from "../../components/track/AddTrackModal";
 import ArticleGallery from "../article/ArticleGallery";
 import {Article} from "../../models/Article";
 import AddArticle from "../../components/article/AddArticle";
+import {User} from "../../models/User";
+import {useNavigate} from "react-router-dom";
 
 type AdminHomePageProps = {
     team: Team;
@@ -29,6 +31,7 @@ type AdminHomePageProps = {
 }
 
 function AdminHomePage(props: AdminHomePageProps) {
+
     return (
         <div className="container" style={{marginTop: "10px"}}>
             <ul className="nav nav-pills nav-justified">

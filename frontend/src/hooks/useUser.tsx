@@ -4,54 +4,31 @@ import axios from "axios";
 
 function UseUser() {
 
-    let user!: User;
-    const [users, setUsers] = useState([])
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
-    const [newUsername, setNewUsername] = useState("")
-    const [newPassword, setNewPassword] = useState("")
-    const [me, setMe] = useState("")
+    const [me, setMe] = useState<User | undefined>()
+    const [isLoggedIn, setisLoggedIn] = useState(false)
 
-    useEffect(() => {
-        getAllUsers()
-    }, [])
-
-    const getAllUsers = () => {
-        axios.get("/api/users")
-            .then((response) => response.data)
-            .then((users) => setUsers(users))
-            .catch((error) => console.log(error));
-    }
-
-    const getUserById = (id: string) => {
-        axios.get(`/api/users/${id}`)
-            .then(response => response.data);
-    }
-
-    const handleLogin = () => {
-        axios.get("/api/users/login", {auth: {username, password}})
+    const handleLogin = (username: string, password: string) => {
+        axios.get("/api/user/login", {auth: {username, password}})
             .then((response) => response.data)
             .then((data) => setMe(data))
-            .then(() => setUsername(""))
-            .then(() => setPassword(""))
+            .then(() => setisLoggedIn(true))
             .catch(() => alert("username or password is incorrect"))
     }
 
     const handleLogout = () => {
-        axios.get("/api/users/logout")
-            .then(() => setMe(""))
+        axios.get("/api/user/logout")
+            .then(() => setMe(undefined))
+            .then(() => setisLoggedIn(false))
     }
 
-    const handleRegister = () => {
+    const handleRegister = (newUsername: string, newPassword: string) => {
         axios.post("/api/user/register", {
             username: newUsername,
             password: newPassword
         })
-            .then(() => setNewUsername(""))
-            .then(() => setNewPassword(""))
     }
 
-    return {user, users, getAllUsers, getUserById, handleLogin, handleLogout, handleRegister};
+    return {me, isLoggedIn, handleLogin, handleLogout, handleRegister};
 }
 
 export default UseUser;

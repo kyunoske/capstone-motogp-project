@@ -1,7 +1,7 @@
 import React from 'react';
 import "./ArticleDetailPage.css";
 import {Article} from "../../models/Article";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 type ArticleDetailPageProps = {
     article: Article;
@@ -27,6 +27,10 @@ function ArticleDetailPage(props: ArticleDetailPageProps) {
         <div className="article-detail-container">
             <span className="span-filler-left-side"></span>
             <div className="article-detail-container-image-text">
+                <Link to={"/homepage"} className="link-to-themes">
+                    <button className="btn button-add back-to-themes-track">Back to Articles
+                    </button>
+                </Link>
                 <div>
                     <div className="article-detail-title">{article.title}</div>
                     <div className="article-detail-image-container">

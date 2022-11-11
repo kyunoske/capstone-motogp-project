@@ -31,8 +31,9 @@ function DeleteTeam(props: DeleteTeamProps) {
 
     const handleRoute = () => {
 
-        // @ts-ignore
-        props.deleteTeam(findTeam.id)
+        if (findTeam && findTeam.id) {
+            props.deleteTeam(findTeam.id)
+        }
 
         setTimeout(() => {
             routeChange()

@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "swiper/css/effect-coverflow";
-import {EffectCoverflow, Pagination, Navigation} from "swiper";
+import {EffectCoverflow, Navigation} from "swiper";
 
 type LandingPageProps = {}
 
@@ -129,7 +129,10 @@ function LandingPage(props: LandingPageProps) {
         <div className="content-container">
             <div className="justify-content-center">
                 <div className="theme-section-headings">
-                    <div className="theme-section-title upside-down">MotoGP World</div>
+                    <div className="main-title-moto-gp-container">
+                        <div className="theme-section-title upside-down">MotoGP World</div>
+                        <div className="only-background-color-for-title"></div>
+                    </div>
                     <p className="theme-section-desc">
                         The place for MotoGP enthusiasts
                     </p>
@@ -153,8 +156,7 @@ function LandingPage(props: LandingPageProps) {
                                     modifier: 1,
                                     slideShadows: true,
                                 }}
-                                pagination={{clickable: true}}
-                                modules={[EffectCoverflow, Pagination, Navigation]}
+                                modules={[EffectCoverflow, Navigation]}
                                 onSlideChange={() => console.log('slide change')}
                                 onSwiper={(swiper) => console.log(swiper)}
                             >

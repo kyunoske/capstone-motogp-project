@@ -7,9 +7,24 @@
 
 .link-to-themes {
     display: flex;
+    text-decoration: none;
+    margin-left: 15px;
 }
 
-.back-to-themes {
-    background: aliceblue;
+.back-to-themes-track {
+    width: 100%;
+    max-height: 38px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: var(--team-button-border);
+    background-color: var(--team-button-background);
+    color: var(--team-button-color);
     margin-bottom: 1rem !important;
+}
+
+:hover.back-to-themes-track {
+    border: var(--team-button-alt-border);
+    background-color: var(--team-button-alt-background);
+    color: var(--team-alt-button-color);
 }

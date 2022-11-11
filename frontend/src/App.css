@@ -217,7 +217,7 @@ body[data-theme="withu-theme"] {
     --team-highlight-color: #2A52BE;
     --team-button-border: 2px solid #0F4C81;
     --team-button-background: #000000;
-    --team-button-color: #0F4C81;
+    --team-button-color: #ffffff;
     --team-button-alt-border: 2px solid #000000;
     --team-button-alt-background: #ffffff;
     --team-alt-button-color: #0F4C81;
@@ -235,6 +235,18 @@ body {
     margin-top: 1rem;
     margin-left: 5rem;
     margin-right: 5rem;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .theme-section-headings {

@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import com.example.backend.model.AppUserDTO;
+import com.example.backend.model.CreateUserDto;
 import com.example.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,11 +27,11 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login() {
-        return SecurityContextHolder
-                .getContext()
-                .getAuthentication()
-                .getName();
+    public AppUserDTO login() {
+        // Ask Security Context for User information
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        return userService.getUserInfoDtoByUsername(username);
     }
 
     @GetMapping("/logout")
@@ -39,10 +40,8 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String register(@RequestBody AppUserDTO appUserDTO) {
+    public String register(@RequestBody CreateUserDto createUserDto) {
 
-        String username = userService.register(appUserDTO);
-
-        return username;
+        return userService.register(createUserDto);
     }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import "./TrackDetailPage.css";
 import ReactPlayer from "react-player/youtube";
 import {Track} from "../../models/Track";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import EditTrack from "../../components/track/EditTrack";
 import DeleteTrack from "../../components/track/DeleteTrack";
 
@@ -29,6 +29,10 @@ function TrackDetailPage(props: TrackDetailPageProps) {
 
     return (
         <div className="track-detail-container">
+            <Link to={"/homepage"} className="link-to-homepage">
+                <button className="btn button-add back-to-homepage-track">Back to Tracks
+                </button>
+            </Link>
             <div className="track-detail-grand-prix-name">
                 {track.grandPrixName}
             </div>
@@ -36,7 +40,7 @@ function TrackDetailPage(props: TrackDetailPageProps) {
                 <div className="track-detail-image-container">
                     <img src={track.image} alt={track.image} className="track-detail-image"/>
                 </div>
-                <div className="track-detai-video">
+                <div className="track-detail-video">
                     <ReactPlayer url={track.lap}
                                  width="100%"
                                  height="100%"
