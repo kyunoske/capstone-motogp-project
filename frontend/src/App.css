@@ -15,7 +15,6 @@
     --alt-side-color-article-detail: #000000;
     --article-title-gallery-color: #000000;
     --bottom-border-tabs: 5px solid #52cc00;
-
 }
 
 body[data-theme="ducati-theme"] {
@@ -229,6 +228,7 @@ body[data-theme="withu-theme"] {
 
 body {
     background: var(--bg-color) !important;
+    caret-color: transparent;
 }
 
 .content-container {

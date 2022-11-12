@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./LandingPage.css";
 import {Button, Card} from "react-bootstrap";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import "swiper/css/effect-coverflow";
 import {EffectCoverflow, Navigation} from "swiper";
+import {User} from "../models/User";
 
-type LandingPageProps = {}
+type LandingPageProps = {
+    user: User;
+    isLoggedIn: boolean;
+}
 
 function LandingPage(props: LandingPageProps) {
 
@@ -17,6 +21,13 @@ function LandingPage(props: LandingPageProps) {
     const navigateToHomePage = () => {
         navigate(`/homepage`)
     }
+
+    // const [isLoggedIn, setIsLoggedIn] = useState(t)
+    //
+    // if (props.user && isLoggedIn) {
+    //     setIsLoggedIn(true)
+    // }
+
     const apriliaDemo = () => {
         document.body.setAttribute("data-theme", "light-theme")
     }
@@ -127,332 +138,670 @@ function LandingPage(props: LandingPageProps) {
 
     return (
         <div className="content-container">
-            <div className="justify-content-center">
-                <div className="theme-section-headings">
-                    <div className="main-title-moto-gp-container">
-                        <div className="theme-section-title upside-down">MotoGP World</div>
-                        <div className="only-background-color-for-title"></div>
+            {props.isLoggedIn ?
+                <>
+                    <div className="admin-only">
+                        <h1 className="h1-fade-in"> Welcome Admin</h1>
+                        <Link to={`admin/homepage`}>
+                            <button type="button" className="btn btn-primary">To Admin Homepage</button>
+                        </Link>
                     </div>
-                    <p className="theme-section-desc">
-                        The place for MotoGP enthusiasts
-                    </p>
-                    <div className="justify-content-center theme-buttons">
-                        <div className="landing-page-select-theme-text">
-                            <h4 className="select-theme-heading">Select a Theme from below</h4>
-                            <p className="select-theme-heading">Click on demo to see a theme you like</p>
-                            <p className="select-theme-heading">Click on Confirm to choose this theme and continue</p>
-                        </div>
-                        <div className="select-theme-div">
-                            <Swiper
-                                navigation
-                                effect={"coverflow"}
-                                grabCursor={true}
-                                centeredSlides={true}
-                                slidesPerView={4}
-                                coverflowEffect={{
-                                    rotate: 50,
-                                    stretch: 0,
-                                    depth: 100,
-                                    modifier: 1,
-                                    slideShadows: true,
-                                }}
-                                modules={[EffectCoverflow, Navigation]}
-                                onSlideChange={() => console.log('slide change')}
-                                onSwiper={(swiper) => console.log(swiper)}
-                            >
-                                <SwiperSlide>
-                                    <Card className="aprilia-card-container">
-                                        <Card.Img variant="top" className="card-logo"
-                                                  src={process.env.PUBLIC_URL + "/images/aprilia-logo-removebg.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="Aprilia"
-                                                    variant="outline-warning"
-                                                    onClick={apriliaDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="Aprilia"
-                                                    variant="outline-warning"
-                                                    onClick={apriliaConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="ducati-card-container">
-                                        <Card.Img variant="top" className="card-logo-ducati"
-                                                  src={process.env.PUBLIC_URL + "/images/ducati_motogp.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="Ducati-Lenovo"
-                                                    variant="outline-warning"
-                                                    onClick={ducatiDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="Ducati-Lenovo"
-                                                    variant="outline-warning"
-                                                    onClick={ducatiConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="gresini-card-container">
-                                        <Card.Img variant="top" className="card-logo-gresini"
-                                                  src={process.env.PUBLIC_URL + "/images/logo_gresini.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="Gresini"
-                                                    variant="outline-warning"
-                                                    onClick={gresiniDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="Gresini"
-                                                    variant="outline-warning"
-                                                    onClick={gresiniConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="lcr-card-container">
-                                        <Card.Img variant="top" className="card-logo-aprilia"
-                                                  src={process.env.PUBLIC_URL + "/images/lcr_honda.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="LCR"
-                                                    variant="outline-warning"
-                                                    onClick={lcrDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="LCR"
-                                                    variant="outline-warning"
-                                                    onClick={lcrConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="monster-yamaha-card-container">
-                                        <Card.Img variant="top" className="card-logo-monster-yamaha"
-                                                  src={process.env.PUBLIC_URL + "/images/monster-yamaha-logo.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="Monster-Yamaha"
-                                                    variant="outline-warning"
-                                                    onClick={monsterYamahaDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="Monster-Yamaha"
-                                                    variant="outline-warning"
-                                                    onClick={monsterYamahaConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="vr46-card-container">
-                                        <Card.Img variant="top" className="card-logo-vr46"
-                                                  src={process.env.PUBLIC_URL + "/images/Mooney-VR46-2022-Logo.jpg"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="VR46"
-                                                    variant="outline-warning"
-                                                    onClick={vR46Demo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="VR46"
-                                                    variant="outline-warning"
-                                                    onClick={vR46Confirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="ktm-card-container">
-                                        <Card.Img variant="top" className="card-logo-ktm"
-                                                  src={process.env.PUBLIC_URL + "/images/red_bull_ktm-logo.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="KTM"
-                                                    variant="outline-warning"
-                                                    onClick={ktmDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="KTM"
-                                                    variant="outline-warning"
-                                                    onClick={ktmConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="pramac-card-container">
-                                        <Card.Img variant="top" className="card-logo-pramac"
-                                                  src={process.env.PUBLIC_URL + "/images/pramac_racing_logo.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="Pramac"
-                                                    variant="outline-warning"
-                                                    onClick={pramacDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="Pramac"
-                                                    variant="outline-warning"
-                                                    onClick={pramacConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="repsol-card-container">
-                                        <Card.Img variant="top" className="card-logo-repsol"
-                                                  src={process.env.PUBLIC_URL + "/images/Repsol-Honda-Team-logo.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="Repsol"
-                                                    variant="outline-warning"
-                                                    onClick={repsolDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="Repsol"
-                                                    variant="outline-warning"
-                                                    onClick={repsolConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="tech3-card-container">
-                                        <Card.Img variant="top" className="card-logo-ktm"
-                                                  src={process.env.PUBLIC_URL + "/images/tech3-logo.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="Tech3"
-                                                    variant="outline-warning"
-                                                    onClick={tech3Demo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="Tech3"
-                                                    variant="outline-warning"
-                                                    onClick={tech3Confirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="suzuki-card-container">
-                                        <Card.Img variant="top" className="card-logo-suzuki"
-                                                  src={process.env.PUBLIC_URL + "/images/team_suzuki_ecstar_logo.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="Suzuki"
-                                                    variant="outline-warning"
-                                                    onClick={suzukiDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="Suzuki"
-                                                    variant="outline-warning"
-                                                    onClick={suzukiConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <Card className="withu-card-container">
-                                        <Card.Img variant="top" className="card-logo-withu"
-                                                  src={process.env.PUBLIC_URL + "/images/logo_withu.png"}/>
-                                        <Card.Body className="card-body">
-                                            <div className="card-button-container">
-                                                <Button
-                                                    id="WithU"
-                                                    variant="outline-warning"
-                                                    onClick={withuDemo}
-                                                >
-                                                    Demo
-                                                </Button>
-                                                <Button
-                                                    id="WithU"
-                                                    variant="outline-warning"
-                                                    onClick={withuConfirm}
-                                                >
-                                                    Confirm
-                                                </Button>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </SwiperSlide>
-                            </Swiper>
+                    <div className="justify-content-center">
+                        <div className="theme-section-headings">
+                            <div className="main-title-moto-gp-container">
+                                <div className="theme-section-title upside-down">MotoGP World</div>
+                                <div className="only-background-color-for-title"></div>
+                            </div>
+                            <p className="theme-section-desc">
+                                The place for MotoGP enthusiasts
+                            </p>
+                            <div className="justify-content-center theme-buttons">
+                                <div className="landing-page-select-theme-text">
+                                    <h4 className="select-theme-heading">Select a Theme from below</h4>
+                                    <p className="select-theme-heading">Click on demo to see a theme you like</p>
+                                    <p className="select-theme-heading">Click on Confirm to choose this theme and
+                                        continue</p>
+                                </div>
+                                <div className="select-theme-div">
+                                    <Swiper
+                                        navigation
+                                        effect={"coverflow"}
+                                        grabCursor={true}
+                                        centeredSlides={true}
+                                        slidesPerView={4}
+                                        coverflowEffect={{
+                                            rotate: 50,
+                                            stretch: 0,
+                                            depth: 100,
+                                            modifier: 1,
+                                            slideShadows: true,
+                                        }}
+                                        modules={[EffectCoverflow, Navigation]}
+                                        onSlideChange={() => console.log('slide change')}
+                                        onSwiper={(swiper) => console.log(swiper)}
+                                    >
+                                        <SwiperSlide>
+                                            <Card className="aprilia-card-container">
+                                                <Card.Img variant="top" className="card-logo"
+                                                          src={process.env.PUBLIC_URL + "/images/aprilia-logo-removebg.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="Aprilia"
+                                                            variant="outline-warning"
+                                                            onClick={apriliaDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="Aprilia"
+                                                            variant="outline-warning"
+                                                            onClick={apriliaConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="ducati-card-container">
+                                                <Card.Img variant="top" className="card-logo-ducati"
+                                                          src={process.env.PUBLIC_URL + "/images/ducati_motogp.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="Ducati-Lenovo"
+                                                            variant="outline-warning"
+                                                            onClick={ducatiDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="Ducati-Lenovo"
+                                                            variant="outline-warning"
+                                                            onClick={ducatiConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="gresini-card-container">
+                                                <Card.Img variant="top" className="card-logo-gresini"
+                                                          src={process.env.PUBLIC_URL + "/images/logo_gresini.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="Gresini"
+                                                            variant="outline-warning"
+                                                            onClick={gresiniDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="Gresini"
+                                                            variant="outline-warning"
+                                                            onClick={gresiniConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="lcr-card-container">
+                                                <Card.Img variant="top" className="card-logo-aprilia"
+                                                          src={process.env.PUBLIC_URL + "/images/lcr_honda.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="LCR"
+                                                            variant="outline-warning"
+                                                            onClick={lcrDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="LCR"
+                                                            variant="outline-warning"
+                                                            onClick={lcrConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="monster-yamaha-card-container">
+                                                <Card.Img variant="top" className="card-logo-monster-yamaha"
+                                                          src={process.env.PUBLIC_URL + "/images/monster-yamaha-logo.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="Monster-Yamaha"
+                                                            variant="outline-warning"
+                                                            onClick={monsterYamahaDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="Monster-Yamaha"
+                                                            variant="outline-warning"
+                                                            onClick={monsterYamahaConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="vr46-card-container">
+                                                <Card.Img variant="top" className="card-logo-vr46"
+                                                          src={process.env.PUBLIC_URL + "/images/Mooney-VR46-2022-Logo.jpg"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="VR46"
+                                                            variant="outline-warning"
+                                                            onClick={vR46Demo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="VR46"
+                                                            variant="outline-warning"
+                                                            onClick={vR46Confirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="ktm-card-container">
+                                                <Card.Img variant="top" className="card-logo-ktm"
+                                                          src={process.env.PUBLIC_URL + "/images/red_bull_ktm-logo.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="KTM"
+                                                            variant="outline-warning"
+                                                            onClick={ktmDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="KTM"
+                                                            variant="outline-warning"
+                                                            onClick={ktmConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="pramac-card-container">
+                                                <Card.Img variant="top" className="card-logo-pramac"
+                                                          src={process.env.PUBLIC_URL + "/images/pramac_racing_logo.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="Pramac"
+                                                            variant="outline-warning"
+                                                            onClick={pramacDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="Pramac"
+                                                            variant="outline-warning"
+                                                            onClick={pramacConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="repsol-card-container">
+                                                <Card.Img variant="top" className="card-logo-repsol"
+                                                          src={process.env.PUBLIC_URL + "/images/Repsol-Honda-Team-logo.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="Repsol"
+                                                            variant="outline-warning"
+                                                            onClick={repsolDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="Repsol"
+                                                            variant="outline-warning"
+                                                            onClick={repsolConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="tech3-card-container">
+                                                <Card.Img variant="top" className="card-logo-ktm"
+                                                          src={process.env.PUBLIC_URL + "/images/tech3-logo.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="Tech3"
+                                                            variant="outline-warning"
+                                                            onClick={tech3Demo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="Tech3"
+                                                            variant="outline-warning"
+                                                            onClick={tech3Confirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="suzuki-card-container">
+                                                <Card.Img variant="top" className="card-logo-suzuki"
+                                                          src={process.env.PUBLIC_URL + "/images/team_suzuki_ecstar_logo.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="Suzuki"
+                                                            variant="outline-warning"
+                                                            onClick={suzukiDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="Suzuki"
+                                                            variant="outline-warning"
+                                                            onClick={suzukiConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <Card className="withu-card-container">
+                                                <Card.Img variant="top" className="card-logo-withu"
+                                                          src={process.env.PUBLIC_URL + "/images/logo_withu.png"}/>
+                                                <Card.Body className="card-body">
+                                                    <div className="card-button-container">
+                                                        <Button
+                                                            id="WithU"
+                                                            variant="outline-warning"
+                                                            onClick={withuDemo}
+                                                        >
+                                                            Demo
+                                                        </Button>
+                                                        <Button
+                                                            id="WithU"
+                                                            variant="outline-warning"
+                                                            onClick={withuConfirm}
+                                                        >
+                                                            Confirm
+                                                        </Button>
+                                                    </div>
+                                                </Card.Body>
+                                            </Card>
+                                        </SwiperSlide>
+                                    </Swiper>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </>
+                :
+                <div className="justify-content-center">
+                    <div className="theme-section-headings">
+                        <div className="main-title-moto-gp-container">
+                            <div className="theme-section-title upside-down">MotoGP World</div>
+                            <div className="only-background-color-for-title"></div>
+                        </div>
+                        <p className="theme-section-desc">
+                            The place for MotoGP enthusiasts
+                        </p>
+                        <div className="justify-content-center theme-buttons">
+                            <div className="landing-page-select-theme-text">
+                                <h4 className="select-theme-heading">Select a Theme from below</h4>
+                                <p className="select-theme-heading">Click on demo to see a theme you like</p>
+                                <p className="select-theme-heading">Click on Confirm to choose this theme and
+                                    continue</p>
+                            </div>
+                            <div className="select-theme-div">
+                                <Swiper
+                                    navigation
+                                    effect={"coverflow"}
+                                    grabCursor={true}
+                                    centeredSlides={true}
+                                    slidesPerView={4}
+                                    coverflowEffect={{
+                                        rotate: 50,
+                                        stretch: 0,
+                                        depth: 100,
+                                        modifier: 1,
+                                        slideShadows: true,
+                                    }}
+                                    modules={[EffectCoverflow, Navigation]}
+                                    onSlideChange={() => console.log('slide change')}
+                                    onSwiper={(swiper) => console.log(swiper)}
+                                >
+                                    <SwiperSlide>
+                                        <Card className="aprilia-card-container">
+                                            <Card.Img variant="top" className="card-logo"
+                                                      src={process.env.PUBLIC_URL + "/images/aprilia-logo-removebg.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="Aprilia"
+                                                        variant="outline-warning"
+                                                        onClick={apriliaDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="Aprilia"
+                                                        variant="outline-warning"
+                                                        onClick={apriliaConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="ducati-card-container">
+                                            <Card.Img variant="top" className="card-logo-ducati"
+                                                      src={process.env.PUBLIC_URL + "/images/ducati_motogp.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="Ducati-Lenovo"
+                                                        variant="outline-warning"
+                                                        onClick={ducatiDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="Ducati-Lenovo"
+                                                        variant="outline-warning"
+                                                        onClick={ducatiConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="gresini-card-container">
+                                            <Card.Img variant="top" className="card-logo-gresini"
+                                                      src={process.env.PUBLIC_URL + "/images/logo_gresini.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="Gresini"
+                                                        variant="outline-warning"
+                                                        onClick={gresiniDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="Gresini"
+                                                        variant="outline-warning"
+                                                        onClick={gresiniConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="lcr-card-container">
+                                            <Card.Img variant="top" className="card-logo-aprilia"
+                                                      src={process.env.PUBLIC_URL + "/images/lcr_honda.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="LCR"
+                                                        variant="outline-warning"
+                                                        onClick={lcrDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="LCR"
+                                                        variant="outline-warning"
+                                                        onClick={lcrConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="monster-yamaha-card-container">
+                                            <Card.Img variant="top" className="card-logo-monster-yamaha"
+                                                      src={process.env.PUBLIC_URL + "/images/monster-yamaha-logo.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="Monster-Yamaha"
+                                                        variant="outline-warning"
+                                                        onClick={monsterYamahaDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="Monster-Yamaha"
+                                                        variant="outline-warning"
+                                                        onClick={monsterYamahaConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="vr46-card-container">
+                                            <Card.Img variant="top" className="card-logo-vr46"
+                                                      src={process.env.PUBLIC_URL + "/images/Mooney-VR46-2022-Logo.jpg"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="VR46"
+                                                        variant="outline-warning"
+                                                        onClick={vR46Demo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="VR46"
+                                                        variant="outline-warning"
+                                                        onClick={vR46Confirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="ktm-card-container">
+                                            <Card.Img variant="top" className="card-logo-ktm"
+                                                      src={process.env.PUBLIC_URL + "/images/red_bull_ktm-logo.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="KTM"
+                                                        variant="outline-warning"
+                                                        onClick={ktmDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="KTM"
+                                                        variant="outline-warning"
+                                                        onClick={ktmConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="pramac-card-container">
+                                            <Card.Img variant="top" className="card-logo-pramac"
+                                                      src={process.env.PUBLIC_URL + "/images/pramac_racing_logo.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="Pramac"
+                                                        variant="outline-warning"
+                                                        onClick={pramacDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="Pramac"
+                                                        variant="outline-warning"
+                                                        onClick={pramacConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="repsol-card-container">
+                                            <Card.Img variant="top" className="card-logo-repsol"
+                                                      src={process.env.PUBLIC_URL + "/images/Repsol-Honda-Team-logo.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="Repsol"
+                                                        variant="outline-warning"
+                                                        onClick={repsolDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="Repsol"
+                                                        variant="outline-warning"
+                                                        onClick={repsolConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="tech3-card-container">
+                                            <Card.Img variant="top" className="card-logo-ktm"
+                                                      src={process.env.PUBLIC_URL + "/images/tech3-logo.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="Tech3"
+                                                        variant="outline-warning"
+                                                        onClick={tech3Demo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="Tech3"
+                                                        variant="outline-warning"
+                                                        onClick={tech3Confirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="suzuki-card-container">
+                                            <Card.Img variant="top" className="card-logo-suzuki"
+                                                      src={process.env.PUBLIC_URL + "/images/team_suzuki_ecstar_logo.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="Suzuki"
+                                                        variant="outline-warning"
+                                                        onClick={suzukiDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="Suzuki"
+                                                        variant="outline-warning"
+                                                        onClick={suzukiConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                    <SwiperSlide>
+                                        <Card className="withu-card-container">
+                                            <Card.Img variant="top" className="card-logo-withu"
+                                                      src={process.env.PUBLIC_URL + "/images/logo_withu.png"}/>
+                                            <Card.Body className="card-body">
+                                                <div className="card-button-container">
+                                                    <Button
+                                                        id="WithU"
+                                                        variant="outline-warning"
+                                                        onClick={withuDemo}
+                                                    >
+                                                        Demo
+                                                    </Button>
+                                                    <Button
+                                                        id="WithU"
+                                                        variant="outline-warning"
+                                                        onClick={withuConfirm}
+                                                    >
+                                                        Confirm
+                                                    </Button>
+                                                </div>
+                                            </Card.Body>
+                                        </Card>
+                                    </SwiperSlide>
+                                </Swiper>
+                            </div>
+                        </div>
+                    </div>
+                </div>}
         </div>
     );
 }

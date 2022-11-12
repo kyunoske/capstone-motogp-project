@@ -1,5 +1,6 @@
 import React, {FormEvent, useState} from 'react';
 import "./LoginPage.css";
+import {Link} from "react-router-dom";
 
 type LoginPageProps = {
     handleLogin: (username: string, password: string) => void;
@@ -14,6 +15,14 @@ function LoginPage(props: LoginPageProps) {
 
     const [newUsername, setNewUsername] = useState("")
     const [newPassword, setNewPassword] = useState("")
+
+    const handleLoginAndRedirect = () => {
+        props.handleLogin(username, password)
+
+        setTimeout(() => {
+            window.location.href = "/#/"
+        }, 1000)
+    }
 
     return (
         <div className="login-container">
@@ -39,7 +48,6 @@ function LoginPage(props: LoginPageProps) {
                     <button className="login-button" onClick={() => props.handleRegister(newUsername, newPassword)}>Add
                         Admin
                     </button>
-                    <button className="login-button logout-button" onClick={() => props.handleLogout}>Logout</button>
                 </div>
 
                 <div className="login">
@@ -60,9 +68,10 @@ function LoginPage(props: LoginPageProps) {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <button className="login-button" onClick={() => props.handleLogin(username, password)}>Login
+                    <button className="login-button" onClick={
+                        handleLoginAndRedirect
+                    }>Login
                     </button>
-                    <button className="login-button logout-button" onClick={() => props.handleLogout}>Logout</button>
                 </div>
             </div>
         </div>

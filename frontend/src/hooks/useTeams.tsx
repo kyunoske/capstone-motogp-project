@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import axios from "axios";
 import {Team} from "../models/Team";
 import {Rider} from "../models/Rider";
+import toast from "react-hot-toast";
 
 function UseTeams() {
 
@@ -16,31 +17,34 @@ function UseTeams() {
         axios.get("/api/teams")
             .then((response) => response.data)
             .then((teams) => setTeams(teams))
-            .catch((error) => console.log(error));
+            .catch((error) => toast.error(error.message))
     }
 
     const getTeamById = (id: string) => {
         axios.get(`/api/teams/${id}`)
             .then(response => response.data)
-            .catch((error) => console.log(error))
+            .catch((error) => toast.error(error.message))
     }
 
     const addTeam = (team: Team) => {
         axios.post("/api/teams", team)
             .then(getAllTeams)
-            .catch((error) => console.log(error))
+            .then(() => toast.success("A new team has been added!"))
+            .catch((error) => toast.error(error.message))
     }
 
     const deleteTeam = (id: string) => {
         axios.delete("/api/teams/" + id)
             .then(() => getAllTeams())
-            .catch((error) => console.log(error))
+            .then(() => toast.success("Team has been deleted!"))
+            .catch((error) => toast.error(error.message))
     }
 
     const editTeam = (id: string, team: Team) => {
         axios.put(`/api/teams/${id}`, team)
             .then(getAllTeams)
-            .catch((error) => console.log(error))
+            .then(() => toast.success("Team has been edited!"))
+            .catch((error) => toast.error(error.message))
     }
 
     return {getAllTeams, addTeam, getTeamById, teams, team, deleteTeam, editTeam};

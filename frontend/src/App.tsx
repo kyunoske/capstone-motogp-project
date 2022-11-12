@@ -20,6 +20,7 @@ import AdminRiderDetailPage from "./pages/admin/AdminRiderDetailPage";
 import AdminTeamDetailPage from "./pages/admin/AdminTeamDetailPage";
 import AdminTrackDetailPage from "./pages/admin/AdminTrackDetailPage";
 import Protected from "./components/Protected";
+import {Toaster} from "react-hot-toast";
 
 function App() {
 
@@ -27,13 +28,36 @@ function App() {
     const {addRider, riders, rider, deleteRider, editRider} = useRiders();
     const {addTrack, tracks, track, deleteTrack, editTrack} = useTracks();
     const {addArticle, articles, article, deleteArticle, editArticle} = useArticles();
-    const {me, isLoggedIn, handleLogin, handleLogout, handleRegister} = useUser();
+    const {me, user, isLoggedIn, handleLogin, handleLogout, handleRegister} = useUser();
 
     return (
         <div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+                gutter={8}
+                containerClassName=""
+                containerStyle={{}}
+                toastOptions={{
+                    success: {
+                        duration: 3000,
+                        theme: {
+                            primary: 'green',
+                            secondary: 'black',
+                        },
+                    },
+                    error: {
+                        duration: 3000,
+                        theme: {
+                            primary: 'red',
+                            secondary: 'black',
+                        },
+                    },
+                }}
+            />
             <HashRouter>
                 <Routes>
-                    <Route path={"/"} element={<LandingPage/>}/>
+                    <Route path={"/"} element={<LandingPage user={user} isLoggedIn={isLoggedIn}/>}/>
                     <Route path={"/homepage"} element={<HomePage
                         teams={teams}
                         team={team}
