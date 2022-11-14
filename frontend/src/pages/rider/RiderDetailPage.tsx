@@ -40,8 +40,8 @@ function RiderDetailPage(props: RiderDetailPageProps) {
                         <div className="rider-info-last-name">{rider.lastName}</div>
                         <div className="rider-info-team-name">Team: {rider.teamName}</div>
                         <br/>
-                        <div className="rider-info-bike">Bike:{rider.bike}</div>
-                        <div className="rider-info-dob">Place of Birth: {rider.dateOfBirth}</div>
+                        <div className="rider-info-bike">Bike: {rider.bike}</div>
+                        <div className="rider-info-dob">Date of Birth: {rider.dateOfBirth}</div>
                         <div className="rider-info-height">Height: {rider.height}</div>
                         <div className="rider-info-weight">Weight: {rider.weight}</div>
                         <div className="rider-info-debut">MotoGP Debut: {rider.motoGPDebut}</div>

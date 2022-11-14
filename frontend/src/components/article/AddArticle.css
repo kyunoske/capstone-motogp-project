@@ -1,0 +1,4 @@
+.button-group-add-article {
+    display: flex;
+    justify-content: space-between;
+}

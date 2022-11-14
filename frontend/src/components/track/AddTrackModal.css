@@ -1,0 +1,4 @@
+.button-group-add-track {
+    display: flex;
+    justify-content: space-between;
+}

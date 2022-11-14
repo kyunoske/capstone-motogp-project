@@ -1,0 +1,4 @@
+.button-group-add-rider {
+    display: flex;
+    justify-content: space-between;
+}

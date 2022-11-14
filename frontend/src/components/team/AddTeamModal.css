@@ -1,0 +1,4 @@
+.button-group-add-team {
+    display: flex;
+    justify-content: space-between;
+}

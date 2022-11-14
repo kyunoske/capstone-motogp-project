@@ -29,7 +29,7 @@
 }
 
 .track-detail-info-container {
-    color: var(--headings-color);
+    color: var(--track-group-info-color);
     display: flex;
     margin-top: 30px;
     background-image: linear-gradient(to left, var(--team-highlight-color), transparent);
@@ -70,7 +70,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    margin: auto;
+    margin: 30px;
 }
 
 .link-to-homepage {

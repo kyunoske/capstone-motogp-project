@@ -1,4 +1,5 @@
 import React, {FormEvent, useState} from 'react';
+import "./AddRiderModal.css";
 import {Rider} from "../../models/Rider";
 
 type AddRiderModalProps = {
@@ -70,7 +71,7 @@ function AddRiderModal(props: AddRiderModalProps) {
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">Add Team</h5>
+                        <h5 className="modal-title" id="exampleModalLabel">Add Rider</h5>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
@@ -250,7 +251,8 @@ function AddRiderModal(props: AddRiderModalProps) {
                                 placeholder="image4"
                                 onChange={(e) => setImage4(e.target.value)}
                             />
-                            <div className="button-group" style={{display: "flex", justifyContent: "space-evenly"}}>
+                            <div className="button-group-add-rider"
+                                 style={{display: "flex", justifyContent: "space-evenly"}}>
                                 <button type="submit" className="btn btn-success" data-bs-dismiss="modal"
                                         style={{width: "200px"}}>Add Rider
                                 </button>

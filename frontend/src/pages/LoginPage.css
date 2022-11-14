@@ -144,3 +144,7 @@ label {
     transform: scale(.6);
     line-height: 1;
 }
+
+.link-to-admin {
+    text-decoration: none;
+}

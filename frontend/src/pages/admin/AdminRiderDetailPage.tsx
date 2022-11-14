@@ -1,7 +1,7 @@
 import React from 'react';
 import "../rider/RiderDetailPage.css";
 import {Rider} from "../../models/Rider";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import EditRider from "../../components/rider/EditRider";
 import DeleteRider from "../../components/rider/DeleteRider";
 
@@ -29,6 +29,10 @@ function AdminRiderDetailPage(props: AdminRiderDetailPageProps) {
 
     return (
         <div className="rider-info-container">
+            <Link to={"/admin/homepage"} className="link-to-homepage">
+                <button className="btn button-add back-to-homepage-rider">Back to Admin Riders
+                </button>
+            </Link>
             <div className="rider-info-left-right-container">
                 <div className="rider-image-container-left">
                     <img src={rider.riderImage} alt={rider.firstName} className="rider-info-rider-image"/>
@@ -40,8 +44,8 @@ function AdminRiderDetailPage(props: AdminRiderDetailPageProps) {
                         <div className="rider-info-last-name">{rider.lastName}</div>
                         <div className="rider-info-team-name">Team: {rider.teamName}</div>
                         <br/>
-                        <div className="rider-info-bike">Bike:{rider.bike}</div>
-                        <div className="rider-info-dob">Place of Birth: {rider.dateOfBirth}</div>
+                        <div className="rider-info-bike">Bike: {rider.bike}</div>
+                        <div className="rider-info-dob">Date of Birth: {rider.dateOfBirth}</div>
                         <div className="rider-info-height">Height: {rider.height}</div>
                         <div className="rider-info-weight">Weight: {rider.weight}</div>
                         <div className="rider-info-debut">MotoGP Debut: {rider.motoGPDebut}</div>

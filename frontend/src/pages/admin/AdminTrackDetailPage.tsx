@@ -2,7 +2,7 @@ import React from 'react';
 import "../track/TrackDetailPage.css";
 import ReactPlayer from "react-player/youtube";
 import {Track} from "../../models/Track";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import EditTrack from "../../components/track/EditTrack";
 import DeleteTrack from "../../components/track/DeleteTrack";
 
@@ -31,6 +31,10 @@ function AdminTrackDetailPage(props: AdminTrackDetailPageProps) {
 
     return (
         <div className="track-detail-container">
+            <Link to={"/admin/homepage"} className="link-to-homepage">
+                <button className="btn button-add back-to-homepage-rider">Back to Admin Tracks
+                </button>
+            </Link>
             <div className="track-detail-grand-prix-name">
                 {track.grandPrixName}
             </div>

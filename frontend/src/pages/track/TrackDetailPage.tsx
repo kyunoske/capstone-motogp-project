@@ -3,8 +3,6 @@ import "./TrackDetailPage.css";
 import ReactPlayer from "react-player/youtube";
 import {Track} from "../../models/Track";
 import {Link, useParams} from "react-router-dom";
-import EditTrack from "../../components/track/EditTrack";
-import DeleteTrack from "../../components/track/DeleteTrack";
 
 type TrackDetailPageProps = {
     track: Track;

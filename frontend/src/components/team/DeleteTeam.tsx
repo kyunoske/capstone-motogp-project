@@ -50,7 +50,7 @@ function DeleteTeam(props: DeleteTeamProps) {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
-                        Are you sure you want to delete {findTeam.name}?
+                        Are you sure you want to delete <span style={{color: "red"}}> {findTeam.name}</span>?
                     </div>
                     <div className="modal-footer">
                         <button
