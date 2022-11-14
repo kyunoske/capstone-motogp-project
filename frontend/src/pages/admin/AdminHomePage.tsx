@@ -12,8 +12,7 @@ import AddTrackModal from "../../components/track/AddTrackModal";
 import ArticleGallery from "../article/ArticleGallery";
 import {Article} from "../../models/Article";
 import AddArticle from "../../components/article/AddArticle";
-import {User} from "../../models/User";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 type AdminHomePageProps = {
     team: Team;
@@ -29,6 +28,7 @@ type AdminHomePageProps = {
     articles: Article[];
     addArticle: (article: Article) => void;
     handleLogout: () => void;
+    isLoading: boolean;
 }
 
 function AdminHomePage(props: AdminHomePageProps) {
@@ -64,7 +64,7 @@ function AdminHomePage(props: AdminHomePageProps) {
                             Mode
                         </button>
                     </Link>
-                    <ArticleGallery articles={props.articles}/>
+                    <ArticleGallery articles={props.articles} isLoading={props.isLoading}/>
                     <AddArticle article={props.article} addArticle={props.addArticle}/>
                     <button type="button"
                             className="btn btn-secondary"
@@ -83,7 +83,7 @@ function AdminHomePage(props: AdminHomePageProps) {
                     </button>
                 </div>
                 <div className="tab-pane fade container" id="riders">
-                    <RiderGallery riders={props.riders}/>
+                    <RiderGallery riders={props.riders} isLoading={props.isLoading}/>
                     <AddRiderModal rider={props.rider} addRider={props.addRider}/>
                     <button type="button"
                             className="btn btn-secondary"
@@ -102,7 +102,7 @@ function AdminHomePage(props: AdminHomePageProps) {
                     </button>
                 </div>
                 <div className="tab-pane container fade" id="teams">
-                    <TeamGallery teams={props.teams}/>
+                    <TeamGallery teams={props.teams} isLoading={props.isLoading}/>
                     <AddTeamModal team={props.team} addTeam={props.addTeam}/>
                     <button type="button"
                             className="btn btn-secondary"
@@ -121,7 +121,7 @@ function AdminHomePage(props: AdminHomePageProps) {
                     </button>
                 </div>
                 <div className="tab-pane container fade" id="tracks">
-                    <TrackGallery tracks={props.tracks}/>
+                    <TrackGallery tracks={props.tracks} isLoading={props.isLoading}/>
                     <AddTrackModal track={props.track} addTrack={props.addTrack}/>
                     <button type="button"
                             className="btn btn-secondary"

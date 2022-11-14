@@ -3,9 +3,11 @@ import "./ArticleGallery.css";
 import {Article} from "../../models/Article";
 import ArticleCard from "../../components/article/ArticleCard";
 import {Link} from "react-router-dom";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 type ArticleGalleryProps = {
     articles: Article[];
+    isLoading: boolean;
 }
 
 function ArticleGallery(props: ArticleGalleryProps) {
@@ -28,7 +30,7 @@ function ArticleGallery(props: ArticleGalleryProps) {
 
             <div className="article-gallery-container">
                 {filteredArticles.map((article, index) =>
-                    <ArticleCard article={article} key={index}/>
+                    <ArticleCard article={article} key={index} isLoading={props.isLoading}/>
                 )}
             </div>
         </div>

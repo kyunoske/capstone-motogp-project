@@ -1,6 +1,7 @@
 import React from 'react';
 import {Article} from "../../models/Article";
 import {useNavigate, useParams} from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner";
 
 type DeleteArticleProps = {
     article: Article;
@@ -25,7 +26,7 @@ function DeleteArticle(props: DeleteArticleProps) {
         return (<>Sorry no article found!</>)
     }
     if (id === undefined) {
-        return (<>Article not found with this id!</>)
+        return <LoadingSpinner/>
     }
 
     const handleRoute = () => {

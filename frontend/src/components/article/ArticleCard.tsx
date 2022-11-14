@@ -2,9 +2,11 @@ import React from 'react';
 import "./ArticleCard.css";
 import {Article} from "../../models/Article";
 import {Link} from "react-router-dom";
+import LoadingSpinner from "../LoadingSpinner";
 
 type ArticleCardProps = {
     article: Article;
+    isLoading: boolean;
 }
 
 function ArticleCard(props: ArticleCardProps) {

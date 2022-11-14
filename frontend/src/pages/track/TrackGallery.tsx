@@ -3,9 +3,11 @@ import "./TrackGallery.css";
 import {Track} from "../../models/Track";
 import TrackCard from "../../components/track/TrackCard";
 import {Link} from "react-router-dom";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 type TrackGalleryProps = {
     tracks: Track[];
+    isLoading: boolean;
 }
 
 function TrackGallery(props: TrackGalleryProps) {

@@ -3,9 +3,11 @@ import "./TeamGallery.css";
 import {Team} from "../../models/Team";
 import TeamCard from "../../components/team/TeamCard";
 import {Link} from "react-router-dom";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 type TeamGalleryProps = {
     teams: Team[];
+    isLoading: boolean;
 }
 
 function TeamGallery(props: TeamGalleryProps) {
