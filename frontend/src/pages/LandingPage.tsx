@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./LandingPage.css";
 import {Button, Card} from "react-bootstrap";
 import {Link, useNavigate} from "react-router-dom";
@@ -21,12 +21,6 @@ function LandingPage(props: LandingPageProps) {
     const navigateToHomePage = () => {
         navigate(`/homepage`)
     }
-
-    // const [isLoggedIn, setIsLoggedIn] = useState(t)
-    //
-    // if (props.user && isLoggedIn) {
-    //     setIsLoggedIn(true)
-    // }
 
     const apriliaDemo = () => {
         document.body.setAttribute("data-theme", "light-theme")
@@ -143,7 +137,8 @@ function LandingPage(props: LandingPageProps) {
                     <div className="admin-only">
                         <h1 className="h1-fade-in"> Welcome Admin</h1>
                         <Link to={`admin/homepage`}>
-                            <button type="button" className="btn btn-primary">To Admin Homepage</button>
+                            <button type="button" className="btn admin-only-button-landing-page">To Admin Homepage
+                            </button>
                         </Link>
                     </div>
                     <div className="justify-content-center">

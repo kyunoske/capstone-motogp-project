@@ -45,6 +45,7 @@
     align-items: center;
     font-size: xx-large;
     text-align: center;
+    color: var(--team-detail-championships-wins-color);
 }
 
 .team-championship-container {
@@ -54,16 +55,10 @@
     background-image: linear-gradient(to left, var(--alt-headings-color), transparent);
 }
 
-.team-championship-number {
-}
-
 .team-wins-container {
     width: 100%;
     height: 100px;
     background-image: linear-gradient(to left, var(--alt-headings-color), transparent);
-}
-
-.team-wins-number {
 }
 
 .team-info-description-container {

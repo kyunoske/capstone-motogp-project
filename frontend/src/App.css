@@ -15,6 +15,10 @@
     --alt-side-color-article-detail: #000000;
     --article-title-gallery-color: #000000;
     --bottom-border-tabs: 5px solid #52cc00;
+    --rider-detail-text-color: #000000;
+    --rider-detail-championships-wins-color: #000000;
+    --team-detail-championships-wins-color: #000000;
+    --track-group-info-color: #000000;
 }
 
 body[data-theme="ducati-theme"] {
@@ -34,6 +38,10 @@ body[data-theme="ducati-theme"] {
     --alt-side-color-article-detail: red;
     --article-title-gallery-color: red;
     --bottom-border-tabs: 5px solid red;
+    --rider-detail-text-color: #ffffff;
+    --rider-detail-championships-wins-color: #ffffff;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #ffffff;
 }
 
 body[data-theme="gresini-theme"] {
@@ -52,7 +60,11 @@ body[data-theme="gresini-theme"] {
     --alt-color-article-detail-title: #ffffff;
     --alt-side-color-article-detail: #ffffff;;
     --article-title-gallery-color: #000000;
-    --bottom-border-tabs: #000000;
+    --bottom-border-tabs: 5px solid #000000;
+    --rider-detail-text-color: #000000;
+    --rider-detail-championships-wins-color: #000000;
+    --team-detail-championships-wins-color: #000000;
+    --track-group-info-color: #000000;
 }
 
 body[data-theme="lcr-theme"] {
@@ -71,7 +83,11 @@ body[data-theme="lcr-theme"] {
     --alt-color-article-detail-title: #BF9D3E;
     --alt-side-color-article-detail: #BF9D3E;
     --article-title-gallery-color: #BF9D3E;
-    --bottom-border-tabs: #BF9D3E;
+    --bottom-border-tabs: 5px solid #BF9D3E;
+    --rider-detail-text-color: #000000;
+    --rider-detail-championships-wins-color: #ffffff;
+    --team-detail-championships-wins-color: #000000;
+    --track-group-info-color: #000000;
 }
 
 body[data-theme="yamaha-theme"] {
@@ -91,6 +107,10 @@ body[data-theme="yamaha-theme"] {
     --alt-side-color-article-detail: #0A2D82;
     --article-title-gallery-color: #95D600;
     --bottom-border-tabs: 5px solid #95D600;
+    --rider-detail-text-color: #ffffff;
+    --rider-detail-championships-wins-color: #ffffff;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #ffffff;
 }
 
 body[data-theme="vr46-theme"] {
@@ -110,6 +130,10 @@ body[data-theme="vr46-theme"] {
     --alt-side-color-article-detail: #FFBF00;
     --article-title-gallery-color: #FFBF00;
     --bottom-border-tabs: 5px solid #ffff00;
+    --rider-detail-text-color: #ffffff;
+    --rider-detail-championships-wins-color: #FFBF00;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #ffffff;
 }
 
 body[data-theme="ktm-theme"] {
@@ -129,6 +153,10 @@ body[data-theme="ktm-theme"] {
     --alt-side-color-article-detail: #F2771A;
     --article-title-gallery-color: #F2771A;
     --bottom-border-tabs: 5px solid #F2771A;
+    --rider-detail-text-color: #ffffff;
+    --rider-detail-championships-wins-color: #ffffff;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #ffffff;
 }
 
 body[data-theme="pramac-theme"] {
@@ -148,6 +176,10 @@ body[data-theme="pramac-theme"] {
     --alt-side-color-article-detail: rebeccapurple;
     --article-title-gallery-color: rebeccapurple;
     --bottom-border-tabs: 5px solid red;
+    --rider-detail-text-color: #000000;
+    --rider-detail-championships-wins-color: red;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #000000;
 }
 
 body[data-theme="repsol-theme"] {
@@ -167,6 +199,10 @@ body[data-theme="repsol-theme"] {
     --alt-side-color-article-detail: #f6a60e;
     --article-title-gallery-color: #f6a60e;
     --bottom-border-tabs: 5px solid #e3192f;
+    --rider-detail-text-color: #000000;
+    --rider-detail-championships-wins-color: #e3192f;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #000000;
 }
 
 body[data-theme="tech3-theme"] {
@@ -186,6 +222,10 @@ body[data-theme="tech3-theme"] {
     --alt-side-color-article-detail: #F2771A;
     --article-title-gallery-color: #F2771A;
     --bottom-border-tabs: 5px solid #F2771A;
+    --rider-detail-text-color: #ffffff;
+    --rider-detail-championships-wins-color: #ffffff;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #ffffff;
 }
 
 body[data-theme="suzuki-theme"] {
@@ -205,6 +245,10 @@ body[data-theme="suzuki-theme"] {
     --alt-side-color-article-detail: #2A52BE;
     --article-title-gallery-color: #2A52BE;
     --bottom-border-tabs: 5px solid #2A52BE;
+    --rider-detail-text-color: #ffffff;
+    --rider-detail-championships-wins-color: #ffffff;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #ffffff;
 }
 
 body[data-theme="withu-theme"] {
@@ -224,6 +268,10 @@ body[data-theme="withu-theme"] {
     --alt-side-color-article-detail: #000000;
     --article-title-gallery-color: #000000;
     --bottom-border-tabs: 5px solid #000000;
+    --rider-detail-text-color: #ffffff;
+    --rider-detail-championships-wins-color: #ffffff;
+    --team-detail-championships-wins-color: #ffffff;
+    --track-group-info-color: #ffffff;
 }
 
 body {

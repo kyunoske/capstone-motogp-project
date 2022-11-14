@@ -40,14 +40,14 @@ function App() {
                 containerStyle={{}}
                 toastOptions={{
                     success: {
-                        duration: 3000,
+                        duration: 1500,
                         theme: {
                             primary: 'green',
                             secondary: 'black',
                         },
                     },
                     error: {
-                        duration: 3000,
+                        duration: 2000,
                         theme: {
                             primary: 'red',
                             secondary: 'black',

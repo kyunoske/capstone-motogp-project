@@ -266,8 +266,30 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    animation: fadeIn 5s
 }
 
 .h1-fade-in {
-    animation: fadeIn 5s
+    color: var(--headings-color);
+}
+
+.admin-only-button-landing-page {
+    border: var(--team-button-border);
+    background-color: var(--team-button-background);
+    color: var(--team-button-color);
+}
+
+:hover.admin-only-button-landing-page {
+    border: var(--team-button-alt-border);
+    background-color: var(--team-button-alt-background);
+    color: var(--team-alt-button-color);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
