@@ -27,7 +27,7 @@ function App() {
     const {addTeam, teams, team, deleteTeam, editTeam} = useTeams();
     const {addRider, riders, rider, deleteRider, editRider} = useRiders();
     const {addTrack, tracks, track, deleteTrack, editTrack} = useTracks();
-    const {addArticle, articles, article, deleteArticle, editArticle} = useArticles();
+    const {addArticle, articles, article, deleteArticle, editArticle, isLoading} = useArticles();
     const {me, user, isLoggedIn, handleLogin, handleLogout, handleRegister} = useUser();
 
     return (
@@ -67,6 +67,7 @@ function App() {
                         track={track}
                         articles={articles}
                         article={article}
+                        isLoading={isLoading}
                     />}/>
 
                     <Route path={"/riders/:id"} element={<RiderDetailPage
@@ -111,6 +112,7 @@ function App() {
                                 article={article}
                                 addArticle={addArticle}
                                 handleLogout={handleLogout}
+                                isLoading={isLoading}
                             />
                         }/>
 

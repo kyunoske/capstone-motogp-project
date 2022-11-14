@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import "./RiderGallery.css";
 import {Rider} from "../../models/Rider";
 import RiderCard from "../../components/rider/RiderCard";
-import {Team} from "../../models/Team";
 import {Link} from "react-router-dom";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 type RiderGalleryProps = {
     riders: Rider[];
+    isLoading: boolean;
 }
 
 function RiderGallery(props: RiderGalleryProps) {

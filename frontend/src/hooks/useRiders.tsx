@@ -7,22 +7,27 @@ function UseRiders() {
 
     let rider!: Rider;
     const [riders, setRiders] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         getAllRiders()
     }, [])
 
     const getAllRiders = () => {
+        setIsLoading(true);
         axios.get("/api/riders")
             .then((response) => response.data)
             .then((riders) => setRiders(riders))
             .catch((error) => toast.error(error.message));
+        setIsLoading(false);
     }
 
     const getRiderById = (id: string) => {
+        setIsLoading(true);
         axios.get(`/api/riders/${id}`)
             .then(response => response.data)
             .catch((error) => toast.error(error.message))
+        setIsLoading(false);
     }
 
     const addRider = (rider: Rider) => {

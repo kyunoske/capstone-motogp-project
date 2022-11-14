@@ -8,6 +8,7 @@ function UseArticles() {
     let article!: Article;
 
     const [articles, setArticles] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         getAllArticles()
@@ -18,12 +19,14 @@ function UseArticles() {
             .then((response) => response.data)
             .then((articles) => setArticles(articles))
             .catch((error) => toast.error(error.message))
+        setIsLoading(false)
     }
 
     const getArticleById = (id: string) => {
         axios.get(`/api/articles/${id}`)
             .then(response => response.data)
             .catch((error) => toast.error(error.message))
+        setIsLoading(false)
     }
 
     const addArticle = (article: Article) => {
@@ -47,7 +50,7 @@ function UseArticles() {
             .catch((error) => toast.error(error.message))
     }
 
-    return {article, articles, getAllArticles, getArticleById, addArticle, deleteArticle, editArticle};
+    return {article, articles, getAllArticles, getArticleById, addArticle, deleteArticle, editArticle, isLoading};
 }
 
 export default UseArticles;

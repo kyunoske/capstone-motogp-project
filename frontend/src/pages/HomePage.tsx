@@ -8,6 +8,7 @@ import TrackGallery from "./track/TrackGallery";
 import {Track} from "../models/Track";
 import ArticleGallery from "./article/ArticleGallery";
 import {Article} from "../models/Article";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 type HomePageProps = {
     team: Team;
@@ -18,6 +19,7 @@ type HomePageProps = {
     tracks: Track[];
     article: Article;
     articles: Article[];
+    isLoading: boolean;
 }
 
 function HomePage(props: HomePageProps) {
@@ -44,16 +46,24 @@ function HomePage(props: HomePageProps) {
 
             <div className="tab-content">
                 <div className="tab-pane container active" id="news">
-                    <ArticleGallery articles={props.articles}/>
+
+                    <ArticleGallery articles={props.articles} isLoading={props.isLoading}/>
+
                 </div>
                 <div className="tab-pane fade container" id="riders">
-                    <RiderGallery riders={props.riders}/>
+
+                    <RiderGallery riders={props.riders} isLoading={props.isLoading}/>
+
                 </div>
                 <div className="tab-pane container fade" id="teams">
-                    <TeamGallery teams={props.teams}/>
+
+                    <TeamGallery teams={props.teams} isLoading={props.isLoading}/>
+
                 </div>
                 <div className="tab-pane container fade" id="tracks">
-                    <TrackGallery tracks={props.tracks}/>
+
+                    <TrackGallery tracks={props.tracks} isLoading={props.isLoading}/>
+
                 </div>
 
             </div>
