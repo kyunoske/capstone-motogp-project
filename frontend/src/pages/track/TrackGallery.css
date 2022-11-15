@@ -5,6 +5,12 @@
     margin-top: 30px;
 }
 
+.track-gallery-mapped-cards {
+    display: flex;
+    flex-flow: wrap;
+    margin: auto;
+}
+
 .link-to-themes {
     display: flex;
     text-decoration: none;
@@ -38,7 +44,9 @@
 
     .track-gallery-mapped-cards {
         justify-content: center;
-        margin-left: 10px;
     }
 
+    .link-to-themes {
+        margin-right: 15px;
+    }
 }
