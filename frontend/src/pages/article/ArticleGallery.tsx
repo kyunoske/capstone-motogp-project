@@ -23,7 +23,7 @@ function ArticleGallery(props: ArticleGalleryProps) {
                     </button>
                 </Link>
                 <div className="input-group input-group-sm mb-3" style={{width: "50%"}}>
-                    <input style={{width: "80%", borderRadius: "5px"}} type="text" placeholder="Find a rider..."
+                    <input style={{width: "80%", borderRadius: "5px"}} type="text" placeholder="Find an article..."
                            onChange={(event) => setData(event.target.value)}/>
                 </div>
             </div>
