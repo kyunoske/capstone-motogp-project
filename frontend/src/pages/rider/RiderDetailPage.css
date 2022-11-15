@@ -134,6 +134,8 @@
     }
 
     .rider-image-container-left {
+        display: flex;
+        flex-direction: column;
         width: 100%;
     }
 
@@ -143,11 +145,21 @@
 
     .rider-info {
         margin-top: 20px;
+        margin-left: 10px;
+        margin-bottom: 10px;
     }
 
     .rider-championships-wins-right {
         width: 100%;
         margin-top: 20px;
-        font-size: 30px;
+        font-size: calc(24px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    }
+
+    .rider-championship-title {
+        margin-top: 10px;
+    }
+
+    .rider-wins-title {
+        margin-top: 10px;
     }
 }

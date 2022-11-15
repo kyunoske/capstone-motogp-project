@@ -114,7 +114,7 @@
     }
 
     .back-to-homepage-track {
-        width: 40%;
+        width: 42%;
     }
 
     .track-detail-image-video-container {
@@ -124,6 +124,8 @@
 
     .track-detail-image-container {
         width: 100%;
+        font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+
     }
 
     .track-detail-video {
@@ -133,6 +135,19 @@
 
     .track-detail-info-container {
         margin-top: 20px;
+        margin-left: 5px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .track-detail-info-left {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .track-detail-info-right {
+        width: 100%;
+        margin-bottom: 5px;
     }
 
     .track-info-description-container {
