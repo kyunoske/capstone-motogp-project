@@ -21,6 +21,7 @@ import AdminTeamDetailPage from "./pages/admin/AdminTeamDetailPage";
 import AdminTrackDetailPage from "./pages/admin/AdminTrackDetailPage";
 import Protected from "./components/Protected";
 import {Toaster} from "react-hot-toast";
+import GoToTop from "./components/GoToTop";
 
 function App() {
 
@@ -154,7 +155,7 @@ function App() {
                         }/>
                     </Route>
                 </Routes>
-
+                <GoToTop/>
             </HashRouter>
             <Footer/>
         </div>
