@@ -11,6 +11,12 @@
     margin-left: 15px;
 }
 
+.team-gallery-mapped-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
 .back-to-themes-team {
     width: 100%;
     max-height: 38px;
@@ -27,4 +33,17 @@
     border: var(--team-button-alt-border);
     background-color: var(--team-button-alt-background);
     color: var(--team-alt-button-color);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .team-input-container {
+        justify-content: space-between;
+    }
+
+    .team-gallery-mapped-cards {
+        justify-content: center;
+    }
+
 }

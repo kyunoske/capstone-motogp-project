@@ -110,3 +110,44 @@
     background-color: var(--team-button-alt-background);
     color: var(--team-alt-button-color);
 }
+
+@media only screen and (max-width: 600px) {
+
+    .rider-info-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .link-to-homepage-rider {
+        width: 150px;
+    }
+
+    .back-to-homepage-rider {
+        width: 90%;
+    }
+
+    .rider-info-left-right-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rider-image-container-left {
+        width: 100%;
+    }
+
+    .rider-info-rider-image {
+        max-height: 410px;
+    }
+
+    .rider-info {
+        margin-top: 20px;
+    }
+
+    .rider-championships-wins-right {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 30px;
+    }
+}

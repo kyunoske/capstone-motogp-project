@@ -58,3 +58,23 @@
     justify-content: space-around;
     margin: 30px;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .article-detail-container-image-text {
+        width: 90%;
+    }
+
+    .track-detail-grand-prix-name {
+        font-size: 30px;
+    }
+
+    .span-filler-left-side {
+        width: 5%;
+    }
+
+    .span-filler-right-side {
+        width: 5%;
+    }
+}

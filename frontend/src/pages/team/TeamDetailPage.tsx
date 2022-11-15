@@ -28,7 +28,7 @@ function TeamDetailPage(props: TeamDetailPageProps) {
 
     return (
         <div className="team-detail-info-container">
-            <Link to={"/homepage"} className="link-to-themes">
+            <Link to={"/homepage"} className="link-to-homepage-team">
                 <button className="btn button-add back-to-homepage-team">Back to Teams
                 </button>
             </Link>

@@ -28,7 +28,7 @@ function RiderGallery(props: RiderGalleryProps) {
                 </div>
             </div>
 
-            <div style={{display: "flex", flexWrap: "wrap", margin: "auto"}}>
+            <div className="rider-gallery-mapped-cards">
                 {filteredRiders.map((rider, index) =>
                     <RiderCard rider={rider} key={index}/>
                 )}

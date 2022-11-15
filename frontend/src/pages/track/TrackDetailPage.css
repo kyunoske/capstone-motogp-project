@@ -95,3 +95,47 @@
     background-color: var(--team-button-alt-background);
     color: var(--team-alt-button-color);
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .track-detail-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .article-detail-title {
+        font-size: 22px;
+    }
+
+    .link-to-homepage-track {
+        width: 150px;
+        margin-left: 0;
+    }
+
+    .back-to-homepage-track {
+        width: 40%;
+    }
+
+    .track-detail-image-video-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .track-detail-image-container {
+        width: 100%;
+    }
+
+    .track-detail-video {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .track-detail-info-container {
+        margin-top: 20px;
+    }
+
+    .track-info-description-container {
+        margin-top: 20px;
+    }
+}

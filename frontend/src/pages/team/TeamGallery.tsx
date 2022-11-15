@@ -29,7 +29,7 @@ function TeamGallery(props: TeamGalleryProps) {
                 </div>
             </div>
 
-            <div style={{display: "flex", flexWrap: "wrap", margin: "auto"}}>
+            <div className="team-gallery-mapped-cards">
                 {filteredTeams.map((team, index) =>
                     <TeamCard team={team} key={index}/>
                 )}

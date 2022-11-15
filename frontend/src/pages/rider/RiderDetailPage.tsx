@@ -25,7 +25,7 @@ function RiderDetailPage(props: RiderDetailPageProps) {
 
     return (
         <div className="rider-info-container">
-            <Link to={"/homepage"} className="link-to-homepage">
+            <Link to={"/homepage"} className="link-to-homepage-rider">
                 <button className="btn button-add back-to-homepage-rider">Back to Riders
                 </button>
             </Link>

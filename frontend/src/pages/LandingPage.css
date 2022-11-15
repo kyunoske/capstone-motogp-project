@@ -293,3 +293,62 @@
         opacity: 1;
     }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .content-container {
+        margin: 1rem 1rem 0 1rem;
+    }
+
+    .theme-section-title {
+        font-size: 3rem;
+    }
+
+    .upside-down::after {
+        margin-top: -35px;
+    }
+
+    .theme-section-desc {
+        margin-top: 40px;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .theme-buttons {
+        margin-top: 40px;
+        height: 500px;
+    }
+
+    .landing-page-select-theme-text {
+        height: 170px;
+    }
+
+    .select-theme-heading {
+        margin-bottom: 20px;
+    }
+
+    .swiper {
+        position: absolute !important;
+        left: -66px;
+        width: 440px !important;
+        --swiper-navigation-size: 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

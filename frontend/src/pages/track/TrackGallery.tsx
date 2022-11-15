@@ -29,7 +29,7 @@ function TrackGallery(props: TrackGalleryProps) {
                 </div>
             </div>
 
-            <div style={{display: "flex", flexWrap: "wrap", margin: "auto"}}>
+            <div className="track-gallery-mapped-cards">
                 {filteredTracks.map((track, index) =>
                     <TrackCard track={track} key={index}/>
                 )}

@@ -5,6 +5,12 @@
     margin-top: 30px;
 }
 
+.rider-gallery-mapped-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
 .link-to-themes {
     display: flex;
     text-decoration: none;
@@ -27,4 +33,17 @@
     border: var(--team-button-alt-border);
     background-color: var(--team-button-alt-background);
     color: var(--team-alt-button-color);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    rider-input-container {
+        justify-content: space-between;
+    }
+
+    .rider-gallery-mapped-cards {
+        justify-content: center;
+    }
+
 }

@@ -27,7 +27,7 @@ function TrackDetailPage(props: TrackDetailPageProps) {
 
     return (
         <div className="track-detail-container">
-            <Link to={"/homepage"} className="link-to-homepage">
+            <Link to={"/homepage"} className="link-to-homepage-track">
                 <button className="btn button-add back-to-homepage-track">Back to Tracks
                 </button>
             </Link>
