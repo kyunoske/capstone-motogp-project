@@ -208,7 +208,7 @@ body[data-theme="repsol-theme"] {
 body[data-theme="tech3-theme"] {
     --bg-color: #000000;
     --headings-color: #ffffff;
-    --alt-headings-color: #000000;
+    --alt-headings-color: #F2771A;
     --desc-color: #F2771A;
     --border-bottom: 5px solid #F2771A;
     --team-highlight-color: #F2771A;
