@@ -10,8 +10,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -134,5 +136,93 @@ class TeamControllerTest {
                                 .content(requestBody))
                 .andExpect(status().isOk())
                 .andExpect(content().json(expectedJSON));
+    }
+
+    @Test
+    void editTeam_shouldEditTeamWithId() throws Exception {
+
+        // GIVEN
+        when(idService.generateId()).thenReturn("1");
+
+        String requestBody = """
+                {
+                            "id": "1",
+                            "name": "Ducati",
+                            "description": "yup",
+                            "logo": "logo",
+                            "rider1": "1",
+                            "rider2": "1",
+                            "rider3": "1",
+                            "image1":"1",
+                            "image2":"2",
+                            "image3":"3",
+                            "image4":"4",
+                            "image5":"5",
+                            "wins":"10",
+                            "championships": "1"
+                    
+                }
+                """;
+
+        String expectedJSON = """
+                {
+                            "id": "1",
+                            "name": "Ducati",
+                            "description": "yup",
+                            "logo": "logo",
+                            "rider1": "1",
+                            "rider2": "1",
+                            "rider3": "1",
+                            "image1":"1",
+                            "image2":"2",
+                            "image3":"3",
+                            "image4":"4",
+                            "image5":"5",
+                            "wins":"10",
+                            "championships": "1"
+                    
+                }
+                """;
+
+        // WHEN & THEN
+        mockMvc.perform(MockMvcRequestBuilders
+                        .put("/api/teams/{id}", "1")
+                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                        .content(requestBody))
+                .andExpect(status().isOk())
+                .andExpect(content().json(expectedJSON));
+    }
+
+    @Test
+    @WithMockUser(username = "admin", password = "123")
+    void getTeamById_shouldReturnThisTeamById() throws Exception {
+
+        // GIVEN
+        when(idService.generateId()).thenReturn("1");
+
+        motoRepo.save(new Team("1", "Ducati", "yup", "1", "1", "1", "logo", "1", "2", "3", "4", "5", "10", "1"));
+
+        // WHEN & THEN
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/teams/{id}", "1")
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    @WithMockUser(username = "admin", password = "123")
+    void deleteTeam_teamShouldBeDeleted() throws Exception {
+        // GIVEN
+        when(idService.generateId()).thenReturn("1");
+
+        motoRepo.save(new Team("1", "Ducati", "yup", "1", "1", "1", "logo", "1", "2", "3", "4", "5", "10", "1"));
+
+        // WHEN & THEN
+        mockMvc.perform(MockMvcRequestBuilders
+                        .delete("/api/teams/{id}", "1")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
     }
 }
