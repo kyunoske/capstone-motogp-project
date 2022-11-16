@@ -77,4 +77,8 @@
     .span-filler-right-side {
         width: 5%;
     }
+
+    .article-detail-text {
+        padding: 20px 20px;
+    }
 }
