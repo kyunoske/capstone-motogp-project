@@ -44,6 +44,8 @@ class ArticleServiceTest {
 
         // WHEN
         Article actual = service.addArticle(article);
+
+        // THEN
         assertEquals(article, actual);
     }
 

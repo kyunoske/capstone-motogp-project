@@ -10,8 +10,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -167,5 +169,108 @@ class RiderControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().json(expectedJSON));
 
+    }
+
+    @Test
+    void editRider_shouldEditRiderWithId() throws Exception {
+
+        // GIVEN
+        when(idService.generateId()).thenReturn("1");
+
+        String requestBody = """
+                {
+                    "id": "1",
+                    "firstName":"1",
+                    "lastName": "1",
+                    "nameInitials": "1",
+                    "nationality": "1",
+                    "bike": "1",
+                    "bikeNumber": "1",
+                    "teamName": "1",
+                    "dateOfBirth": "1",
+                    "height": "1",
+                    "weight":  "1",
+                    "motoGPDebut": "1",
+                    "description": "1",
+                    "podiums": "1",
+                    "wins": "1",
+                    "championships": "1",
+                    "numOfRacesMotoGP": "1",
+                    "riderImage": "1",
+                    "image1": "1",
+                    "image2": "1",
+                    "image3": "1",
+                    "image4": "1"
+                }
+                """;
+
+        String expectedJSON = """
+                {
+                   "id":"1",
+                   "firstName":"1",
+                   "lastName": "1",
+                   "nameInitials": "1",
+                   "nationality": "1",
+                   "bike": "1",
+                   "bikeNumber": "1",
+                   "teamName": "1",
+                   "dateOfBirth": "1",
+                   "height": "1",
+                   "weight":  "1",
+                   "motoGPDebut": "1",
+                   "description": "1",
+                   "podiums": "1",
+                   "wins": "1",
+                   "championships": "1",
+                   "numOfRacesMotoGP": "1",
+                   "riderImage": "1",
+                   "image1": "1",
+                   "image2": "1",
+                   "image3": "1",
+                   "image4": "1"
+                }
+                """;
+
+
+        // WHEN & THEN
+        mockMvc.perform(MockMvcRequestBuilders
+                        .put("/api/riders/{id}", "1")
+                        .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+                        .content(requestBody))
+                .andExpect(status().isOk())
+                .andExpect(content().json(expectedJSON));
+    }
+
+    @Test
+    @WithMockUser(username = "admin", password = "123")
+    void getRiderById_shouldReturnThisRiderById() throws Exception {
+
+        // GIVEN
+        when(idService.generateId()).thenReturn("1");
+
+        riderRepo.save(new Rider("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
+
+        // WHEN & THEN
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/riders/{id}", "1")
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    @WithMockUser(username = "admin", password = "123")
+    void deleteRider_riderShouldBeDeleted() throws Exception {
+        // GIVEN
+        when(idService.generateId()).thenReturn("1");
+
+        riderRepo.save(new Rider("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1"));
+
+        // WHEN & THEN
+        mockMvc.perform(MockMvcRequestBuilders
+                        .delete("/api/riders/{id}", "1")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
     }
 }
