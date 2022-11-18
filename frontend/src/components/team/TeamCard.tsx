@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 type TeamCardProps = {
     team: Team;
+    isLoggedIn: boolean;
 }
 
 function TeamCard(props: TeamCardProps) {
@@ -17,9 +18,13 @@ function TeamCard(props: TeamCardProps) {
                 <Card.Title></Card.Title>
                 <Card.Text>
                 </Card.Text>
-                <Link style={{width: "100%", marginTop: "auto"}} to={"/teams/" + props.team.id}>
-                    <Button className="team-card-button">More {props.team.name}</Button>
-                </Link>
+                {props.isLoggedIn ?
+                    <Link style={{width: "100%", marginTop: "auto"}} to={"/admin/teams/" + props.team.id}>
+                        <Button className="team-card-button">More {props.team.name}</Button>
+                    </Link> :
+                    <Link style={{width: "100%", marginTop: "auto"}} to={"/teams/" + props.team.id}>
+                        <Button className="team-card-button">More {props.team.name}</Button>
+                    </Link>}
             </Card.Body>
         </Card>
     );

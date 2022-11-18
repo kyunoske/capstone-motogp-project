@@ -2,8 +2,6 @@ import React from 'react';
 import "./TeamDetailPage.css";
 import {Team} from "../../models/Team";
 import {Link, useParams} from "react-router-dom";
-import EditTeam from "../../components/team/EditTeam";
-import DeleteTeam from "../../components/team/DeleteTeam";
 
 type TeamDetailPageProps = {
     teams: Team[];

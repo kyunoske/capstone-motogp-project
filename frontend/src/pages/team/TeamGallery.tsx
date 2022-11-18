@@ -3,11 +3,10 @@ import "./TeamGallery.css";
 import {Team} from "../../models/Team";
 import TeamCard from "../../components/team/TeamCard";
 import {Link} from "react-router-dom";
-import LoadingSpinner from "../../components/LoadingSpinner";
 
 type TeamGalleryProps = {
     teams: Team[];
-    isLoading: boolean;
+    isLoggedIn: boolean;
 }
 
 function TeamGallery(props: TeamGalleryProps) {
@@ -29,9 +28,10 @@ function TeamGallery(props: TeamGalleryProps) {
                 </div>
             </div>
 
+
             <div className="team-gallery-mapped-cards">
                 {filteredTeams.map((team, index) =>
-                    <TeamCard team={team} key={index}/>
+                    <TeamCard team={team} key={index} isLoggedIn={props.isLoggedIn}/>
                 )}
             </div>
         </div>

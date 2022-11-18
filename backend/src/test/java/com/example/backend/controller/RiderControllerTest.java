@@ -175,7 +175,6 @@ class RiderControllerTest {
     void editRider_shouldEditRiderWithId() throws Exception {
 
         // GIVEN
-        when(idService.generateId()).thenReturn("1");
 
         String requestBody = """
                 {
@@ -272,5 +271,14 @@ class RiderControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
+
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/riders")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().json("""
+                                                                                []
+                        """));
     }
 }

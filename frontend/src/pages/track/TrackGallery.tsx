@@ -3,11 +3,10 @@ import "./TrackGallery.css";
 import {Track} from "../../models/Track";
 import TrackCard from "../../components/track/TrackCard";
 import {Link} from "react-router-dom";
-import LoadingSpinner from "../../components/LoadingSpinner";
 
 type TrackGalleryProps = {
     tracks: Track[];
-    isLoading: boolean;
+    isLoggedIn: boolean;
 }
 
 function TrackGallery(props: TrackGalleryProps) {
@@ -31,7 +30,7 @@ function TrackGallery(props: TrackGalleryProps) {
 
             <div className="track-gallery-mapped-cards">
                 {filteredTracks.map((track, index) =>
-                    <TrackCard track={track} key={index}/>
+                    <TrackCard track={track} key={index} isLoggedIn={props.isLoggedIn}/>
                 )}
             </div>
         </div>

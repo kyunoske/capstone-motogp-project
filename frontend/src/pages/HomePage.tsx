@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import "./HomePage.css";
 import {Team} from "../models/Team";
 import TeamGallery from "./team/TeamGallery";
@@ -8,7 +8,6 @@ import TrackGallery from "./track/TrackGallery";
 import {Track} from "../models/Track";
 import ArticleGallery from "./article/ArticleGallery";
 import {Article} from "../models/Article";
-import LoadingSpinner from "../components/LoadingSpinner";
 
 type HomePageProps = {
     team: Team;
@@ -19,7 +18,7 @@ type HomePageProps = {
     tracks: Track[];
     article: Article;
     articles: Article[];
-    isLoading: boolean;
+    isLoggedIn: boolean;
 }
 
 function HomePage(props: HomePageProps) {
@@ -47,22 +46,22 @@ function HomePage(props: HomePageProps) {
             <div className="tab-content">
                 <div className="tab-pane container active" id="news">
 
-                    <ArticleGallery articles={props.articles} isLoading={props.isLoading}/>
+                    <ArticleGallery articles={props.articles} isLoggedIn={props.isLoggedIn}/>
 
                 </div>
                 <div className="tab-pane fade container" id="riders">
 
-                    <RiderGallery riders={props.riders} isLoading={props.isLoading}/>
+                    <RiderGallery riders={props.riders} isLoggedIn={props.isLoggedIn}/>
 
                 </div>
                 <div className="tab-pane container fade" id="teams">
 
-                    <TeamGallery teams={props.teams} isLoading={props.isLoading}/>
+                    <TeamGallery teams={props.teams} isLoggedIn={props.isLoggedIn}/>
 
                 </div>
                 <div className="tab-pane container fade" id="tracks">
 
-                    <TrackGallery tracks={props.tracks} isLoading={props.isLoading}/>
+                    <TrackGallery tracks={props.tracks} isLoggedIn={props.isLoggedIn}/>
 
                 </div>
 

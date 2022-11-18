@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 type RiderCardProps = {
     rider: Rider;
+    isLoggedIn: boolean;
 }
 
 function RiderCard(props: RiderCardProps) {
@@ -19,17 +20,28 @@ function RiderCard(props: RiderCardProps) {
                     <img src={props.rider.nationality} alt={props.rider.nationality} className="rider-flag"/>
                 </Card.Title>
                 <Card.Text className="rider-card-text">
-                    <span>{props.rider.firstName}</span>
+                    <span>{props.rider.firstName}</span>&nbsp;
                     <span><strong>{props.rider.lastName}</strong></span>
                 </Card.Text>
-                <Link style={{width: "100%", marginTop: "auto"}} to={"/riders/" + props.rider.id}>
-                    <Button
-                        variant="primary"
-                        className="rider-card-button"
-                    >
-                        More {props.rider.firstName}
-                    </Button>
-                </Link>
+                {props.isLoggedIn ?
+                    <Link style={{width: "100%", marginTop: "auto"}} to={"/admin/riders/" + props.rider.id}>
+                        <Button
+                            variant="primary"
+                            className="rider-card-button"
+                        >
+                            More {props.rider.firstName}
+                        </Button>
+                    </Link>
+                    :
+                    <Link style={{width: "100%", marginTop: "auto"}} to={"/riders/" + props.rider.id}>
+                        <Button
+                            variant="primary"
+                            className="rider-card-button"
+                        >
+                            More {props.rider.firstName}
+                        </Button>
+                    </Link>
+                }
             </Card.Body>
         </Card>
     );
