@@ -102,7 +102,6 @@ class ArticleControllerTest {
     void editArticle_shouldEditArticleWithId() throws Exception {
 
         // GIVEN
-        when(idService.generateId()).thenReturn("1");
 
         String requestBody = """
                     {
@@ -142,7 +141,6 @@ class ArticleControllerTest {
     void getArticleById_shouldReturnThisArticleById() throws Exception {
 
         // GIVEN
-        when(idService.generateId()).thenReturn("1");
 
         articleRepo.save(new Article("1", "1", "1", "1", "1", "1", "1"));
 
@@ -158,7 +156,6 @@ class ArticleControllerTest {
     @WithMockUser(username = "admin", password = "123")
     void deleteArticle_shouldBeDeleted() throws Exception {
         // GIVEN
-        when(idService.generateId()).thenReturn("1");
 
         articleRepo.save(new Article("1", "1", "1", "1", "1", "1", "1"));
 
@@ -168,5 +165,14 @@ class ArticleControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
+
+        mockMvc.perform(MockMvcRequestBuilders
+                        .get("/api/articles")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().json("""
+                                                                                []
+                        """));
     }
 }

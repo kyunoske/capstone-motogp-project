@@ -3,11 +3,10 @@ import "./RiderGallery.css";
 import {Rider} from "../../models/Rider";
 import RiderCard from "../../components/rider/RiderCard";
 import {Link} from "react-router-dom";
-import LoadingSpinner from "../../components/LoadingSpinner";
 
 type RiderGalleryProps = {
     riders: Rider[];
-    isLoading: boolean;
+    isLoggedIn: boolean;
 }
 
 function RiderGallery(props: RiderGalleryProps) {
@@ -30,7 +29,7 @@ function RiderGallery(props: RiderGalleryProps) {
 
             <div className="rider-gallery-mapped-cards">
                 {filteredRiders.map((rider, index) =>
-                    <RiderCard rider={rider} key={index}/>
+                    <RiderCard rider={rider} key={index} isLoggedIn={props.isLoggedIn}/>
                 )}
             </div>
         </div>

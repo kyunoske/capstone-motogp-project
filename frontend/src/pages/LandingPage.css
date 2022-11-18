@@ -228,9 +228,14 @@
 
 .swiper {
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
     --swiper-navigation-color: var(--team-highlight-color);
+    --swiper-navigation-size: 30px;
+}
+
+.swiper-wrapper {
+    height: auto;
 }
 
 .swiper-slide {
@@ -322,7 +327,7 @@
 
     .swiper {
         position: absolute !important;
-        left: -100px;
+        left: -86px;
         width: 440px !important;
         --swiper-navigation-size: 0;
     }

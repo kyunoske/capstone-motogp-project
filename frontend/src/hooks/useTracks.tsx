@@ -1,34 +1,28 @@
 import {useEffect, useState} from 'react';
 import {Track} from "../models/Track";
 import axios from "axios";
-import {Article} from "../models/Article";
 import toast from "react-hot-toast";
 
 function UseTracks() {
 
     let track!: Track;
     const [tracks, setTracks] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         getAllTracks()
     }, [])
 
     const getAllTracks = () => {
-        setIsLoading(true)
         axios.get("/api/tracks")
             .then((response) => response.data)
             .then((tracks) => setTracks(tracks))
             .catch((error) => toast.error(error.message))
-        setIsLoading(false)
     }
 
     const getTrackById = (id: string) => {
-        setIsLoading(true)
         axios.get(`/api/tracks/${id}`)
             .then(response => response.data)
             .catch((error) => toast.error(error.message))
-        setIsLoading(false)
     }
 
     const addTrack = (track: Track) => {
@@ -51,7 +45,6 @@ function UseTracks() {
             .then(() => toast.success("Track has been edited!"))
             .catch((error) => toast.error(error.message))
     }
-
 
     return {getAllTracks, getTrackById, addTrack, tracks, track, deleteTrack, editTrack};
 }

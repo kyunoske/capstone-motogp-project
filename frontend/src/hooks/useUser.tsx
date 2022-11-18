@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useState} from 'react';
 import axios from "axios";
 import toast from "react-hot-toast";
 import {User} from "../models/User";
@@ -8,13 +8,13 @@ function UseUser() {
     let user!: User;
 
     const [me, setMe] = useState<User | undefined>()
-    const [isLoggedIn, setisLoggedIn] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     const handleLogin = (username: string, password: string) => {
         axios.get("/api/user/login", {auth: {username, password}})
             .then((response) => response.data)
             .then((data) => setMe(data))
-            .then(() => setisLoggedIn(true))
+            .then(() => setIsLoggedIn(true))
             .then(() => toast.success("You are logged in!"))
             .catch(() => toast.error("username or password are incorrect"))
     }
@@ -22,7 +22,7 @@ function UseUser() {
     const handleLogout = () => {
         axios.get("/api/user/logout")
             .then(() => setMe(undefined))
-            .then(() => setisLoggedIn(false))
+            .then(() => setIsLoggedIn(false))
             .then(() => toast.success("You are logged out!"))
             .catch((error) => toast.error(error.message))
     }

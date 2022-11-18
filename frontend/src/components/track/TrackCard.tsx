@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 type TrackCardProps = {
     track: Track;
+    isLoggedIn: boolean;
 }
 
 function TrackCard(props: TrackCardProps) {
@@ -19,9 +20,13 @@ function TrackCard(props: TrackCardProps) {
                     {props.track.country}&nbsp;
                     <img src={props.track.countryFlag} alt={props.track.countryFlag} className="track-flag"/>
                 </Card.Text>
-                <Link style={{width: "100%", marginTop: "auto"}} to={"/tracks/" + props.track.id}>
-                    <Button className="track-card-button">More {props.track.name}</Button>
-                </Link>
+                {props.isLoggedIn ?
+                    <Link style={{width: "100%", marginTop: "auto"}} to={"/admin/tracks/" + props.track.id}>
+                        <Button className="track-card-button">More {props.track.name}</Button>
+                    </Link> :
+                    <Link style={{width: "100%", marginTop: "auto"}} to={"/tracks/" + props.track.id}>
+                        <Button className="track-card-button">More {props.track.name}</Button>
+                    </Link>}
             </Card.Body>
         </Card>
     );
